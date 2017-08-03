@@ -1,0 +1,288 @@
+% http://kjhealy.github.com/kjh-vita
+%
+% ------------------------------------------------------------------------
+% Requirements included in a modern tex distribution:
+% ------------------------------------------------------------------------
+% xelatex
+% fontspec.sty
+% hyperrref.sty
+% xunicode.sty
+% color.sty
+% url.sty
+% fancyhdr.sty
+% memoir.cls
+% fontawesome.sty
+%
+% ------------------------------------------------------------------------
+% Requirements from https://github.com/kjhealy/latex-custom-kjh:
+% ------------------------------------------------------------------------
+% org-preamble-xelatex.sty
+% memoir-article-styles.sty
+%
+% ------------------------------------------------------------------------
+% Optional:
+% ------------------------------------------------------------------------
+% git
+% vc.sty
+% revnum.sty
+% fonts
+%
+% ------------------------------------------------------------------------
+% Note:
+%------------------------------------------------------------------------
+% Because this is a hand-tweaked file, be on the look out for \medksip, 
+% \bigskip and \newpage commands here and there, which are used to balance
+% the layout or avoid widows & orphans, etc. You should of course add or 
+% remove these as needed.
+%------------------------------------------------------------------------
+
+\documentclass[11pt,article,oneside]{memoir}   
+\usepackage{org-preamble-xelatex} 
+\usepackage{fontawesome,url}
+    
+%------------------------------------------------------------------------
+% Metadata
+%------------------------------------------------------------------------
+
+\def\myauthor{Kerim B. Kaylan}
+\def\mytitle{Vita}
+\def\mycopyright{\myauthor}
+\def\mykeywords{}
+\def\mybibliostyle{plain}
+\def\mybibliocommand{}
+\def\mysubtitle{}
+\def\myaffiliation{University of Illinois at Chicago}
+\def\myaddress{College of Medicine}
+\def\myemail{kaylan2@uic.edu}
+\def\myweb{https://www.kbkaylan.net}
+\def\myphone{+1 269 861 3750}
+\def\myfax{}
+\def\mytwitter{}
+\def\myversion{}
+\def\myrevision{}
+
+\def\myaffiliation{University of Illinois at Chicago}
+\def\myauthor{Kerim B. Kaylan}
+\date{}
+\def\mykeywords{Kerim, Kaylan, Kerim Kaylan, Vita, CV, Resume, Engineering, Medicine}
+
+%------------------------------------------------------------------------
+% Document
+%------------------------------------------------------------------------
+\begin{document}
+
+\setromanfont[Mapping={tex-text}, 
+	Numbers={OldStyle},
+	Ligatures={Common}]{Minion Pro}
+\setsansfont[Mapping=tex-text,
+	Ligatures={Common}, 
+	Colour=AA0000]{Unit-Medium}
+\setmonofont[Mapping=tex-text,Scale=0.72]{PragmataPro} 
+
+\newfontface\scheader[SmallCapsFont={Minion Pro},SmallCapsFeatures={Letters=SmallCaps}]{Minion Pro}
+
+\newfontface\addressblock[Mapping={tex-text}, 
+	Numbers={OldStyle},
+	Ligatures={Common}]{Minion Pro Medium Caption}
+
+%------------------------------------------------------------------------
+% Local commands
+%------------------------------------------------------------------------
+
+% Marginal header
+% Note: as the document goes on you may need to introduce a (gradually increasing)
+% \vspace element to keep the marginal header pleasingly aligned with the first 
+% item in the body text. Like this: \marginhead{{\vskip 0.4em}Grants}, or 
+% \marginhead{{\vskip 0.8em}Service}. Experiment as needed.
+\newcommand{\marginhead}[1]{\marginpar{\textsf{{\footnotesize\vspace{-1em}\flushright #1}}}}
+
+% No bullets on labels
+\renewcommand{\labelitemi}{~} 
+
+% Custom hanging indent for vita items
+\def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
+\def\labelitemi{~}
+\renewcommand{\labelitemii}{~}
+
+%------------------------------------------------------------------------
+% Address and contact block
+%------------------------------------------------------------------------
+\begin{minipage}[t]{2.95in}
+ \flushright {\footnotesize 
+ \href{http://medicine.uic.edu}{College of Medicine} \\ University of Illinois at Chicago \\ \vspace{-0.05in} Chicago, \textsc{il} 60612}  
+  
+\end{minipage}
+\hfill     
+%\begin{minipage}[t]{0.0in}
+% dummy (needed here)
+%\end{minipage}
+\hfill
+\begin{minipage}[t]{1.3in}
+  \flushright \footnotesize  \addressblock \myphone \, \faPhone \\ 
+  % {\scriptsize  \texttt{\href{http://twitter.com/kjhealy}{\mytwitter}} \, \faTwitter }  \\ 
+  {\scriptsize  \texttt{\href{mailto:\myemail}{\myemail}} \, \faEnvelope} \\
+  {\scriptsize  \texttt{\href{\myweb}{\myweb}} \, \faGlobe}
+\end{minipage}
+
+\medskip
+
+% Name 
+\noindent{\LARGE\scheader \textsc{kerim b. kaylan}}
+\reversemarginpar
+
+\bigskip
+
+% Education
+\marginhead{\sffamily {{\vskip -0.25em} education}}
+
+\ind M.D., College of Medicine, University of Illinois at Chicago, 2021 (expected).
+
+\ind Ph.D., Bioengineering, University of Illinois at Urbana--Champaign, 2017.
+
+\ind \hspace{0.35in} \footnotesize Dissertation: \emph{Dissecting combinatorial microenvironmental regulation of cell fate and function using a multi-modal arraying platform}. \normalsize\vspace{0.05in}
+
+\ind M.S., Bioengineering, University of Illinois at Urbana--Champaign, 2016.
+
+\ind \hspace{0.35in} \footnotesize Thesis: \emph{Engineered microenvironments for studying liver progenitor differentiation}. \normalsize\vspace{0.05in}
+
+\ind B.S.E., Biomedical Engineeering, University of Michigan---Ann Arbor, 2012.
+
+\ind \hspace{0.35in} \footnotesize Graduated \emph{magna cum laude}. \normalsize\vspace{0.05in}
+
+\bigskip
+ 
+% Industry
+\marginhead{\sffamily {{\vskip -0.4em} industry}}
+ 
+\ind Co-op, Biological Technologies, Genentech, Inc., South San Francisco, CA, 2011.
+ 
+ \ind Engineer, NeuroNexus, Inc., Ann Arbor, MI, 2010--2011.
+ 
+\bigskip
+ 
+% Publications
+\marginhead{\sffamily {\vskip 0.45em} publications}
+
+\medskip\vspace{0.20em}
+
+\noindent\emph{Journal Articles \vspace{0.05in}}
+%% \renewcommand{\labelenumi}{\textsc{a}\theenumi.}
+%% \begin{revnumerate}
+
+\ind Roberto C. Andresen Eguiluz, Kerim B. Kaylan, Gregory H. Underhill, and Deborah E. Leckband. 2017. ``Substrate stiffness and VE-cadherin mechano-transduction coordinate to regulate endothelial monolayer integrity.'' \emph{Biomaterials}~140:~45--57.
+
+\ind Kerim B. Kaylan, Andreas P. Kourouklis, and Gregory H. Underhill. 2017. ``High-throughput cell microarray platform for correlative analysis of cell differentiation and traction forces.'' \emph{Journal of Visualized Experiments} 121:~e55362.
+
+\ind Kerim B. Kaylan, Stefan D. Gentile, Lauren E. Milling, Kaustubh N. Bhinge, Farhad Kosari, and Gregory H. Underhill. 2016. ``Mapping tumor cell drug responses as a function of matrix context and genotype using combinatorial cell microarrays.'' \emph{Integrative Biology} 8(12):~1221--1231.
+
+\ind Andreas P. Kourouklis*, Kerim B. Kaylan*, and Gregory H. Underhill. 2016. ``Substrate stiffness and matrix composition coordinately control the differentiation of liver progenitor cells.'' \emph{Biomaterials} 99:~82--94.
+
+\ind Kerim B. Kaylan*, Viktoriya Ermilova*, Ravi Chandra Yada, and Gregory H. Underhill. 2016. ``Combinatorial microenvironmental regulation of liver progenitor differentiation by Notch ligands, TGF\textbeta, and extracellular matrix.'' \emph{Scientific Reports} 6(23490).
+
+\ind Ehsan Atefi, Darcy Fyffe, Kerim B. Kaylan, and Hossein Tavana. 2016. ``Characterization of aqueous two-phase systems from volume and density measurements.'' \emph{Journal of Chemical and Engineering Data} 61(4):~1531--1539.
+
+\ind Hossein Tavana, Kerim Kaylan, Tommaso Bersano-Begey, Kathryn E. Luker, Gary D. Luker, and Shuichi Takayama. 2011. ``Rehydration of polymeric, aqueous, biphasic system facilitates high throughput cell exclusion patterning for cell migration studies.'' \emph{Advanced Functional Materials} 21(15):~2920--2926.
+
+%\end{revnumerate}
+%\newpage
+
+\bigskip
+
+\noindent\textit{Book Chapter \vspace{0.05in}}
+% \renewcommand{\labelenumi}{\textsc{c}\theenumi.}
+% \begin{revnumerate}
+
+\ind Kerim B. Kaylan and Gregory H. Underhill. 2016. ``Hydrogels for Hepatic Tissue Engineering,'' in \emph{Gels Handbook: Fundamentals, Properties and Applications}, vol. 2, edited by Mohammad R. Abidian, Umut A. Gurkan, Faramarz Edalat. Hackensack, \textsc{nj}: World Scientific. 427--462.
+
+%\end{revnumerate}
+
+\bigskip 
+
+% Conference Presentations
+\marginhead{\sffamily {\vskip -0.45em}conference \newline presentations}
+
+\ind ``Mapping tumor cell drug response as a function of matrix context using combinatorial cell microarrays.'' Biomedical Engineering Society Annual Meeting, Minneapolis, MN. October 2016.
+
+\ind ``Cellular microarrays reveal combinatorial effects of Notch ligands, TGF\textbeta, and extracellular matrix on liver progenitor differentiation.'' American Society of Mechanical Engineers NanoEngineering for Medicine and Biology Conference, Houston, TX. February 2016.
+
+\ind ``Combinatorial cell microarrays for analyzing ECM regulation of tumor cell drug response.'' American Physician Scientists Association Annual Meeting, Chicago, IL. April 2015.
+
+\ind ``Arrayed microenvironments for probing liver progenitor cell fate decisions.'' Biomedical Engineering Society Meeting, San Antonio, TX. October 2014.
+
+\bigskip
+
+% Grants, Honors, and Awards
+\marginhead{\sffamily {\vskip -0.5em}grants, honors, and awards}
+
+\ind Teacher Ranked as Excellent, University of Illinois at Urbana--Champaign, 2017.
+
+\ind Teacher Ranked as Excellent, University of Illinois at Urbana--Champaign, 2016.
+
+\ind \hspace{0.35in} \footnotesize Outstanding ratings; top 10\% of teaching assistants as ranked by their students. \normalsize\vspace{0.05in}
+
+\ind Medical Student Interest Group Matching Grant Program, Intersociety Council for Pathology Information, \$500, 2016.
+
+\ind I-Corps, University of Illinois at Urbana--Champaign Site Cohort 11, National Science Foundation, \$2,000, 2016.
+
+\ind Medical Student Interest Group Matching Grant Program, Intersociety Council for Pathology Information, \$750, 2015.
+
+\ind O'Morchoe Leadership Fellowship for Out in Medicine, University of Illinois College of Medicine, \$1,500, 2014.
+
+\ind Summer Biomedical and Life Sciences Fellowship, University of Michigan Undergraduate Research Opportunity Program, \$4,000, 2010.
+
+\ind Michigan Promise Scholarship, State of Michigan, \$1,000, 2008.
+
+\ind Michigan Competitive Scholarship, State of Michigan, \$1,300, 2008.
+
+\bigskip\bigskip
+
+% Teaching
+\marginhead{\sffamily {\vskip -0.5em}teaching}
+
+\ind Instructor, Cell and Tissue Biology, University of Illinois College of Medicine, 2016--2017.
+
+\ind Facilitator, Discover Bioengineering and WYSE summer camps, University of Illinois at Urbana--Champaign, 2015--2016.
+
+\ind Organizer, Bioengineering the Future, University Lab High School, Urbana, IL. 2013.
+
+\ind Instructor, Quantitative Cell Biology, University of Michigan---Ann Arbor, 2012.
+
+\ind Peer Mentor, Engineering Advising Center, University of Michigan---Ann Arbor, 2010--2011.
+
+\bigskip
+
+% Professional Service
+\marginhead{\sffamily {\vskip -0.15em}professional service}
+
+\ind Member, Medical Scholars Program Steering Committee, University of Illinois College of Medicine, 2017.
+
+\ind Selection committee for Teaching Excellence and Innovation in Education awards, University of Illinois College of Medicine, 2017.
+
+\ind Organizer, Pathology Interest Group, University of Illinois College of Medicine, 2015--2017.
+
+\ind Co-President, Out in Medicine, University of Illinois College of Medicine, 2014--2017.
+
+\ind Organizer, Graduate Cancer Community @ Illinois, University of Illinois at Urbana--Champaign, 2013--2016.
+
+\ind Member, Climate Survey Steering Committee, University of Illinois at Urbana--Champaign, 2012.
+
+\ind Member and Co-Chair, Medical Scholars Program Retreat Committee, University of Illinois College of Medicine, 2012--2014.
+
+\ind Member, Engineering Graduate Student Advisory Committee, University of Illinois at Urbana--Champaign, 2012--2013.
+
+\ind Member and Co-Chair, Medical Scholars Program Advisory Committee, University of Illinois College of Medicine, 2012--2017.
+
+\ind Executive Board Member, Biomedical Engineering Society, University of Michigan---Ann Arbor, 2010--2011.
+
+\bigskip
+
+% Professional Affiliations
+\marginhead{\sffamily {\vskip -0.45em}professional affiliations}
+
+\ind Tau Beta Pi---The Engineering Honor Society, 2014--present.
+
+\ind Biomedical Engineering Society, 2014--present.
+
+\ind American Physician Scientists Association, 2013--present.
+
+\end{document}
