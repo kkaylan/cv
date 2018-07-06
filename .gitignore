@@ -1,15 +1,9 @@
 *.pdf
-*.zip
-*.ttf
-*.otf
-*.jpg
-*.sty
 *.log
 *.out
 *.aux
 *.bcf
 *.run.xml
 *.synctex.gz
-vc*
-source/*
 archive/*
+images/*
