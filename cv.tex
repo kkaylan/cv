@@ -1,0 +1,448 @@
+\documentclass[%
+% xcolor=svgnames,%
+% color=mycolor,%
+% DIV=19,
+% fontsize=20,
+% style=classic,% (default) OR
+% style=casual% !! remove linebreak in facebook definition (see personal data); OR
+% style=oldstyle,%
+% headline=name,%
+]{komacv}
+
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ifoot{CV |~\firstname~\familyname}
+\ofoot{\pagemark/\totalpagemark}
+% \ihead{Hello world!}
+% \ohead{My life so far}
+
+
+% ===========================
+%    LENGTHS
+% ===========================
+% \setlength\titlenamemaxwidth{.4\textwidth}
+% \setlength\hintscolwidth{2cm}
+% \setlength\sepcolwidth{1em}
+% \setlength\quotewidth{.3\textwidth}
+% \setlength\titlesepwidth{50pt}
+% \setlength\infocolwidth{6cm} % for oldstyle only!
+% \setlength\sepinfocolwidth{6em} % for oldstyle only!
+% \setlength\footerwidth{.5\textwidth} % for casual style only
+% \setlength\aftertitlevspace{5\baselineskip}
+% \setlength\afterquotevspace{8\baselineskip}
+% \setlength\afterelementsvspace{40pt}
+% \setlength\beforesecvspace{3\baselineskip}
+% \setlength\aftersecvspace{4\baselineskip}
+% \setlength\beforesubsecvspace{3\baselineskip}
+% \setlength\aftersubsecvspace{4\baselineskip}
+% \setlength\listitemsymbolwidth{1cm}
+
+
+% ===========================
+%    COLORS
+% ===========================
+% \xdefinecolor{mycolor}{cmyk}{0.92,0,0.87,0.09}
+% \colorlet{firstnamecolor}{blue}
+% \colorlet{familynamecolor}{red}
+% \colorlet{acadtitlecolor}{green}
+% \colorlet{addresscolor}{gray}
+% \colorlet{quotecolor}{pink}
+% \colorlet{framecolor}{yellow}
+% \colorlet{framebackcolor}{black}
+% \colorlet{secbarcolor}{familynamecolor}
+% \colorlet{seccolor}{familynamecolor}
+% \colorlet{subseccolor}{pink!70!black}
+% \colorlet{hintcolor}{orange}
+
+% ===========================
+%    FONTS
+% ===========================
+%% Fonts, for use with LuaLaTeX oder XeLaTeX
+% \defaultfontfeatures{Renderer=Basic,Ligatures=TeX}
+% \setmainfont[Numbers=OldStyle]{Palatino Linotype}
+% \setsansfont{AvantGarde Bk BT}
+% \setmonofont{Courier New}
+
+% \setkomafont{firstnamefont}{\fontsize{24}{26}\itshape}
+\addtokomafont{firstnamefont}{\fontsize{35}{50}}
+% \addtokomafont{familynamefont}{\scshape}
+% \setkomafont{addressfont}{\scriptsize}
+% \setkomafont{acadtitlefont}{\usekomafont{familynamefont}}
+% \setkomafont{quotefont}{\ttfamily}
+% \addtokomafont{section}{\Huge\rmfamily\slshape}
+% \addtokomafont{subsection}{\bfseries}
+
+% ===========================
+%    HYPERSETUP
+% ===========================
+\renewcommand*\urlbordercolor{red}
+\hypersetup{pdfcreator=\LaTeX}
+
+% ===========================
+%    BIBLIOGRAPHY
+% ===========================
+
+\usepackage[backend=biber,
+style=numeric,%authortitle,% 
+sorting=ymdnt,%
+maxbibnames=99,
+giveninits=true,
+defernumbers=true,
+]{biblatex}
+
+% From: https://tex.stackexchange.com/questions/140561/anti-chronological-bibliography-with-sorting-ydnt-and-usage-of-sortyear
+\DeclareSortingScheme{ymdnt}{
+  \sort{
+    \field{presort}
+  }
+  \sort[final]{
+    \field{sortkey}
+  }
+  \sort[direction=descending]{
+    \field[strside=left,strwidth=4]{sortyear}
+    \field[strside=left,strwidth=4]{year}
+    \literal{9999}
+  }
+  \sort[direction=descending]{
+    \field{month}
+    \literal{9999}
+  }
+  \sort{
+    \field{sortname}
+    \field{author}
+    \field{editor}
+    \field{translator}
+    \field{sorttitle}
+    \field{title}
+  }
+  \sort{
+    \field{sorttitle}
+    \field{title}
+  }
+}
+  
+\addbibresource{cv.bib}
+\defbibheading{bibliography}[Publications]{\section{#1}}
+\DeclareFieldFormat[misc]{title}{\mkbibquote{#1}}
+
+% ===========================
+%    PERSONAL DATA
+% ===========================
+\renewcommand*{\title}{CV}% PDF metadata
+\renewcommand*{\firstname}{Kerim B.}
+\renewcommand*{\familyname}{Kaylan}
+%\renewcommand*{\acadtitle}{B.\,Ed.}
+\renewcommand*{\addressstreet}{University of Illinois College of Medicine}
+\renewcommand*{\addresscity}{Chicago, IL 60612}
+%\renewcommand*{\address}[3]{Chicago, IL 60612}
+\renewcommand*{\mobile}{+1 269 861 3750}
+%\renewcommand*{\phonenr}{001-23456789}
+%\renewcommand*{\faxnr}{001-23456788}
+\renewcommand*{\email}{kaylan2@uic.edu}
+\renewcommand*{\homepage}{www.kbkaylan.net}
+% \renewcommand*{\twitter}{twitter.com/janeeyre}
+% \renewcommand*{\github}{github.com/janeeyre}
+% \renewcommand*{\facebook}{facebook.com/\\jane.eyre}
+% \renewcommand*{\facebook}{facebook.com/jane.eyre} % avoid linebreaks in casual style
+% \renewcommand*{\linkedin}{https://uk.linkedin.com/pub/jane-eyre}
+% \renewcommand*{\extrainfo}{Some extra info}
+% \renewcommand*{\cvquote}{\enquote{Convinced I grew that neither earth should perish, \\nor one of the souls it treasured.}} %p.373
+% \renewcommand\phonesymbol{Tel.~}
+% \headline[l]{name} % [c|l|r]{none|name|title}; default: [c]{none}
+% \renewcommand\headlinecontent{Jane Elizabeth Eyre Rochester}
+
+% ===========================
+%    PICTURE
+% ===========================
+% \setlength\fboxrule{7pt}
+% \setlength\mframepicshift{1cm}
+% \photo[frame]{3cm}{jeyre}
+%\photo[mframe]{5cm}{jeyre}
+
+\begin{document}
+\raggedbottom
+
+\maketitle
+
+\section{Education}
+
+\cvitem{2012--2021 (expected)}{
+\textbf{Doctor of Medicine}. \newline
+University of Illinois College of Medicine, Chicago, IL. \newline
+{\small \httplink[Medical Scholars (M.D./Ph.D.) Program]{www.med.illinois.edu/msp/About/}.}}
+
+\cvitem{2012--2017}{
+\textbf{Doctor of Philosophy}, \textit{Bioengineering}.\newline
+Dissertation: \httplink[Dissecting combinatorial microenvironmental regulation of cell fate and function using a multi-modal arraying platform\smallskip]{hdl.handle.net/2142/98244}.
+\textbf{Master of Science}, \textit{Bioengineering}.\newline
+Thesis: \httplink[Engineered microenvironments for studying liver progenitor differentiation\smallskip]{hdl.handle.net/2142/90492}.\newline
+University of Illinois at Urbana--Champaign, Urbana, IL.\newline
+{\small \httplink[Medical Scholars (M.D./Ph.D.) Program]{www.med.illinois.edu/msp/About/}.}}
+
+\cvitem{2008--2012}{
+\textbf{Bachelor of Science in Engineering}, \textit{Biomedical Engineering}.\newline
+University of Michigan, Ann Arbor, MI.\newline
+{\small Graduated \textit{magna cum laude}.}}
+
+\section{Positions}
+
+\cventry{2018}{Microfabricated Tissue Models Laboratory}{Visiting Scholar}{Department of Bioengineering}{University of Illinois at Chicago}{Advisor: Prof. Salman R. Khetani.
+\begin{compactitem}
+\item Developed and documented a generalized pipeline to analyze data from cell microarrays.
+\item Investigated the functional regulation of primary human and iPSC-derived hepatocytes by matrix proteins and substrate stiffness.
+\end{compactitem}}
+
+\cventry{2012--2017}{Tissue Development and Engineering Laboratory}{Graduate Research Assistant}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{Advisor: Prof. Gregory H. Underhill. \\
+\begin{compactitem}
+\item Designed a cell-based microarray platform with multiple readouts to deconstruct combined biochemical and biomechanical regulation of cell fate and function.
+\item Characterized the regulation of liver progenitor differentiation by biochemical factors (TGF$\beta$, Notch, and MAPK signaling) and biomechanical cues (substrate stiffness and interfacial effects).
+\item Mapped the response of lung tumor cells to chemotherapeutic drugs as a function of both support by matrix protein presentation and expression of the oncogene \textit{ASCL1}.
+\end{compactitem}}
+
+\cventry{2011}{Genentech, Inc.}{Cooperative}{Biological Technologies}{South San Francisco, CA}{Manager: Dr. Guoying Jiang.
+\begin{compactitem}
+\item Designed a functional cell-based assay for a therapeutic monoclonal antibody (MAb1).
+\item Investigated alternative assay formats reflective of the MOA of MAb1.
+\item Screened alternative cell lines for response and efficacy in the assay.
+\end{compactitem}}
+
+\cventry{2010--2011}{NeuroNexus, Inc.}{Student Engineer}{Ann Arbor, MI}{}{Manager: Dr. John Seymour.
+\begin{compactitem}
+\item Catalogued design requirements of novel optical neural stimulation systems for use in optogenetics research.
+\item Prototyped a portable optical neural stimulation system for mice.
+\item Optimized diode coupling efficiency using simulations and experiments.
+\end{compactitem}}
+
+\cventry{2009--2011}{Micro/Nano/Molecular Biotechnology Laboratory}{Undergraduate Research Assistant}{Department of Biomedical Engineering}{University of Michigan}{Principal Investigator: Prof. Shuichi Takayama. \\ Advisor: Dr. Hossein Tavana.
+\begin{compactitem}
+\item Adapted polymeric aqueous two-phase systems (ATPS) for patterning of biomolecules and cells.
+\item Designed and validated a high-throughput ATPS migration assay for studying changes in cancer cell migration with drug treatment.
+\item Formulated and implemented SOPs for automated lab equipment.
+\end{compactitem}}
+ 
+\section{Grants, Honors, and Awards}
+
+\cventry{2017}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{College of Medicine}{University of Illinois College of Medicine}{Top 25\% of teaching assistants ranked by students.}
+
+\cventry{2016}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{College of Medicine}{University of Illinois College of Medicine}{Outstanding; top 10\% of teaching assistants ranked by students.}
+
+\cventry{2016}{Medical Student Interest Group Matching Grant Program}{\$500}{Intersociety Council for Pathology Information}{}{Awarded to the Pathology Interest Group at the University of Illinois College of Medicine to continue supporting programs facilitating interactions between faculty and students in addition to providing education on pathology as a career choice.}
+
+\cventry{2016}{National Science Foundation I-Corps}{\$2,000}{}{University of Illinois at Urbana--Champaign Site Cohort 11}{Awarded with Dr. Andreas P. Kourouklis for the use of lean methodologies to develop new, clinically-relevant technologies in liver tissue engineering.}
+
+\cventry{2015}{Medical Student Interest Group Matching Grant Program}{\$750}{Intersociety Council for Pathology Information}{}{Awarded to the Pathology Interest Group at the University of Illinois College of Medicine to support interactions between faculty and students and provide education on pathology as a career choice.}
+
+\cventry{2014}{O'Morchoe Leadership Fellowship for Out in Medicine}{\$1,500}{University of Illinois College of Medicine}{}{Awarded to support the activities of Out in Medicine, chiefly education relating to the care of intersex patients.}
+
+\cventry{2010}{Summer Biomedical and Life Science Fellowship}{\$4,000}{University of Michigan Undergraduate Research Opportunity Program}{}{Supported research with Prof. Shuichi Takayama to develop a novel cell migration assay using ATPS.}
+
+\cventry{2008}{Michigan Promise Scholarship}{\$1,000}{State of Michigan}{}{}
+
+\cventry{2008}{Michigan Competitive Scholarship}{\$1,300}{State of Michigan}{}{}
+
+\section{Publications}
+
+\subsection{Journal Articles}
+
+{\small Asterisk (*) indicates equal authorship.}
+
+\begin{refcontext}[labelprefix=A]
+\nocite{*}
+\printbibliography[, keyword=article, heading=none, resetnumbers=true]
+\end{refcontext}
+
+\subsection{Book Chapters}
+
+\begin{refcontext}[labelprefix=B]
+\nocite{*}
+\printbibliography[keyword=book, heading=none, resetnumbers=true]
+\end{refcontext}
+
+\subsection{Conference Abstracts and Proceedings}
+
+\begin{refcontext}[labelprefix=C]
+\nocite{*}
+\printbibliography[keyword=proceeding, heading=none, resetnumbers=true]
+\end{refcontext}
+
+\section{Presentations}
+
+\subsection{Invited Talks}
+
+\begin{refcontext}[labelprefix=T]
+\nocite{*}
+\printbibliography[keyword=talk, heading=none, resetnumbers=true]
+\end{refcontext}
+
+\subsection{Poster Presentations}
+
+\begin{refcontext}[labelprefix=P]
+\nocite{*}
+\printbibliography[keyword=poster, heading=none, resetnumbers=true]
+\end{refcontext}
+
+\section{Service}
+
+\subsection{Leadership}
+
+\cventry{2017--2019}{Student Curricular Board}{}{University of Illinois College of Medicine}{}{
+\textit{Special Projects Chair (2018--2019).}\\
+\begin{compactitem}
+\item Designed a lean startup-based approach to student-driven curricular change focused on the build-measure-learn process, actionable metrics, minimum viable solutions, and pivoting.
+\item Collected qualitative and quantitative feedback on availability of study resources and preparedness for USMLE exams.
+\item Generated solutions to previously-unidentified curricular issues.
+\end{compactitem}
+\textit{Special Projects Team Member (2017--2018).}\\
+\begin{compactitem}
+\item Developed and carried out a tutorial series on Osmosis, a spaced-repetition tool integrated with the college's curriculum.
+\end{compactitem}}
+
+\cventry{2016--2017}{Medical Scholars Program Advisory Committee}{Co-Chair}{University of Illinois College of Medicine}{}{
+\begin{compactitem}
+\item Maintained communication between students and faculty as the regional campus implemented plans to sunset the college.
+\item Initiated changes to the structure of the committee to adapt to changes in the demographics of the student body.
+\end{compactitem}}
+
+\cventry{2015--2017}{Pathology Interest Group}{Organizer}{University of Illinois College of Medicine}{}{
+\begin{compactitem}
+\item Planned and carried out activities to promote interactions between pathology faculty and students, including panels of recently-matched students and lunch talks with practicing pathologists.
+\item Held informational meetings regarding career options in pathology, subspecialization options, and the outlook of the field. 
+\end{compactitem}}
+
+\cventry{2014--2017}{Out in Medicine at Illinois}{Co-President}{University of Illinois College of Medicine}{}{\begin{compactitem}
+\item Held mixers and socials to build community for students, staff, and faculty who identify as sexual or gender minorities.
+\item Organized seminars on the health of sexual or gender minorities, specifically the care of transgender and intersex patients.
+\end{compactitem}}
+
+\cventry{2013--2016}{Graduate Cancer Community \@ Illinois}{Organizer}{University of Illinois at Urbana--Champaign}{}{
+\begin{compactitem}
+\item Planned and hosted 6 seminars on cancer biology from local faculty.
+\item Assisted in organizing the Graduate Cancer Community Fall Symposium, which brought students and regional faculty together to present posters and talks on their cancer research.
+\item Helped carry out the Pioneers in Cancer seminar series, which brought 3 highly-respected faculty members in the cancer field from across the country to speak to and interact with graduate students.
+\end{compactitem}}
+
+\cventry{2013--2014}{Medical Scholars Program Retreat Committee}{Co-Chair}{University of Illinois College of Medicine}{}{
+\begin{compactitem}
+\item Oversaw preparations for the Medical Scholars Program Retreat, including securing a venue, contracting with caterers, selecting and scheduling activities, and inviting students and alumni to speak.
+\item Served as master of ceremonies on the day of the retreat.
+\end{compactitem}}
+
+\cventry{2010--2011}{Biomedical Engineering Society}{Executive Board Member}{University of Michigan}{}{
+\begin{compactitem}
+\item Kept chapter website updated, improved and upgraded backend code.
+\end{compactitem}}
+
+\subsection{College and University Committees}
+
+\cventry{2018--2019}{Search Committee for Associate Dean of Curriculum}{Member}{University of Illinois College of Medicine}{}{}
+
+\cventry{2017--2018}{USMLE Preparedness Committee}{Member}{University of Illinois College of Medicine}{}{}
+
+\cventry{2017}{Medical Scholars Program Steering Committee}{Member}{University of Illinois College of Medicine}{}{}
+
+\cventry{2017}{Teaching Excellence and Innovation in Education Award Selection Committee}{Member}{University of Illinois College of Medicine}{}{}
+
+\cventry{2012--2017}{Medical Scholars Program Advisory Committee}{Member}{University of Illinois College of Medicine}{}{}
+
+\cventry{2012--2014}{Medical Scholars Program Retreat Committee}{Member}{University of Illinois College of Medicine}{}{}
+
+\cventry{2012--2013}{Engineering Graduate Student Advisory Committee}{Member and Secretary}{College of Engineering}{University of Illinois at Urbana--Champaign}{}
+ 
+\cventry{2012}{Climate Survey Steering Committee}{Member}{University of Illinois at Urbana--Champaign}{}{}
+ 
+\section{Teaching}
+
+\cventry{2016--2017}{Cell and Tissue Biology}{Teaching Assistant}{University of Illinois College of Medicine}{}
+{Primary Instructor: Prof. Benjamin Williams.
+\begin{compactitem}
+\item Supervised weekly lab sessions providing active review of histology and identification of structures.
+\item Held discussions sections on disease pathophysiology, provided written feedback on student case presentations.
+\end{compactitem}}
+
+\cventry{2016}{Worldwide Youth in Science and Engineering Camp}{Facilitator}{College of Engineering}{University of Illinois at Urbana--Champaign}{Primary Instructor: Prof. Gregory H. Underhill.
+\begin{compactitem}
+\item Redesigned module on PCR in response to previously identified issues.
+\item Taught PCR module to high school students. 
+\end{compactitem}}
+
+\cventry{2015--2016}{Discover Bioengineering Camp}{Facilitator}{College of Engineering}{University of Illinois at Urbana--Champaign}
+{Primary Instructors: Prof. Gregory H. Underhill, Prof. Jennifer Amos.
+\begin{compactitem}
+\item Designed, revised, and taught module on PCR to high school students.
+\end{compactitem}}
+
+\cventry{2015}{Introduction to Bioengineering}{Mentor}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{Primary Instructor: Mark Gryka.
+\begin{compactitem}
+\item Introduced 3 mentees to bioengineering research.
+\end{compactitem}}
+
+\cventry{2014}{Quantitative Biotechnology}{Guest Lecturer}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{Primary Instructor: Prof. Sua Myong.
+\begin{compactitem}
+\item Served as guest lecturer for 1 class session.
+\end{compactitem}}
+
+\cventry{2014}{Stem Cell Bioengineering}{Grader}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{
+Primary Instructor: Prof. Gregory H. Underhill.
+\begin{compactitem}
+\item Graded problem sets and provided written feedback to students.
+\end{compactitem}}
+
+\cventry{2013}{Bioengineering the Future}{Organizer and Primary Instructor}{University Lab High School}{Urbana, IL}{
+\begin{compactitem}
+\item Organized and taught a week-long bioengineering course targeted at high school students.
+\item Engaged and coordinated multiple graduate and faculty speakers.
+\end{compactitem}}
+
+\cventry{2012--2017}{Tissue Development and Engineering Laboratory}{Undergraduate Mentor}{University of Illinois at Urbana--Champaign}{}{
+Advisor: Prof. Gregory H. Underhill.
+\begin{compactitem}
+\item Trained new lab members in lab-specific safety guidelines, experimental protocols, analysis of data, and interpretation of results.
+\item Established goals and specific projects for each mentee in addition to assuring development of specific technical skills.
+\item Held weekly subgroup and 1:1 meetings with undergraduate mentees (16 total) to design independent experiments and discuss project progress.
+\end{compactitem}}
+
+\cventry{2012}{Quantitative Cell Biology}{Instructional Aid}{Department of Biomedical Engineering}{University of Michigan}{
+Primary Instructor: Prof. Shuichi Takayama.
+\begin{compactitem}
+\item Graded problem sets and administered exams.
+\item Held weekly office hours, organized review sessions for exams.
+\end{compactitem}}
+
+\cventry{2011}{Engineering Advising Center}{Peer Mentor}{College of Engineering}{University of Michigan}{
+Peer Mentor Program.
+\begin{compactitem}
+\item Advised freshman mentee on gaining research and industry experience.
+\item Provided information regarding academics and course scheduling specific to the Department of Biomedical Engineering.
+\end{compactitem}}
+   
+\section{Professional Affiliations}
+\cvlistitem{American College of Physicians.}
+\cvlistitem{Tau Beta Pi---The Engineering Honor Society.}
+\cvlistitem{Biomedical Engineering Society.}
+\cvlistitem{American Physician Scientists Association.}
+
+\section{Skills}
+
+\subsection{Software}
+
+\cvitem{Software}{OS X, Windows, GNU/Linux (Ubuntu, Red Hat).}
+\cvitem{Programming}{R, MATLAB, \LaTeX, Git, HTML, CSS, C++.}
+\cvitem{Applications}{RStudio, NIH ImageJ (Fiji), CellProfiler, GIMP, Inkscape, LabVIEW, SolidWorks.}
+
+\subsection{Wet laboratory}
+
+\cvitem{Cell biology}{Cell culture, viral transduction, cell migration assays.}
+\cvitem{Molecular biology}{Immunoblotting, immunocytochemistry and immunofluorescence, \textit{in situ} hybridization, qRT-PCR, ELISA, biolayer interferometry.}
+\cvitem{Imaging}{Phase contrast, fluorescence, and confocal microscopy.}
+\cvitem{Fabrication}{Protein microarraying, hydrogel fabrication (PDMS, polyacrylamide).}
+\cvitem{Automation}{Automated microscopy, robotic liquid handling, spotting robots.}
+
+\subsection{Analytical}
+
+\cvitem{Statistics}{Basic hypothesis testing, single and multiple linear regression, ANOVA, clustering analysis, PCA.}
+\cvitem{Image analysis}{Automated high-content image cytometry (ImageJ, CellProfiler).}
+
+\section{Interests}
+Reading, programming, viola, aikido, biking, weight lifting.
+
+\end{document}
