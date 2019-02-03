@@ -57,20 +57,29 @@
 % ===========================
 %    FONTS
 % ===========================
-%% Fonts, for use with LuaLaTeX oder XeLaTeX
+%% Fonts, for use with LuaLaTeX or XeLaTeX
+\usepackage[T1]{fontenc}
 % \defaultfontfeatures{Renderer=Basic,Ligatures=TeX}
-% \setmainfont[Numbers=OldStyle]{Palatino Linotype}
+% \setmainfont[Numbers=OldStyle]{Baskerville}
 % \setsansfont{AvantGarde Bk BT}
 % \setmonofont{Courier New}
 
-% \setkomafont{firstnamefont}{\fontsize{24}{26}\itshape}
+% first and last name
+\setkomafont{firstnamefont}{\fontsize{24}{26}\itshape}
 \addtokomafont{firstnamefont}{\fontsize{35}{50}}
-% \addtokomafont{familynamefont}{\scshape}
-% \setkomafont{addressfont}{\scriptsize}
+\addtokomafont{familynamefont}{}
+
+% addresses and quotes
+\setkomafont{addressfont}{\normalsize}
 % \setkomafont{acadtitlefont}{\usekomafont{familynamefont}}
-% \setkomafont{quotefont}{\ttfamily}
-% \addtokomafont{section}{\Huge\rmfamily\slshape}
-% \addtokomafont{subsection}{\bfseries}
+\setkomafont{quotefont}{\ttfamily}
+
+% hints (years on the left)
+\setkomafont{hintfont}{\rmfamily\normalsize}
+
+% sections and subsections
+\addtokomafont{section}{\rmfamily\bfseries}
+\addtokomafont{subsection}{\rmfamily\slshape}
 
 % ===========================
 %    HYPERSETUP
@@ -125,6 +134,17 @@ defernumbers=true,
 \defbibheading{bibliography}[Publications]{\section{#1}}
 \DeclareFieldFormat[misc]{title}{\mkbibquote{#1}}
 
+% from https://tex.stackexchange.com/questions/73136/make-specific-author-bold-using-biblatex
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+
 % ===========================
 %    PERSONAL DATA
 % ===========================
@@ -135,7 +155,7 @@ defernumbers=true,
 \renewcommand*{\addressstreet}{University of Illinois College of Medicine}
 \renewcommand*{\addresscity}{Chicago, IL 60612}
 %\renewcommand*{\address}[3]{Chicago, IL 60612}
-\renewcommand*{\mobile}{+1 269 861 3750}
+%\renewcommand*{\mobile}{+1 269 861 3750}
 %\renewcommand*{\phonenr}{001-23456789}
 %\renewcommand*{\faxnr}{001-23456788}
 \renewcommand*{\email}{kaylan2@uic.edu}
@@ -157,9 +177,10 @@ defernumbers=true,
 % \setlength\fboxrule{7pt}
 % \setlength\mframepicshift{1cm}
 % \photo[frame]{3cm}{jeyre}
-%\photo[mframe]{5cm}{jeyre}
+% \photo[mframe]{5cm}{jeyre}
 
 \begin{document}
+\renewcommand\familydefault{\rmdefault}\normalfont
 \raggedbottom
 
 \maketitle
@@ -173,7 +194,7 @@ University of Illinois College of Medicine, Chicago, IL. \newline
 
 \cvitem{2012--2017}{
 \textbf{Doctor of Philosophy}, \textit{Bioengineering}.\newline
-Dissertation: \httplink[Dissecting combinatorial microenvironmental regulation of cell fate and function using a multi-modal arraying platform\smallskip]{hdl.handle.net/2142/98244}.
+Dissertation: \httplink[Dissecting combinatorial microenvironmental regulation of cell fate and function using a multi-modal arraying platform\smallskip]{hdl.handle.net/2142/98244}.\newline
 \textbf{Master of Science}, \textit{Bioengineering}.\newline
 Thesis: \httplink[Engineered microenvironments for studying liver progenitor differentiation\smallskip]{hdl.handle.net/2142/90492}.\newline
 University of Illinois at Urbana--Champaign, Urbana, IL.\newline
@@ -267,9 +288,9 @@ University of Michigan, Ann Arbor, MI.\newline
 
 \section{Presentations}
 
-\subsection{Invited Talks}
+\subsection{Oral Presentations}
 
-\begin{refcontext}[labelprefix=T]
+\begin{refcontext}[labelprefix=O]
 \nocite{*}
 \printbibliography[keyword=talk, heading=none, resetnumbers=true]
 \end{refcontext}
@@ -290,7 +311,8 @@ University of Michigan, Ann Arbor, MI.\newline
 \begin{compactitem}
 \item Designed a lean startup-based approach to student-driven curricular change focused on the build-measure-learn process, actionable metrics, minimum viable solutions, and pivoting.
 \item Collected qualitative and quantitative feedback on availability of study resources and preparedness for USMLE exams.
-\item Generated solutions to previously-unidentified curricular issues.
+\item Organized and executed two town halls focused on unaddressed student needs and other curricular issues.
+\item Assembled and communicated student feedback to faculty regarding the design of the neurology and psychiatry block for M2 students. 
 \end{compactitem}
 \textit{Special Projects Team Member (2017--2018).}\\
 \begin{compactitem}
@@ -299,7 +321,7 @@ University of Michigan, Ann Arbor, MI.\newline
 
 \cventry{2016--2017}{Medical Scholars Program Advisory Committee}{Co-Chair}{University of Illinois College of Medicine}{}{
 \begin{compactitem}
-\item Maintained communication between students and faculty as the regional campus implemented plans to sunset the college.
+\item Maintained communication between students and faculty through implementation of plans to sunset the regional campus of the college.
 \item Initiated changes to the structure of the committee to adapt to changes in the demographics of the student body.
 \end{compactitem}}
 
@@ -417,9 +439,9 @@ Peer Mentor Program.
    
 \section{Professional Affiliations}
 \cvlistitem{American College of Physicians.}
-\cvlistitem{Tau Beta Pi---The Engineering Honor Society.}
-\cvlistitem{Biomedical Engineering Society.}
 \cvlistitem{American Physician Scientists Association.}
+\cvlistitem{Biomedical Engineering Society.}
+\cvlistitem{Tau Beta Pi---The Engineering Honor Society.}
 
 \section{Skills}
 
@@ -439,10 +461,10 @@ Peer Mentor Program.
 
 \subsection{Analytical}
 
-\cvitem{Statistics}{Basic hypothesis testing, single and multiple linear regression, ANOVA, clustering analysis, PCA.}
+\cvitem{Statistics}{Basic hypothesis testing, single and multiple linear regression, ANOVA, clustering analysis, principal components analysis.}
 \cvitem{Image analysis}{Automated high-content image cytometry (ImageJ, CellProfiler).}
 
 \section{Interests}
-Reading, programming, viola, aikido, biking, weight lifting.
+Reading, programming, viola, aikido, weight lifting.
 
 \end{document}
