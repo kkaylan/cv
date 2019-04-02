@@ -1,3 +1,9 @@
+  % !TEX TS-program = arara
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+
 \documentclass[%
 % xcolor=svgnames,%
 % color=mycolor,%
@@ -11,11 +17,10 @@
 
 \pagestyle{scrheadings}
 \clearscrheadfoot
-\ifoot{CV |~\firstname~\familyname}
+\ifoot{\firstname~\familyname~| CV | Compiled \today}
 \ofoot{\pagemark/\totalpagemark}
 % \ihead{Hello world!}
 % \ohead{My life so far}
-
 
 % ===========================
 %    LENGTHS
@@ -80,6 +85,7 @@
 % sections and subsections
 \addtokomafont{section}{\rmfamily\bfseries}
 \addtokomafont{subsection}{\rmfamily\slshape}
+\addtokomafont{subsubsection}{\rmfamily\slshape}
 
 % ===========================
 %    HYPERSETUP
@@ -187,65 +193,34 @@ defernumbers=true,
 
 \section{Education}
 
-\cvitem{2012--2021 (expected)}{
-\textbf{Doctor of Medicine}. \newline
-University of Illinois College of Medicine, Chicago, IL. \newline
-{\small \httplink[Medical Scholars (M.D./Ph.D.) Program]{www.med.illinois.edu/msp/About/}.}}
+\cvitem{2021 (expected)}{
+\textbf{M.D.}\newline
+University of Illinois College of Medicine, Chicago, IL.}
 
-\cvitem{2012--2017}{
-\textbf{Doctor of Philosophy}, \textit{Bioengineering}.\newline
-Dissertation: \httplink[Dissecting combinatorial microenvironmental regulation of cell fate and function using a multi-modal arraying platform\smallskip]{hdl.handle.net/2142/98244}.\newline
-\textbf{Master of Science}, \textit{Bioengineering}.\newline
-Thesis: \httplink[Engineered microenvironments for studying liver progenitor differentiation\smallskip]{hdl.handle.net/2142/90492}.\newline
+\cvitem{2017}{
+\textbf{Ph.D.}, \textit{Bioengineering}.\newline
 University of Illinois at Urbana--Champaign, Urbana, IL.\newline
-{\small \httplink[Medical Scholars (M.D./Ph.D.) Program]{www.med.illinois.edu/msp/About/}.}}
+{\small Dissertation: \httplink[Dissecting combinatorial microenvironmental regulation of cell fate and function using a multi-modal arraying platform\smallskip]{hdl.handle.net/2142/98244}.}}
 
-\cvitem{2008--2012}{
-\textbf{Bachelor of Science in Engineering}, \textit{Biomedical Engineering}.\newline
+\cvitem{2016}{
+\textbf{M.S.}, \textit{Bioengineering}.\newline
+University of Illinois at Urbana--Champaign, Urbana, IL.\newline
+{\small Thesis: \httplink[Engineered microenvironments for studying liver progenitor differentiation\smallskip]{hdl.handle.net/2142/90492}.}}
+
+\cvitem{2012}{
+\textbf{B.S.E.}, \textit{Biomedical Engineering}.\newline
 University of Michigan, Ann Arbor, MI.\newline
 {\small Graduated \textit{magna cum laude}.}}
-
-\section{Positions}
-
-\cventry{2018}{Microfabricated Tissue Models Laboratory}{Visiting Scholar}{Department of Bioengineering}{University of Illinois at Chicago}{Advisor: Prof. Salman R. Khetani.
-\begin{compactitem}
-\item Developed and documented a generalized pipeline to analyze data from cell microarrays.
-\item Investigated the functional regulation of primary human and iPSC-derived hepatocytes by matrix proteins and substrate stiffness.
-\end{compactitem}}
-
-\cventry{2012--2017}{Tissue Development and Engineering Laboratory}{Graduate Research Assistant}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{Advisor: Prof. Gregory H. Underhill. \\
-\begin{compactitem}
-\item Designed a cell-based microarray platform with multiple readouts to deconstruct combined biochemical and biomechanical regulation of cell fate and function.
-\item Characterized the regulation of liver progenitor differentiation by biochemical factors (TGF$\beta$, Notch, and MAPK signaling) and biomechanical cues (substrate stiffness and interfacial effects).
-\item Mapped the response of lung tumor cells to chemotherapeutic drugs as a function of both support by matrix protein presentation and expression of the oncogene \textit{ASCL1}.
-\end{compactitem}}
-
-\cventry{2011}{Genentech, Inc.}{Cooperative}{Biological Technologies}{South San Francisco, CA}{Manager: Dr. Guoying Jiang.
-\begin{compactitem}
-\item Designed a functional cell-based assay for a therapeutic monoclonal antibody (MAb1).
-\item Investigated alternative assay formats reflective of the MOA of MAb1.
-\item Screened alternative cell lines for response and efficacy in the assay.
-\end{compactitem}}
-
-\cventry{2010--2011}{NeuroNexus, Inc.}{Student Engineer}{Ann Arbor, MI}{}{Manager: Dr. John Seymour.
-\begin{compactitem}
-\item Catalogued design requirements of novel optical neural stimulation systems for use in optogenetics research.
-\item Prototyped a portable optical neural stimulation system for mice.
-\item Optimized diode coupling efficiency using simulations and experiments.
-\end{compactitem}}
-
-\cventry{2009--2011}{Micro/Nano/Molecular Biotechnology Laboratory}{Undergraduate Research Assistant}{Department of Biomedical Engineering}{University of Michigan}{Principal Investigator: Prof. Shuichi Takayama. \\ Advisor: Dr. Hossein Tavana.
-\begin{compactitem}
-\item Adapted polymeric aqueous two-phase systems (ATPS) for patterning of biomolecules and cells.
-\item Designed and validated a high-throughput ATPS migration assay for studying changes in cancer cell migration with drug treatment.
-\item Formulated and implemented SOPs for automated lab equipment.
-\end{compactitem}}
  
-\section{Grants, Honors, and Awards}
+\section{Awards and Honors}
 
-\cventry{2017}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{College of Medicine}{University of Illinois College of Medicine}{Top 25\% of teaching assistants ranked by students.}
+\cventry{2019}{Chancellor's Student Service Award}{}{University of Illinois at Chicago}{}{Honors students who have made an outstanding contribution to the university through service to campus and community.}
 
-\cventry{2016}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{College of Medicine}{University of Illinois College of Medicine}{Outstanding; top 10\% of teaching assistants ranked by students.}
+\cventry{2017}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{College of Medicine}{University of Illinois College of Medicine}{Top 25\% of teaching assistants ranked by students in Spring 2017 semester.}
+
+\cventry{2016}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{College of Medicine}{University of Illinois College of Medicine}{Outstanding; top 10\% of teaching assistants ranked by students in Fall 2016 semester.}
+
+\section{Grants and Fellowships}
 
 \cventry{2016}{Medical Student Interest Group Matching Grant Program}{\$500}{Intersociety Council for Pathology Information}{}{Awarded to the Pathology Interest Group at the University of Illinois College of Medicine to continue supporting programs facilitating interactions between faculty and students in addition to providing education on pathology as a career choice.}
 
@@ -263,7 +238,7 @@ University of Michigan, Ann Arbor, MI.\newline
 
 \section{Publications}
 
-\subsection{Journal Articles}
+\subsection{Peer-Reviewed Journal Articles}
 
 {\small Asterisk (*) indicates equal authorship.}
 
@@ -302,146 +277,219 @@ University of Michigan, Ann Arbor, MI.\newline
 \printbibliography[keyword=poster, heading=none, resetnumbers=true]
 \end{refcontext}
 
-\section{Service}
+\section{Research and Industry Experience}
 
-\subsection{Leadership}
-
-\cventry{2017--2019}{Student Curricular Board}{}{University of Illinois College of Medicine}{}{
-\textit{Special Projects Chair (2018--2019).}\\
+\cventry{1/2018--Present}{Microfabricated Tissue Models Laboratory}{}{Department of Bioengineering}{University of Illinois at Chicago}{Advisor: Prof. Salman R. Khetani.
 \begin{compactitem}
-\item Designed a lean startup-based approach to student-driven curricular change focused on the build-measure-learn process, actionable metrics, minimum viable solutions, and pivoting.
-\item Collected qualitative and quantitative feedback on availability of study resources and preparedness for USMLE exams.
-\item Organized and executed two town halls focused on unaddressed student needs and other curricular issues.
-\item Assembled and communicated student feedback to faculty regarding the design of the neurology and psychiatry block for M2 students. 
-\end{compactitem}
-\textit{Special Projects Team Member (2017--2018).}\\
-\begin{compactitem}
-\item Developed and carried out a tutorial series on Osmosis, a spaced-repetition tool integrated with the college's curriculum.
+\item Developed and documented a generalized pipeline to analyze data from cell microarrays.
+\item Investigated the functional regulation of primary human and iPSC-derived hepatocytes by matrix proteins and substrate stiffness.
 \end{compactitem}}
 
-\cventry{2016--2017}{Medical Scholars Program Advisory Committee}{Co-Chair}{University of Illinois College of Medicine}{}{
+\cventry{8/2012--7/2017}{Tissue Development and Engineering Laboratory}{Graduate Research Assistant}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{Advisor: Prof. Gregory H. Underhill. \\
 \begin{compactitem}
-\item Maintained communication between students and faculty through implementation of plans to sunset the regional campus of the college.
-\item Initiated changes to the structure of the committee to adapt to changes in the demographics of the student body.
+\item Designed a cell-based microarray platform with multiple readouts to deconstruct combined biochemical and biomechanical regulation of cell fate and function.
+\item Characterized the regulation of liver progenitor differentiation by biochemical factors (TGF$\beta$, Notch, and MAPK signaling) and biomechanical cues (substrate stiffness and interfacial effects).
+\item Mapped the response of lung tumor cells to chemotherapeutic drugs as a function of both support by matrix protein presentation and expression of the oncogene \textit{ASCL1}.
 \end{compactitem}}
 
-\cventry{2015--2017}{Pathology Interest Group}{Organizer}{University of Illinois College of Medicine}{}{
+\cventry{6/2011--12/2011}{Genentech, Inc.}{Cooperative}{Biological Technologies}{South San Francisco, CA}{Manager: Dr. Guoying Jiang.
 \begin{compactitem}
-\item Planned and carried out activities to promote interactions between pathology faculty and students, including panels of recently-matched students and lunch talks with practicing pathologists.
-\item Held informational meetings regarding career options in pathology, subspecialization options, and the outlook of the field. 
+\item Designed a functional cell-based assay for a therapeutic monoclonal antibody (MAb1).
+\item Investigated alternative assay formats reflective of the MOA of MAb1.
+\item Screened alternative cell lines for response and efficacy in the assay.
 \end{compactitem}}
 
-\cventry{2014--2017}{Out in Medicine at Illinois}{Co-President}{University of Illinois College of Medicine}{}{\begin{compactitem}
-\item Held mixers and socials to build community for students, staff, and faculty who identify as sexual or gender minorities.
-\item Organized seminars on the health of sexual or gender minorities, specifically the care of transgender and intersex patients.
-\end{compactitem}}
-
-\cventry{2013--2016}{Graduate Cancer Community \@ Illinois}{Organizer}{University of Illinois at Urbana--Champaign}{}{
+\cventry{9/2010--5/2011}{NeuroNexus, Inc.}{Student Engineer}{Ann Arbor, MI}{}{Manager: Dr. John Seymour.
 \begin{compactitem}
-\item Planned and hosted 6 seminars on cancer biology from local faculty.
-\item Assisted in organizing the Graduate Cancer Community Fall Symposium, which brought students and regional faculty together to present posters and talks on their cancer research.
-\item Helped carry out the Pioneers in Cancer seminar series, which brought 3 highly-respected faculty members in the cancer field from across the country to speak to and interact with graduate students.
+\item Catalogued design requirements of novel optical neural stimulation systems for use in optogenetics research.
+\item Prototyped a portable optical neural stimulation system for mice.
+\item Optimized diode coupling efficiency using simulations and experiments.
 \end{compactitem}}
 
-\cventry{2013--2014}{Medical Scholars Program Retreat Committee}{Co-Chair}{University of Illinois College of Medicine}{}{
+\cventry{9/2009--5/2011}{Micro/Nano/Molecular Biotechnology Laboratory}{Undergraduate Research Assistant}{Department of Biomedical Engineering}{University of Michigan}{Principal Investigator: Prof. Shuichi Takayama. \\ Advisor: Dr. Hossein Tavana.
 \begin{compactitem}
-\item Oversaw preparations for the Medical Scholars Program Retreat, including securing a venue, contracting with caterers, selecting and scheduling activities, and inviting students and alumni to speak.
-\item Served as master of ceremonies on the day of the retreat.
+\item Adapted polymeric aqueous two-phase systems (ATPS) for patterning of biomolecules and cells.
+\item Designed and validated a high-throughput ATPS migration assay for studying changes in cancer cell migration with drug treatment.
+\item Formulated and implemented SOPs for automated lab equipment.
 \end{compactitem}}
 
-\cventry{2010--2011}{Biomedical Engineering Society}{Executive Board Member}{University of Michigan}{}{
-\begin{compactitem}
-\item Kept chapter website updated, improved and upgraded backend code.
-\end{compactitem}}
-
-\subsection{College and University Committees}
-
-\cventry{2018--2019}{Search Committee for Associate Dean of Curriculum}{Member}{University of Illinois College of Medicine}{}{}
-
-\cventry{2017--2018}{USMLE Preparedness Committee}{Member}{University of Illinois College of Medicine}{}{}
-
-\cventry{2017}{Medical Scholars Program Steering Committee}{Member}{University of Illinois College of Medicine}{}{}
-
-\cventry{2017}{Teaching Excellence and Innovation in Education Award Selection Committee}{Member}{University of Illinois College of Medicine}{}{}
-
-\cventry{2012--2017}{Medical Scholars Program Advisory Committee}{Member}{University of Illinois College of Medicine}{}{}
-
-\cventry{2012--2014}{Medical Scholars Program Retreat Committee}{Member}{University of Illinois College of Medicine}{}{}
-
-\cventry{2012--2013}{Engineering Graduate Student Advisory Committee}{Member and Secretary}{College of Engineering}{University of Illinois at Urbana--Champaign}{}
- 
-\cventry{2012}{Climate Survey Steering Committee}{Member}{University of Illinois at Urbana--Champaign}{}{}
- 
 \section{Teaching}
 
-\cventry{2016--2017}{Cell and Tissue Biology}{Teaching Assistant}{University of Illinois College of Medicine}{}
-{Primary Instructor: Prof. Benjamin Williams.
+\subsection{Graduate and Professional}
+
+\subsubsection{University of Illinois College of Medicine}
+
+\cventry{1/2016--5/2017}{Cell and Tissue Biology}{Teaching Assistant}{}{}
+{Primary instructor: Prof. Benjamin Williams.\\
+Semesters: Spring 2016, Fall 2016, Spring 2017.\\
+Contact hours: 3/week, 48 weeks.\\
+Student evaluations: 4.2/5.0 (Spring 2016), 4.8/5.0 (Fall 2016), 4.5/5.0 (Spring 2017).
 \begin{compactitem}
 \item Supervised weekly lab sessions providing active review of histology and identification of structures.
 \item Held discussions sections on disease pathophysiology, provided written feedback on student case presentations.
 \end{compactitem}}
 
-\cventry{2016}{Worldwide Youth in Science and Engineering Camp}{Facilitator}{College of Engineering}{University of Illinois at Urbana--Champaign}{Primary Instructor: Prof. Gregory H. Underhill.
-\begin{compactitem}
-\item Redesigned module on PCR in response to previously identified issues.
-\item Taught PCR module to high school students. 
-\end{compactitem}}
+\subsection{Undergraduate}
 
-\cventry{2015--2016}{Discover Bioengineering Camp}{Facilitator}{College of Engineering}{University of Illinois at Urbana--Champaign}
-{Primary Instructors: Prof. Gregory H. Underhill, Prof. Jennifer Amos.
-\begin{compactitem}
-\item Designed, revised, and taught module on PCR to high school students.
-\end{compactitem}}
+\subsubsection{University of Illinois at Urbana--Champaign}
 
-\cventry{2015}{Introduction to Bioengineering}{Mentor}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{Primary Instructor: Mark Gryka.
+\cventry{8/2015--12/2015}{Introduction to Bioengineering}{Mentor}{Department of Bioengineering}{}{
+Primary instructor: Mark Gryka.\\
+Contact hours: 12.\\
 \begin{compactitem}
 \item Introduced 3 mentees to bioengineering research.
 \end{compactitem}}
 
-\cventry{2014}{Quantitative Biotechnology}{Guest Lecturer}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{Primary Instructor: Prof. Sua Myong.
+\cventry{2/2014}{Quantitative Biotechnology}{Guest Lecturer}{Department of Bioengineering}{}{
+Primary instructor: Prof. Sua Myong.\\
+Contact hours: 2.\\
 \begin{compactitem}
 \item Served as guest lecturer for 1 class session.
 \end{compactitem}}
 
-\cventry{2014}{Stem Cell Bioengineering}{Grader}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{
-Primary Instructor: Prof. Gregory H. Underhill.
+\cventry{1/2014-5/2014}{Stem Cell Bioengineering}{Grader}{Department of Bioengineering}{}{
+Primary instructor: Prof. Gregory H. Underhill.\\
+Semesters: Spring 2014.\\
 \begin{compactitem}
 \item Graded problem sets and provided written feedback to students.
 \end{compactitem}}
 
-\cventry{2013}{Bioengineering the Future}{Organizer and Primary Instructor}{University Lab High School}{Urbana, IL}{
-\begin{compactitem}
-\item Organized and taught a week-long bioengineering course targeted at high school students.
-\item Engaged and coordinated multiple graduate and faculty speakers.
-\end{compactitem}}
-
-\cventry{2012--2017}{Tissue Development and Engineering Laboratory}{Undergraduate Mentor}{University of Illinois at Urbana--Champaign}{}{
-Advisor: Prof. Gregory H. Underhill.
+\cventry{8/2012--7/2017}{Tissue Development and Engineering Laboratory}{Undergraduate Mentor}{}{}{
+Advisor: Prof. Gregory H. Underhill.\\
+Contact hours: 2/week.\\
 \begin{compactitem}
 \item Trained new lab members in lab-specific safety guidelines, experimental protocols, analysis of data, and interpretation of results.
 \item Established goals and specific projects for each mentee in addition to assuring development of specific technical skills.
 \item Held weekly subgroup and 1:1 meetings with undergraduate mentees (16 total) to design independent experiments and discuss project progress.
 \end{compactitem}}
 
-\cventry{2012}{Quantitative Cell Biology}{Instructional Aid}{Department of Biomedical Engineering}{University of Michigan}{
-Primary Instructor: Prof. Shuichi Takayama.
+\subsubsection{University of Michigan}
+
+\cventry{1/2012--4/2012}{Quantitative Cell Biology}{Instructional Aid}{Department of Biomedical Engineering}{}{
+Primary instructor: Prof. Shuichi Takayama.\\
+Semesters: Winter 2012.\\
+Contact hours: 2/week, 16 weeks.\\
+Student evaluations: 4.5/5.0 (Winter 2012).
 \begin{compactitem}
 \item Graded problem sets and administered exams.
 \item Held weekly office hours, organized review sessions for exams.
 \end{compactitem}}
 
-\cventry{2011}{Engineering Advising Center}{Peer Mentor}{College of Engineering}{University of Michigan}{
-Peer Mentor Program.
+\cventry{8/2011--5/2012}{Peer Mentor Program}{Peer Mentor}{Engineering Advising Center}{College of Engineering}{
+Contact hours: 4.
 \begin{compactitem}
 \item Advised freshman mentee on gaining research and industry experience.
 \item Provided information regarding academics and course scheduling specific to the Department of Biomedical Engineering.
 \end{compactitem}}
+
+\subsection{K-12}
+
+\cventry{7/2016}{Worldwide Youth in Science and Engineering Camp}{Facilitator}{College of Engineering}{University of Illinois at Urbana--Champaign}{Primary instructor: Prof. Gregory H. Underhill.\\
+Contact hours: 8.
+\begin{compactitem}
+\item Redesigned module on PCR in response to previously identified issues.
+\item Taught PCR module to high school students. 
+\end{compactitem}}
+
+\cventry{7/2015, 7/2016}{Discover Bioengineering Camp}{Facilitator}{College of Engineering}{University of Illinois at Urbana--Champaign}
+{Primary instructors: Prof. Gregory H. Underhill, Prof. Jennifer Amos.\\
+Contact hours: 16.
+\begin{compactitem}
+\item Designed, revised, and taught module on PCR to high school students.
+\end{compactitem}}
+
+\cventry{2/2013}{Bioengineering the Future}{Organizer and Primary Instructor}{University Lab High School}{Urbana, IL}{
+Contact hours: 4.
+\begin{compactitem}
+\item Organized and taught a week-long bioengineering course targeted at high school students.
+\item Engaged and coordinated multiple graduate student and faculty speakers.
+\end{compactitem}}
+
+\section{Service}
+
+\subsection{Departmental, College, and University Service}
+
+\subsubsection{University of Illinois College of Medicine}
+
+\cvitem{11/2018--3/2019}{Search Committee for Associate Dean of Curriculum.}
+
+\cvitem{9/2017--9/2018}{USMLE Preparedness Committee.}
+
+\cvitem{4/2017}{Medical Scholars Program Steering Committee.}
+
+\cvitem{3/2017}{Teaching Excellence and Innovation in Education Award Selection Committee.}
+
+\cvitem{8/2012--7/2017}{Medical Scholars Program Advisory Committee.}
+
+\cvitem{9/2012--8/2014}{Medical Scholars Program Retreat Committee.}
+
+\subsubsection{University of Illinois at Urbana--Champaign}
+
+\cvitem{9/2012--8/2013}{Engineering Graduate Student Advisory Committee.}
+ 
+\cvitem{11/2012--12/2012}{Climate Survey Steering Committee.}
+
+\subsection{Extracurricular University Service}
+
+\subsubsection{University of Illinois College of Medicine}
+
+\cventry{9/2017--Present}{Student Curricular Board}{}{}{}{
+\textit{Special Projects Chair (5/2018--4/2019).}\\
+\begin{compactitem}
+\item Designed a lean startup-based approach to student-driven curricular change focused on the build-measure-learn process, actionable metrics, minimum viable solutions, and pivoting.
+\item Collected qualitative and quantitative feedback on availability of study resources and preparedness for USMLE exams.
+\item Organized and executed two town halls focused on unaddressed student needs and other curricular issues.
+\item Assembled and communicated student feedback to faculty regarding the design of the neurology and psychiatry block for M2 students. 
+\end{compactitem}
+\textit{Special Projects Team Member (9/2017--4/2018).}\\
+\begin{compactitem}
+\item Developed and carried out a tutorial series on Osmosis, a spaced-repetition tool integrated with the college's curriculum.
+\end{compactitem}}
+
+\cventry{9/2016--7/2017}{Medical Scholars Program Advisory Committee}{Co-Chair}{}{}{
+\begin{compactitem}
+\item Maintained communication between students and faculty through implementation of plans to sunset the regional campus of the college.
+\item Initiated changes to the structure of the committee to adapt to changes in the demographics of the student body.
+\end{compactitem}}
+
+\cventry{9/2015--7/2017}{Pathology Interest Group}{Organizer}{}{}{
+\begin{compactitem}
+\item Planned and carried out activities to promote interactions between pathology faculty and students, including panels of recently-matched students and lunch talks with practicing pathologists.
+\item Held informational meetings regarding career options in pathology, subspecialization options, and the outlook of the field. 
+\end{compactitem}}
+
+\cventry{5/2014--7/2017}{Out in Medicine at Illinois}{Co-President}{}{}{\begin{compactitem}
+\item Held mixers and socials to build community for students, staff, and faculty who identify as sexual or gender minorities.
+\item Organized seminars on the health of sexual or gender minorities, specifically the care of transgender and intersex patients.
+\end{compactitem}}
+
+\cventry{9/2013--8/2014}{Medical Scholars Program Retreat Committee}{Co-Chair}{}{}{
+\begin{compactitem}
+\item Oversaw preparations for the Medical Scholars Program Retreat, including securing a venue, contracting with caterers, selecting and scheduling activities, and inviting students and alumni to speak.
+\item Served as master of ceremonies on the day of the retreat.
+\end{compactitem}}
+
+\subsubsection{University of Illinois at Urbana--Champaign}
+
+\cventry{8/2013--5/2016}{Graduate Cancer Community \@ Illinois}{Organizer}{}{}{
+\begin{compactitem}
+\item Planned and hosted 6 seminars on cancer biology from local faculty.
+\item Assisted in organizing the Graduate Cancer Community Fall Symposium, which brought students and regional faculty together to present posters and talks on their cancer research.
+\item Helped carry out the Pioneers in Cancer seminar series, which brought 3 highly-respected faculty members in the cancer field from across the country to speak to and interact with graduate students.
+\end{compactitem}}
+
+\subsubsection{University of Michigan}
+
+\cventry{9/2010--5/2011}{Biomedical Engineering Society}{Executive Board Member}{}{}{
+\begin{compactitem}
+\item Kept chapter website updated, improved and upgraded backend code.
+\end{compactitem}}
    
 \section{Professional Affiliations}
-\cvlistitem{American College of Physicians.}
-\cvlistitem{American Physician Scientists Association.}
-\cvlistitem{Biomedical Engineering Society.}
-\cvlistitem{Tau Beta Pi---The Engineering Honor Society.}
+\cvitem{2017}{American College of Physicians. \newline\small\textit{Medical student member.}}
+\cvitem{2014}{Biomedical Engineering Society}
+\cvitem{2014}{Tau Beta Pi---The Engineering Honor Society.}
+\cvitem{2013}{American Physician Scientists Association.}
 
 \section{Skills}
 
