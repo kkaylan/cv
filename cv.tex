@@ -17,7 +17,7 @@
 
 \pagestyle{scrheadings}
 \clearscrheadfoot
-\ifoot{\firstname~\familyname~| CV | Compiled \today}
+\ifoot{Curriculum Vitae, \firstname~\familyname. Compiled \today.}
 \ofoot{\pagemark/\totalpagemark}
 % \ihead{Hello world!}
 % \ohead{My life so far}
@@ -63,7 +63,8 @@
 %    FONTS
 % ===========================
 %% Fonts, for use with LuaLaTeX or XeLaTeX
-\usepackage[T1]{fontenc}
+% \usepackage[T1]{fontenc}
+\usepackage{Alegreya}
 % \defaultfontfeatures{Renderer=Basic,Ligatures=TeX}
 % \setmainfont[Numbers=OldStyle]{Baskerville}
 % \setsansfont{AvantGarde Bk BT}
@@ -185,13 +186,30 @@ defernumbers=true,
 % \photo[frame]{3cm}{jeyre}
 % \photo[mframe]{5cm}{jeyre}
 
+% ===========================
+%    CONDITIONAL TEXT
+% ===========================
+\usepackage{comment}
+
+% uncomment for a short CV
+\includecomment{shortcv}
+\excludecomment{longcv}
+
+% uncomment for a long CV
+%\excludecomment{shortcv}
+%\includecomment{longcv}
+
+% ===========================
+
 \begin{document}
 \renewcommand\familydefault{\rmdefault}\normalfont
 \raggedbottom
 
 \maketitle
 
+% ===========================
 \section{Education}
+% ===========================
 
 \cvitem{2021 (expected)}{
 \textbf{M.D.}\newline
@@ -211,16 +229,132 @@ University of Illinois at Urbana--Champaign, Urbana, IL.\newline
 \textbf{B.S.E.}, \textit{Biomedical Engineering}.\newline
 University of Michigan, Ann Arbor, MI.\newline
 {\small Graduated \textit{magna cum laude}.}}
+
+% ===========================
+\section{Research and Industry Experience}
+% ===========================
+
+% Short CV
+% ===========================
+
+\begin{shortcv}
+
+\cventry{1/2018--Present}{Microfabricated Tissue Models Laboratory}{}{Department of Bioengineering}{University of Illinois at Chicago}{Advisor: Prof. Salman R. Khetani.}
+
+\cventry{8/2012--7/2017}{Tissue Development and Engineering Laboratory}{Graduate Research Assistant}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{Advisor: Prof. Gregory H. Underhill.}
+
+\cventry{6/2011--12/2011}{Genentech, Inc.}{Cooperative}{Biological Technologies}{South San Francisco, CA}{Manager: Dr. Guoying Jiang.}
+
+\cventry{9/2010--5/2011}{NeuroNexus, Inc.}{Student Engineer}{Ann Arbor, MI}{}{Manager: Dr. John Seymour.}
+
+\cventry{9/2009--5/2011}{Micro/Nano/Molecular Biotechnology Laboratory}{Undergraduate Research Assistant}{Department of Biomedical Engineering}{University of Michigan}{Advisors: Prof. Shuichi Takayama, Dr. Hossein Tavana.}
+
+\end{shortcv}
+
+% Long CV
+% ===========================
  
+\begin{longcv}
+
+\cventry{1/2018--Present}{Microfabricated Tissue Models Laboratory}{}{Department of Bioengineering}{University of Illinois at Chicago}{Advisor: Prof. Salman R. Khetani.
+\begin{compactitem}
+\item Developed and documented a generalized pipeline to analyze data from cell microarrays.
+\item Investigated the functional regulation of primary human and iPSC-derived hepatocytes by matrix proteins and substrate stiffness.
+\end{compactitem}}
+
+\cventry{8/2012--7/2017}{Tissue Development and Engineering Laboratory}{Graduate Research Assistant}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{Advisor: Prof. Gregory H. Underhill. \\
+\begin{compactitem}
+\item Designed a cell-based microarray platform with multiple readouts to deconstruct combined biochemical and biomechanical regulation of cell fate and function.
+\item Characterized the regulation of liver progenitor differentiation by biochemical factors (TGF$\beta$, Notch, and MAPK signaling) and biomechanical cues (substrate stiffness and interfacial effects).
+\item Mapped the response of lung tumor cells to chemotherapeutic drugs as a function of both support by matrix protein presentation and expression of the oncogene \textit{ASCL1}.
+\end{compactitem}}
+
+\cventry{6/2011--12/2011}{Genentech, Inc.}{Cooperative}{Biological Technologies}{South San Francisco, CA}{Manager: Dr. Guoying Jiang.
+\begin{compactitem}
+\item Designed a functional cell-based assay for a therapeutic monoclonal antibody (MAb1).
+\item Investigated alternative assay formats reflective of the MOA of MAb1.
+\item Screened alternative cell lines for response and efficacy in the assay.
+\end{compactitem}}
+
+\cventry{9/2010--5/2011}{NeuroNexus, Inc.}{Student Engineer}{Ann Arbor, MI}{}{Manager: Dr. John Seymour.
+\begin{compactitem}
+\item Catalogued design requirements of novel optical neural stimulation systems for use in optogenetics research.
+\item Prototyped a portable optical neural stimulation system for mice.
+\item Optimized diode coupling efficiency using simulations and experiments.
+\end{compactitem}}
+
+\cventry{9/2009--5/2011}{Micro/Nano/Molecular Biotechnology Laboratory}{Undergraduate Research Assistant}{Department of Biomedical Engineering}{University of Michigan}{Principal Investigator: Prof. Shuichi Takayama. \\ Advisor: Dr. Hossein Tavana.
+\begin{compactitem}
+\item Adapted polymeric aqueous two-phase systems (ATPS) for patterning of biomolecules and cells.
+\item Designed and validated a high-throughput ATPS migration assay for studying changes in cancer cell migration with drug treatment.
+\item Formulated and implemented SOPs for automated lab equipment.
+\end{compactitem}}
+
+\end{longcv} 
+ 
+ % ===========================
 \section{Awards and Honors}
+% ===========================
+
+% Short CV
+% ===========================
+
+\begin{shortcv}
+
+\cventry{2019}{Chancellor's Student Service Award}{}{University of Illinois at Chicago}{}{}
+
+\cventry{2017}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{University of Illinois College of Medicine}{}{}
+
+\cventry{2016}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{University of Illinois College of Medicine}{}{}
+
+\cventry{2008}{Michigan Promise Scholarship}{\$1,000}{State of Michigan}{}{}
+
+\cventry{2008}{Michigan Competitive Scholarship}{\$1,300}{State of Michigan}{}{}
+
+\end{shortcv}
+
+% Long CV
+% ===========================
+
+\begin{longcv}
 
 \cventry{2019}{Chancellor's Student Service Award}{}{University of Illinois at Chicago}{}{Honors students who have made an outstanding contribution to the university through service to campus and community.}
 
-\cventry{2017}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{College of Medicine}{University of Illinois College of Medicine}{Top 25\% of teaching assistants ranked by students in Spring 2017 semester.}
+\cventry{2017}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{University of Illinois College of Medicine}{}{Top 25\% of teaching assistants ranked by students in Spring 2017 semester.}
 
-\cventry{2016}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{College of Medicine}{University of Illinois College of Medicine}{Outstanding; top 10\% of teaching assistants ranked by students in Fall 2016 semester.}
+\cventry{2016}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{University of Illinois College of Medicine}{}{Outstanding; top 10\% of teaching assistants ranked by students in Fall 2016 semester.}
 
+\cventry{2008}{Michigan Promise Scholarship}{\$1,000}{State of Michigan}{}{}
+
+\cventry{2008}{Michigan Competitive Scholarship}{\$1,300}{State of Michigan}{}{}
+
+\end{longcv}
+
+% ===========================
 \section{Grants and Fellowships}
+% ===========================
+
+% Short CV
+% ===========================
+
+\begin{shortcv}
+
+\cventry{2016}{Medical Student Interest Group Matching Grant Program}{\$500}{Intersociety Council for Pathology Information}{}{}
+
+\cventry{2016}{National Science Foundation I-Corps}{\$2,000}{}{University of Illinois at Urbana--Champaign Site Cohort 11}{}
+
+\cventry{2015}{Medical Student Interest Group Matching Grant Program}{\$750}{Intersociety Council for Pathology Information}{}{}
+
+\cventry{2014}{O'Morchoe Leadership Fellowship}{\$1,500}{University of Illinois College of Medicine}{}{}
+
+\cventry{2010}{Summer Biomedical and Life Science Fellowship}{\$4,000}{University of Michigan Undergraduate Research Opportunity Program}{}{}
+
+\end{shortcv}
+
+% Long CV
+% ===========================
+
+\begin{longcv}
 
 \cventry{2016}{Medical Student Interest Group Matching Grant Program}{\$500}{Intersociety Council for Pathology Information}{}{Awarded to the Pathology Interest Group at the University of Illinois College of Medicine to continue supporting programs facilitating interactions between faculty and students in addition to providing education on pathology as a career choice.}
 
@@ -228,17 +362,17 @@ University of Michigan, Ann Arbor, MI.\newline
 
 \cventry{2015}{Medical Student Interest Group Matching Grant Program}{\$750}{Intersociety Council for Pathology Information}{}{Awarded to the Pathology Interest Group at the University of Illinois College of Medicine to support interactions between faculty and students and provide education on pathology as a career choice.}
 
-\cventry{2014}{O'Morchoe Leadership Fellowship for Out in Medicine}{\$1,500}{University of Illinois College of Medicine}{}{Awarded to support the activities of Out in Medicine, chiefly education relating to the care of intersex patients.}
+\cventry{2014}{O'Morchoe Leadership Fellowship}{\$1,500}{University of Illinois College of Medicine}{}{Awarded to support the activities of Out in Medicine, chiefly education relating to the care of intersex patients.}
 
 \cventry{2010}{Summer Biomedical and Life Science Fellowship}{\$4,000}{University of Michigan Undergraduate Research Opportunity Program}{}{Supported research with Prof. Shuichi Takayama to develop a novel cell migration assay using ATPS.}
 
-\cventry{2008}{Michigan Promise Scholarship}{\$1,000}{State of Michigan}{}{}
+\end{longcv}
 
-\cventry{2008}{Michigan Competitive Scholarship}{\$1,300}{State of Michigan}{}{}
-
+% ===========================
 \section{Publications}
+% ===========================
 
-\subsection{Peer-Reviewed Journal Articles}
+\subsection{Journal Articles}
 
 {\small Asterisk (*) indicates equal authorship.}
 
@@ -277,43 +411,46 @@ University of Michigan, Ann Arbor, MI.\newline
 \printbibliography[keyword=poster, heading=none, resetnumbers=true]
 \end{refcontext}
 
-\section{Research and Industry Experience}
+% ===========================
+\section{Teaching Experience}
+% ===========================
 
-\cventry{1/2018--Present}{Microfabricated Tissue Models Laboratory}{}{Department of Bioengineering}{University of Illinois at Chicago}{Advisor: Prof. Salman R. Khetani.
-\begin{compactitem}
-\item Developed and documented a generalized pipeline to analyze data from cell microarrays.
-\item Investigated the functional regulation of primary human and iPSC-derived hepatocytes by matrix proteins and substrate stiffness.
-\end{compactitem}}
+% Short CV
+% ===========================
+\begin{shortcv}
 
-\cventry{8/2012--7/2017}{Tissue Development and Engineering Laboratory}{Graduate Research Assistant}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{Advisor: Prof. Gregory H. Underhill. \\
-\begin{compactitem}
-\item Designed a cell-based microarray platform with multiple readouts to deconstruct combined biochemical and biomechanical regulation of cell fate and function.
-\item Characterized the regulation of liver progenitor differentiation by biochemical factors (TGF$\beta$, Notch, and MAPK signaling) and biomechanical cues (substrate stiffness and interfacial effects).
-\item Mapped the response of lung tumor cells to chemotherapeutic drugs as a function of both support by matrix protein presentation and expression of the oncogene \textit{ASCL1}.
-\end{compactitem}}
+\subsection{Graduate and Professional}
 
-\cventry{6/2011--12/2011}{Genentech, Inc.}{Cooperative}{Biological Technologies}{South San Francisco, CA}{Manager: Dr. Guoying Jiang.
-\begin{compactitem}
-\item Designed a functional cell-based assay for a therapeutic monoclonal antibody (MAb1).
-\item Investigated alternative assay formats reflective of the MOA of MAb1.
-\item Screened alternative cell lines for response and efficacy in the assay.
-\end{compactitem}}
+\cventry{1/2016--5/2017}{Cell and Tissue Biology}{Teaching Assistant}{University of Illinois College of Medicine}{}{}
 
-\cventry{9/2010--5/2011}{NeuroNexus, Inc.}{Student Engineer}{Ann Arbor, MI}{}{Manager: Dr. John Seymour.
-\begin{compactitem}
-\item Catalogued design requirements of novel optical neural stimulation systems for use in optogenetics research.
-\item Prototyped a portable optical neural stimulation system for mice.
-\item Optimized diode coupling efficiency using simulations and experiments.
-\end{compactitem}}
+\cventry{2/2014}{Quantitative Biotechnology}{Guest Lecturer}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{}
 
-\cventry{9/2009--5/2011}{Micro/Nano/Molecular Biotechnology Laboratory}{Undergraduate Research Assistant}{Department of Biomedical Engineering}{University of Michigan}{Principal Investigator: Prof. Shuichi Takayama. \\ Advisor: Dr. Hossein Tavana.
-\begin{compactitem}
-\item Adapted polymeric aqueous two-phase systems (ATPS) for patterning of biomolecules and cells.
-\item Designed and validated a high-throughput ATPS migration assay for studying changes in cancer cell migration with drug treatment.
-\item Formulated and implemented SOPs for automated lab equipment.
-\end{compactitem}}
+\subsection{Undergraduate}
 
-\section{Teaching}
+\cventry{8/2015--12/2015}{Introduction to Bioengineering}{Mentor}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{}
+
+\cventry{1/2014-5/2014}{Stem Cell Bioengineering}{Grader}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{}
+
+\cventry{8/2012--7/2017}{Tissue Development and Engineering Laboratory}{Undergraduate Mentor}{University of Illinois at Urbana--Champaign}{}{}
+
+\cventry{1/2012--4/2012}{Quantitative Cell Biology}{Instructional Aid}{Department of Biomedical Engineering}{University of Michigan}{}
+
+\cventry{8/2011--5/2012}{Peer Mentor Program}{Peer Mentor}{Engineering Advising Center}{University of Michigan}{}
+
+\subsection{K-12}
+
+\cventry{7/2016}{Worldwide Youth in Science and Engineering Camp}{Facilitator}{College of Engineering}{University of Illinois at Urbana--Champaign}{}
+
+\cventry{7/2015, 7/2016}{Discover Bioengineering Camp}{Facilitator}{College of Engineering}{University of Illinois at Urbana--Champaign}{}
+
+\cventry{2/2013}{Bioengineering the Future}{Organizer and Primary Instructor}{University Lab High School}{Urbana, IL}{}
+
+\end{shortcv}
+
+% Long CV
+% ===========================
+
+\begin{longcv}
 
 \subsection{Graduate and Professional}
 
@@ -329,6 +466,15 @@ Student evaluations: 4.2/5.0 (Spring 2016), 4.8/5.0 (Fall 2016), 4.5/5.0 (Spring
 \item Held discussions sections on disease pathophysiology, provided written feedback on student case presentations.
 \end{compactitem}}
 
+\subsubsection{University of Illinois at Urbana--Champaign}
+
+\cventry{2/2014}{Quantitative Biotechnology}{Guest Lecturer}{Department of Bioengineering}{}{
+Primary instructor: Prof. Sua Myong.\\
+Contact hours: 2.\\
+\begin{compactitem}
+\item Served as guest lecturer for 1 class session.
+\end{compactitem}}
+
 \subsection{Undergraduate}
 
 \subsubsection{University of Illinois at Urbana--Champaign}
@@ -338,13 +484,6 @@ Primary instructor: Mark Gryka.\\
 Contact hours: 12.\\
 \begin{compactitem}
 \item Introduced 3 mentees to bioengineering research.
-\end{compactitem}}
-
-\cventry{2/2014}{Quantitative Biotechnology}{Guest Lecturer}{Department of Bioengineering}{}{
-Primary instructor: Prof. Sua Myong.\\
-Contact hours: 2.\\
-\begin{compactitem}
-\item Served as guest lecturer for 1 class session.
 \end{compactitem}}
 
 \cventry{1/2014-5/2014}{Stem Cell Bioengineering}{Grader}{Department of Bioengineering}{}{
@@ -405,7 +544,11 @@ Contact hours: 4.
 \item Engaged and coordinated multiple graduate student and faculty speakers.
 \end{compactitem}}
 
+\end{longcv}
+
+% ===========================
 \section{Service}
+% ===========================
 
 \subsection{Departmental, College, and University Service}
 
@@ -430,6 +573,40 @@ Contact hours: 4.
 \cvitem{11/2012--12/2012}{Climate Survey Steering Committee.}
 
 \subsection{Extracurricular University Service}
+
+% Short CV
+% ===========================
+
+\begin{shortcv}
+
+\subsubsection{University of Illinois College of Medicine}
+
+\cvitem{5/2018--4/2019}{Student Curricular Board, \textit{Special Projects Chair}.}
+
+\cvitem{9/2017--Present}{Student Curricular Board, \textit{Special Projects Team Member}.}
+
+\cvitem{9/2016--7/2017}{Medical Scholars Program Advisory Committee, \textit{Co-Chair}.}
+
+\cvitem{9/2015--7/2017}{Pathology Interest Group, \textit{Organizer}.}
+
+\cvitem{5/2014--7/2017}{Out in Medicine at Illinois, \textit{Co-President}.}
+
+\cvitem{9/2013--8/2014}{Medical Scholars Program Retreat Committee, \textit{Co-Chair}.}
+
+\subsubsection{University of Illinois at Urbana--Champaign}
+
+\cvitem{8/2013--5/2016}{Graduate Cancer Community \@ Illinois, \textit{Organizer}.}
+
+\subsubsection{University of Michigan}
+
+\cvitem{9/2010--5/2011}{Biomedical Engineering Society, \textit{Executive Board Member}.}
+
+\end{shortcv}
+
+% Long CV
+% ===========================
+
+\begin{longcv}
 
 \subsubsection{University of Illinois College of Medicine}
 
@@ -484,14 +661,26 @@ Contact hours: 4.
 \begin{compactitem}
 \item Kept chapter website updated, improved and upgraded backend code.
 \end{compactitem}}
-   
+
+\end{longcv}
+
+% ===========================
 \section{Professional Affiliations}
+% ===========================
+
 \cvitem{2017}{American College of Physicians. \newline\small\textit{Medical student member.}}
-\cvitem{2014}{Biomedical Engineering Society}
+\cvitem{2014}{Biomedical Engineering Society.}
 \cvitem{2014}{Tau Beta Pi---The Engineering Honor Society.}
 \cvitem{2013}{American Physician Scientists Association.}
 
+% Long CV
+% ===========================
+
+\begin{longcv}
+
+% ===========================
 \section{Skills}
+% ===========================
 
 \subsection{Software}
 
@@ -512,7 +701,12 @@ Contact hours: 4.
 \cvitem{Statistics}{Basic hypothesis testing, single and multiple linear regression, ANOVA, clustering analysis, principal components analysis.}
 \cvitem{Image analysis}{Automated high-content image cytometry (ImageJ, CellProfiler).}
 
+% ===========================
 \section{Interests}
+% ===========================
+
 Reading, programming, viola, aikido, strength training.
+
+\end{longcv}
 
 \end{document}
