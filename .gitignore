@@ -8,3 +8,5 @@
 archive/*
 images/*
 comment.cut
+comment.cut*
+*comment.cut
