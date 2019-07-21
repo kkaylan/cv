@@ -19,6 +19,53 @@
 
 \refsection{0}
   \datalist[entry]{ymdnt/global/7FC56270E7A70FA81A5935B72EACBE29/global/global}
+    \entry{Monckton:2019aa}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=d8040941e7e5fc473edd107fc1eb3534}{%
+           family={Monckton},
+           familyi={M\bibinitperiod},
+           given={Chase\bibnamedelima P},
+           giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=ebb842a32be2324e5fa81c77a7ef557e}{%
+           family={Brougham-Cook},
+           familyi={B\bibinithyphendelim C\bibinitperiod},
+           given={Aidan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5cbd0b88e47aaaf7cd3ab64a2667d1b2}{%
+           family={Kaylan},
+           familyi={K\bibinitperiod},
+           given={Kerim\bibnamedelima B},
+           giveni={K\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=256023156f80f6adc1fa03d8b86c86ef}{%
+           family={Underhill},
+           familyi={U\bibinitperiod},
+           given={Gregory\bibnamedelima H},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=8faed1415d3765b473f897b281a8d584}{%
+           family={Khetani},
+           familyi={K\bibinitperiod},
+           given={Salman\bibnamedelima R},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{d20f8521822f19747f6702cf350b7788}
+      \strng{fullhash}{b70af07109cf2979de0c625aa6158937}
+      \strng{bibnamehash}{b70af07109cf2979de0c625aa6158937}
+      \strng{authorbibnamehash}{b70af07109cf2979de0c625aa6158937}
+      \strng{authornamehash}{d20f8521822f19747f6702cf350b7788}
+      \strng{authorfullhash}{b70af07109cf2979de0c625aa6158937}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelprefix}{A}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Biomedical Engineering Society Annual Meeting}
+      \field{month}{10}
+      \field{title}{Engineering robust chemomechanical microenvironments for human hepatocytes using cell microarrays}
+      \field{year}{2019}
+      \true{nocite}
+      \keyw{proceeding}
+      \annotation{item}{author}{default}{3}{}{0}{highlight}
+    \endentry
     \entry{Kaylan2018}{article}{}
       \name{author}{10}{}{%
         {{hash=5cbd0b88e47aaaf7cd3ab64a2667d1b2}{%
@@ -1581,7 +1628,7 @@
         {{hash=76932864d56c35c55e822f14f6cf24ad}{%
            family={Gazzano-Santoro},
            familyi={G\bibinithyphendelim S\bibinitperiod},
-           given={Hélène},
+           given={H{é}l{è}ne},
            giveni={H\bibinitperiod}}}%
       }
       \strng{namehash}{cb2a63a0d1de47add9eb2c9f2c4886ba}
@@ -1624,7 +1671,7 @@
         {{hash=76932864d56c35c55e822f14f6cf24ad}{%
            family={Gazzano-Santoro},
            familyi={G\bibinithyphendelim S\bibinitperiod},
-           given={Hélène},
+           given={H{é}l{è}ne},
            giveni={H\bibinitperiod}}}%
       }
       \strng{namehash}{cb2a63a0d1de47add9eb2c9f2c4886ba}
@@ -1748,6 +1795,53 @@
     \endentry
   \enddatalist
   \datalist[entry]{ymdnt/global/9D5ED678FE57BCCA610140957AFAB571/global/global}
+    \entry{Monckton:2019aa}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=d8040941e7e5fc473edd107fc1eb3534}{%
+           family={Monckton},
+           familyi={M\bibinitperiod},
+           given={Chase\bibnamedelima P},
+           giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=ebb842a32be2324e5fa81c77a7ef557e}{%
+           family={Brougham-Cook},
+           familyi={B\bibinithyphendelim C\bibinitperiod},
+           given={Aidan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5cbd0b88e47aaaf7cd3ab64a2667d1b2}{%
+           family={Kaylan},
+           familyi={K\bibinitperiod},
+           given={Kerim\bibnamedelima B},
+           giveni={K\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=256023156f80f6adc1fa03d8b86c86ef}{%
+           family={Underhill},
+           familyi={U\bibinitperiod},
+           given={Gregory\bibnamedelima H},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=8faed1415d3765b473f897b281a8d584}{%
+           family={Khetani},
+           familyi={K\bibinitperiod},
+           given={Salman\bibnamedelima R},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{d20f8521822f19747f6702cf350b7788}
+      \strng{fullhash}{b70af07109cf2979de0c625aa6158937}
+      \strng{bibnamehash}{b70af07109cf2979de0c625aa6158937}
+      \strng{authorbibnamehash}{b70af07109cf2979de0c625aa6158937}
+      \strng{authornamehash}{d20f8521822f19747f6702cf350b7788}
+      \strng{authorfullhash}{b70af07109cf2979de0c625aa6158937}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelprefix}{B}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Biomedical Engineering Society Annual Meeting}
+      \field{month}{10}
+      \field{title}{Engineering robust chemomechanical microenvironments for human hepatocytes using cell microarrays}
+      \field{year}{2019}
+      \true{nocite}
+      \keyw{proceeding}
+      \annotation{item}{author}{default}{3}{}{0}{highlight}
+    \endentry
     \entry{Kaylan2018}{article}{}
       \name{author}{10}{}{%
         {{hash=5cbd0b88e47aaaf7cd3ab64a2667d1b2}{%
@@ -3310,7 +3404,7 @@
         {{hash=76932864d56c35c55e822f14f6cf24ad}{%
            family={Gazzano-Santoro},
            familyi={G\bibinithyphendelim S\bibinitperiod},
-           given={Hélène},
+           given={H{é}l{è}ne},
            giveni={H\bibinitperiod}}}%
       }
       \strng{namehash}{cb2a63a0d1de47add9eb2c9f2c4886ba}
@@ -3353,7 +3447,7 @@
         {{hash=76932864d56c35c55e822f14f6cf24ad}{%
            family={Gazzano-Santoro},
            familyi={G\bibinithyphendelim S\bibinitperiod},
-           given={Hélène},
+           given={H{é}l{è}ne},
            giveni={H\bibinitperiod}}}%
       }
       \strng{namehash}{cb2a63a0d1de47add9eb2c9f2c4886ba}
@@ -3477,6 +3571,53 @@
     \endentry
   \enddatalist
   \datalist[entry]{ymdnt/global/0D61F8370CAD1D412F80B84D143E1257/global/global}
+    \entry{Monckton:2019aa}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=d8040941e7e5fc473edd107fc1eb3534}{%
+           family={Monckton},
+           familyi={M\bibinitperiod},
+           given={Chase\bibnamedelima P},
+           giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=ebb842a32be2324e5fa81c77a7ef557e}{%
+           family={Brougham-Cook},
+           familyi={B\bibinithyphendelim C\bibinitperiod},
+           given={Aidan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5cbd0b88e47aaaf7cd3ab64a2667d1b2}{%
+           family={Kaylan},
+           familyi={K\bibinitperiod},
+           given={Kerim\bibnamedelima B},
+           giveni={K\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=256023156f80f6adc1fa03d8b86c86ef}{%
+           family={Underhill},
+           familyi={U\bibinitperiod},
+           given={Gregory\bibnamedelima H},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=8faed1415d3765b473f897b281a8d584}{%
+           family={Khetani},
+           familyi={K\bibinitperiod},
+           given={Salman\bibnamedelima R},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{d20f8521822f19747f6702cf350b7788}
+      \strng{fullhash}{b70af07109cf2979de0c625aa6158937}
+      \strng{bibnamehash}{b70af07109cf2979de0c625aa6158937}
+      \strng{authorbibnamehash}{b70af07109cf2979de0c625aa6158937}
+      \strng{authornamehash}{d20f8521822f19747f6702cf350b7788}
+      \strng{authorfullhash}{b70af07109cf2979de0c625aa6158937}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelprefix}{C}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Biomedical Engineering Society Annual Meeting}
+      \field{month}{10}
+      \field{title}{Engineering robust chemomechanical microenvironments for human hepatocytes using cell microarrays}
+      \field{year}{2019}
+      \true{nocite}
+      \keyw{proceeding}
+      \annotation{item}{author}{default}{3}{}{0}{highlight}
+    \endentry
     \entry{Kaylan2018}{article}{}
       \name{author}{10}{}{%
         {{hash=5cbd0b88e47aaaf7cd3ab64a2667d1b2}{%
@@ -5039,7 +5180,7 @@
         {{hash=76932864d56c35c55e822f14f6cf24ad}{%
            family={Gazzano-Santoro},
            familyi={G\bibinithyphendelim S\bibinitperiod},
-           given={Hélène},
+           given={H{é}l{è}ne},
            giveni={H\bibinitperiod}}}%
       }
       \strng{namehash}{cb2a63a0d1de47add9eb2c9f2c4886ba}
@@ -5082,7 +5223,7 @@
         {{hash=76932864d56c35c55e822f14f6cf24ad}{%
            family={Gazzano-Santoro},
            familyi={G\bibinithyphendelim S\bibinitperiod},
-           given={Hélène},
+           given={H{é}l{è}ne},
            giveni={H\bibinitperiod}}}%
       }
       \strng{namehash}{cb2a63a0d1de47add9eb2c9f2c4886ba}
@@ -5206,6 +5347,53 @@
     \endentry
   \enddatalist
   \datalist[entry]{ymdnt/global/F186217753C37B9B9F958D906208506E/global/global}
+    \entry{Monckton:2019aa}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=d8040941e7e5fc473edd107fc1eb3534}{%
+           family={Monckton},
+           familyi={M\bibinitperiod},
+           given={Chase\bibnamedelima P},
+           giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=ebb842a32be2324e5fa81c77a7ef557e}{%
+           family={Brougham-Cook},
+           familyi={B\bibinithyphendelim C\bibinitperiod},
+           given={Aidan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5cbd0b88e47aaaf7cd3ab64a2667d1b2}{%
+           family={Kaylan},
+           familyi={K\bibinitperiod},
+           given={Kerim\bibnamedelima B},
+           giveni={K\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=256023156f80f6adc1fa03d8b86c86ef}{%
+           family={Underhill},
+           familyi={U\bibinitperiod},
+           given={Gregory\bibnamedelima H},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=8faed1415d3765b473f897b281a8d584}{%
+           family={Khetani},
+           familyi={K\bibinitperiod},
+           given={Salman\bibnamedelima R},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{d20f8521822f19747f6702cf350b7788}
+      \strng{fullhash}{b70af07109cf2979de0c625aa6158937}
+      \strng{bibnamehash}{b70af07109cf2979de0c625aa6158937}
+      \strng{authorbibnamehash}{b70af07109cf2979de0c625aa6158937}
+      \strng{authornamehash}{d20f8521822f19747f6702cf350b7788}
+      \strng{authorfullhash}{b70af07109cf2979de0c625aa6158937}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelprefix}{O}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Biomedical Engineering Society Annual Meeting}
+      \field{month}{10}
+      \field{title}{Engineering robust chemomechanical microenvironments for human hepatocytes using cell microarrays}
+      \field{year}{2019}
+      \true{nocite}
+      \keyw{proceeding}
+      \annotation{item}{author}{default}{3}{}{0}{highlight}
+    \endentry
     \entry{Kaylan2018}{article}{}
       \name{author}{10}{}{%
         {{hash=5cbd0b88e47aaaf7cd3ab64a2667d1b2}{%
@@ -6768,7 +6956,7 @@
         {{hash=76932864d56c35c55e822f14f6cf24ad}{%
            family={Gazzano-Santoro},
            familyi={G\bibinithyphendelim S\bibinitperiod},
-           given={Hélène},
+           given={H{é}l{è}ne},
            giveni={H\bibinitperiod}}}%
       }
       \strng{namehash}{cb2a63a0d1de47add9eb2c9f2c4886ba}
@@ -6811,7 +6999,7 @@
         {{hash=76932864d56c35c55e822f14f6cf24ad}{%
            family={Gazzano-Santoro},
            familyi={G\bibinithyphendelim S\bibinitperiod},
-           given={Hélène},
+           given={H{é}l{è}ne},
            giveni={H\bibinitperiod}}}%
       }
       \strng{namehash}{cb2a63a0d1de47add9eb2c9f2c4886ba}
@@ -6935,6 +7123,53 @@
     \endentry
   \enddatalist
   \datalist[entry]{ymdnt/global/44C29EDB103A2872F519AD0C9A0FDAAA/global/global}
+    \entry{Monckton:2019aa}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=d8040941e7e5fc473edd107fc1eb3534}{%
+           family={Monckton},
+           familyi={M\bibinitperiod},
+           given={Chase\bibnamedelima P},
+           giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=ebb842a32be2324e5fa81c77a7ef557e}{%
+           family={Brougham-Cook},
+           familyi={B\bibinithyphendelim C\bibinitperiod},
+           given={Aidan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5cbd0b88e47aaaf7cd3ab64a2667d1b2}{%
+           family={Kaylan},
+           familyi={K\bibinitperiod},
+           given={Kerim\bibnamedelima B},
+           giveni={K\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=256023156f80f6adc1fa03d8b86c86ef}{%
+           family={Underhill},
+           familyi={U\bibinitperiod},
+           given={Gregory\bibnamedelima H},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=8faed1415d3765b473f897b281a8d584}{%
+           family={Khetani},
+           familyi={K\bibinitperiod},
+           given={Salman\bibnamedelima R},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{d20f8521822f19747f6702cf350b7788}
+      \strng{fullhash}{b70af07109cf2979de0c625aa6158937}
+      \strng{bibnamehash}{b70af07109cf2979de0c625aa6158937}
+      \strng{authorbibnamehash}{b70af07109cf2979de0c625aa6158937}
+      \strng{authornamehash}{d20f8521822f19747f6702cf350b7788}
+      \strng{authorfullhash}{b70af07109cf2979de0c625aa6158937}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelprefix}{P}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Biomedical Engineering Society Annual Meeting}
+      \field{month}{10}
+      \field{title}{Engineering robust chemomechanical microenvironments for human hepatocytes using cell microarrays}
+      \field{year}{2019}
+      \true{nocite}
+      \keyw{proceeding}
+      \annotation{item}{author}{default}{3}{}{0}{highlight}
+    \endentry
     \entry{Kaylan2018}{article}{}
       \name{author}{10}{}{%
         {{hash=5cbd0b88e47aaaf7cd3ab64a2667d1b2}{%
@@ -8497,7 +8732,7 @@
         {{hash=76932864d56c35c55e822f14f6cf24ad}{%
            family={Gazzano-Santoro},
            familyi={G\bibinithyphendelim S\bibinitperiod},
-           given={Hélène},
+           given={H{é}l{è}ne},
            giveni={H\bibinitperiod}}}%
       }
       \strng{namehash}{cb2a63a0d1de47add9eb2c9f2c4886ba}
@@ -8540,7 +8775,7 @@
         {{hash=76932864d56c35c55e822f14f6cf24ad}{%
            family={Gazzano-Santoro},
            familyi={G\bibinithyphendelim S\bibinitperiod},
-           given={Hélène},
+           given={H{é}l{è}ne},
            giveni={H\bibinitperiod}}}%
       }
       \strng{namehash}{cb2a63a0d1de47add9eb2c9f2c4886ba}
@@ -8664,6 +8899,52 @@
     \endentry
   \enddatalist
   \datalist[entry]{ymdnt/global//global/global}
+    \entry{Monckton:2019aa}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=d8040941e7e5fc473edd107fc1eb3534}{%
+           family={Monckton},
+           familyi={M\bibinitperiod},
+           given={Chase\bibnamedelima P},
+           giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=ebb842a32be2324e5fa81c77a7ef557e}{%
+           family={Brougham-Cook},
+           familyi={B\bibinithyphendelim C\bibinitperiod},
+           given={Aidan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5cbd0b88e47aaaf7cd3ab64a2667d1b2}{%
+           family={Kaylan},
+           familyi={K\bibinitperiod},
+           given={Kerim\bibnamedelima B},
+           giveni={K\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=256023156f80f6adc1fa03d8b86c86ef}{%
+           family={Underhill},
+           familyi={U\bibinitperiod},
+           given={Gregory\bibnamedelima H},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=8faed1415d3765b473f897b281a8d584}{%
+           family={Khetani},
+           familyi={K\bibinitperiod},
+           given={Salman\bibnamedelima R},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{d20f8521822f19747f6702cf350b7788}
+      \strng{fullhash}{b70af07109cf2979de0c625aa6158937}
+      \strng{bibnamehash}{b70af07109cf2979de0c625aa6158937}
+      \strng{authorbibnamehash}{b70af07109cf2979de0c625aa6158937}
+      \strng{authornamehash}{d20f8521822f19747f6702cf350b7788}
+      \strng{authorfullhash}{b70af07109cf2979de0c625aa6158937}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Biomedical Engineering Society Annual Meeting}
+      \field{month}{10}
+      \field{title}{Engineering robust chemomechanical microenvironments for human hepatocytes using cell microarrays}
+      \field{year}{2019}
+      \true{nocite}
+      \keyw{proceeding}
+      \annotation{item}{author}{default}{3}{}{0}{highlight}
+    \endentry
     \entry{Kaylan2018}{article}{}
       \name{author}{10}{}{%
         {{hash=5cbd0b88e47aaaf7cd3ab64a2667d1b2}{%
@@ -10192,7 +10473,7 @@
         {{hash=76932864d56c35c55e822f14f6cf24ad}{%
            family={Gazzano-Santoro},
            familyi={G\bibinithyphendelim S\bibinitperiod},
-           given={Hélène},
+           given={H{é}l{è}ne},
            giveni={H\bibinitperiod}}}%
       }
       \strng{namehash}{cb2a63a0d1de47add9eb2c9f2c4886ba}
@@ -10234,7 +10515,7 @@
         {{hash=76932864d56c35c55e822f14f6cf24ad}{%
            family={Gazzano-Santoro},
            familyi={G\bibinithyphendelim S\bibinitperiod},
-           given={Hélène},
+           given={H{é}l{è}ne},
            giveni={H\bibinitperiod}}}%
       }
       \strng{namehash}{cb2a63a0d1de47add9eb2c9f2c4886ba}
