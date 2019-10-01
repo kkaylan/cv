@@ -3,14 +3,12 @@
 *.out
 *.aux
 *.bcf
+*.blg
 *.run.xml
 *.synctex.gz
+*.icloud
 archive/*
 images/*
 comment.cut
 comment.cut*
 *comment.cut
-cv.blg
-*.icloud
-*.blg
-cv.blg
