@@ -11,3 +11,5 @@ images/*
 comment.cut
 comment.cut*
 *comment.cut
+*.bak
+*.pdf
