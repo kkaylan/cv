@@ -2,7 +2,7 @@
 
 SSH_USER = kbkaylan_kbkaylan@ssh.phx.nearlyfreespeech.net
 DOCUMENT_ROOT = /home/public/pdf
-LOCAL_ROOT = /Users/kkaylan/Documents/Website/static/pdf
+LOCAL_ROOT = /Users/kkaylan/Documents/Git/Website/static/pdf
 
 all: deploy
 
