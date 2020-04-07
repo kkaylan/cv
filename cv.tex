@@ -396,14 +396,16 @@ University of Michigan, Ann Arbor, MI.\newline
 \printbibliography[keyword=book, heading=none, resetnumbers=true]
 \end{refcontext}
 
-\subsection{Conference Abstracts and Proceedings}
+\subsection{Conference Proceedings}
 
-\begin{refcontext}[labelprefix=C]
+\begin{refcontext}[labelprefix=PR]
 \nocite{*}
 \printbibliography[keyword=proceeding, heading=none, resetnumbers=true]
 \end{refcontext}
 
+% ===========================
 \section{Presentations}
+% ===========================
 
 \subsection{Oral Presentations}
 
@@ -414,9 +416,25 @@ University of Michigan, Ann Arbor, MI.\newline
 
 \subsection{Poster Presentations}
 
-\begin{refcontext}[labelprefix=P]
+\begin{refcontext}[labelprefix=PO]
 \nocite{*}
 \printbibliography[keyword=poster, heading=none, resetnumbers=true]
+\end{refcontext}
+
+\subsection{Oral Presentations by Co-Authors}
+{\small Co-author who presented is also \textbf{bolded}.}
+
+\begin{refcontext}[labelprefix=OC]
+\nocite{*}
+\printbibliography[keyword=talk-coauthor, heading=none, resetnumbers=true]
+\end{refcontext}
+
+\subsection{Poster Presentations by Co-Authors}
+{\small Co-author who presented is also \textbf{bolded}.}
+
+\begin{refcontext}[labelprefix=POC]
+\nocite{*}
+\printbibliography[keyword=poster-coauthor, heading=none, resetnumbers=true]
 \end{refcontext}
 
 % ===========================
