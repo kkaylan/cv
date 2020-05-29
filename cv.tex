@@ -141,6 +141,11 @@ defernumbers=true,
 \defbibheading{bibliography}[Publications]{\section{#1}}
 \DeclareFieldFormat[misc]{title}{\mkbibquote{#1}}
 
+% remove reference counts
+% https://tex.stackexchange.com/questions/219935/remove-numbers-from-cv-bibliography-using-biblatex-in-texshop
+\DeclareFieldFormat{labelnumberwidth}{}
+\setlength{\biblabelsep}{0pt}
+
 % from https://tex.stackexchange.com/questions/73136/make-specific-author-bold-using-biblatex
 \renewcommand*{\mkbibnamegiven}[1]{%
   \ifitemannotation{highlight}
@@ -381,24 +386,24 @@ University of Michigan, Ann Arbor, MI.\newline
 % ===========================
 
 \subsection{Journal Articles}
-
+~
 {\small Asterisk (*) indicates equal authorship.}
 
-\begin{refcontext}[labelprefix=A]
+\begin{refcontext}[]
 \nocite{*}
 \printbibliography[, keyword=article, heading=none, resetnumbers=true]
 \end{refcontext}
 
 \subsection{Book Chapters}
 
-\begin{refcontext}[labelprefix=B]
+\begin{refcontext}[]
 \nocite{*}
 \printbibliography[keyword=book, heading=none, resetnumbers=true]
 \end{refcontext}
 
 \subsection{Conference Proceedings}
 
-\begin{refcontext}[labelprefix=PR]
+\begin{refcontext}[]
 \nocite{*}
 \printbibliography[keyword=proceeding, heading=none, resetnumbers=true]
 \end{refcontext}
@@ -409,30 +414,36 @@ University of Michigan, Ann Arbor, MI.\newline
 
 \subsection{Oral Presentations}
 
-\begin{refcontext}[labelprefix=O]
+\begin{refcontext}[]
 \nocite{*}
 \printbibliography[keyword=talk, heading=none, resetnumbers=true]
 \end{refcontext}
 
 \subsection{Poster Presentations}
 
-\begin{refcontext}[labelprefix=PO]
+\begin{refcontext}[]
 \nocite{*}
 \printbibliography[keyword=poster, heading=none, resetnumbers=true]
 \end{refcontext}
 
+% ===========================
+\section{Abstracts Presented by Co-Authors}
+% ===========================
+
 \subsection{Oral Presentations by Co-Authors}
+~
 {\small Co-author who presented is also \textbf{bolded}.}
 
-\begin{refcontext}[labelprefix=OC]
+\begin{refcontext}[]
 \nocite{*}
 \printbibliography[keyword=talk-coauthor, heading=none, resetnumbers=true]
 \end{refcontext}
 
 \subsection{Poster Presentations by Co-Authors}
+~
 {\small Co-author who presented is also \textbf{bolded}.}
 
-\begin{refcontext}[labelprefix=POC]
+\begin{refcontext}[]
 \nocite{*}
 \printbibliography[keyword=poster-coauthor, heading=none, resetnumbers=true]
 \end{refcontext}
