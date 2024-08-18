@@ -14,3 +14,4 @@ comment.cut*
 *.bak
 *.pdf
 *.bbl
+.DS_Store
