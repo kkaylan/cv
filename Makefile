@@ -2,7 +2,7 @@
 
 SSH_USER = kbkaylan_kbkaylan@ssh.nyc1.nearlyfreespeech.net
 DOCUMENT_ROOT = /home/public/pdf
-LOCAL_ROOT = "/Users/kkaylan/Library/Mobile Documents/com~apple~CloudDocs/Documents/Git/Website/static/pdf"
+LOCAL_ROOT = "/Users/kkaylan/Library/CloudStorage/OneDrive-Personal/Git/Website/static/pdf"
 
 all: deploy
 
