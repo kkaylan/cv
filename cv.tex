@@ -7,7 +7,7 @@
 \documentclass[%
 % xcolor=svgnames,%
 % color=mycolor,%
-% DIV=19,
+DIV=19,
 % fontsize=20,
 % style=classic,% (default) OR
 % style=casual% !! remove linebreak in facebook definition (see personal data); OR
@@ -15,18 +15,11 @@
 % headline=name,%
 ]{komacv}
 
-\pagestyle{scrheadings}
-\clearscrheadfoot
-\ifoot{Curriculum Vitae, \firstname~\familyname. Compiled \today.}
-\ofoot{\pagemark/\totalpagemark}
-% \ihead{Hello world!}
-% \ohead{My life so far}
-
 % ===========================
 %    LENGTHS
 % ===========================
 % \setlength\titlenamemaxwidth{.4\textwidth}
-% \setlength\hintscolwidth{2cm}
+\setlength\hintscolwidth{1.25in}
 % \setlength\sepcolwidth{1em}
 % \setlength\quotewidth{.3\textwidth}
 % \setlength\titlesepwidth{50pt}
@@ -42,6 +35,15 @@
 % \setlength\aftersubsecvspace{4\baselineskip}
 % \setlength\listitemsymbolwidth{1cm}
 
+% ===========================
+%    HEADERS AND FOOTERS
+% ===========================
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ifoot{Curriculum Vitae, \firstname~\familyname. Compiled \today.}
+\ofoot{\pagemark/\totalpagemark}
+% \ihead{Hello world!}
+% \ohead{My life so far}
 
 % ===========================
 %    COLORS
@@ -63,30 +65,39 @@
 %    FONTS
 % ===========================
 %% Fonts, for use with LuaLaTeX or XeLaTeX
-% \usepackage[T1]{fontenc}
-\usepackage{Alegreya}
+%% See document beginning for Roman versus serif
+%\usepackage[T1]{fontenc}
+
+% Alegreya
+%\usepackage{Alegreya}
+
+% Helvetica
+\usepackage[scaled]{helvet}
+\usepackage[T1]{fontenc}
+
+% Baskerville, Avant Garde, or Courier New
 % \defaultfontfeatures{Renderer=Basic,Ligatures=TeX}
 % \setmainfont[Numbers=OldStyle]{Baskerville}
 % \setsansfont{AvantGarde Bk BT}
 % \setmonofont{Courier New}
 
 % first and last name
-\setkomafont{firstnamefont}{\fontsize{24}{26}\itshape}
-\addtokomafont{firstnamefont}{\fontsize{35}{50}}
+\setkomafont{firstnamefont}{\fontsize{16}{20}\itshape}
+\addtokomafont{firstnamefont}{\fontsize{24}36}
 \addtokomafont{familynamefont}{}
 
 % addresses and quotes
 \setkomafont{addressfont}{\normalsize}
 % \setkomafont{acadtitlefont}{\usekomafont{familynamefont}}
-\setkomafont{quotefont}{\ttfamily}
+\setkomafont{quotefont}{}
 
 % hints (years on the left)
-\setkomafont{hintfont}{\rmfamily\normalsize}
+\setkomafont{hintfont}{\normalsize}
 
 % sections and subsections
-\addtokomafont{section}{\rmfamily\bfseries}
-\addtokomafont{subsection}{\rmfamily\slshape}
-\addtokomafont{subsubsection}{\rmfamily\slshape}
+\addtokomafont{section}{\bfseries}
+\addtokomafont{subsection}{\slshape}
+\addtokomafont{subsubsection}{\slshape}
 
 % ===========================
 %    HYPERSETUP
@@ -207,7 +218,9 @@ defernumbers=true,
 % ===========================
 
 \begin{document}
-\renewcommand\familydefault{\rmdefault}\normalfont
+
+% Set Roman or san serif font
+\renewcommand\familydefault{\sfdefault}\normalfont
 \raggedbottom
 
 \maketitle
@@ -244,7 +257,7 @@ University of Michigan, Ann Arbor, MI.\newline
 \cvitem{2021--2023}{\textbf{Internal Medicine Residency Program.}\newline Department of Medicine, University of Chicago, Chicago, IL.}
 
 \subsection{Licensure and Board Certification}
-\cvitem{2024}{ABIM Internal Medicine Certification.}
+\cvitem{2024--present}{ABIM Internal Medicine Certification.}
 \cvitem{2024--present}{Licensed Physician and Surgeon, State of Illinois.}
 \cvitem{2022}{USMLE Step 3 (passed).}
 \cvitem{2021--2024}{Temporary Medical Permit, State of Illinois.}
@@ -280,7 +293,10 @@ University of Michigan, Ann Arbor, MI.\newline
  
 \begin{longcv}
 
-\cventry{7/2024--present}{Mirmira Laboratory}{Postdoctoral Fellow}{Section of Endocrinology, Diabetes, and Metabolism, Department of Medicine}{University of Chicago}{Advisor: Prof. Raghavendra Mirmira.}
+\cventry{7/2024--present}{Mirmira Laboratory}{Postdoctoral Fellow}{Section of Endocrinology, Diabetes, and Metabolism, Department of Medicine}{University of Chicago}{Advisor: Prof. Raghavendra Mirmira.
+\begin{compactitem}
+\item Established a human gene replacement mouse model to evaluate pharmacologic inhibition of lipoxygenase signaling for type 2 diabetes and obesity.
+\end{compactitem}}
 
 \cventry{1/2018--1/2019}{Microfabricated Tissue Models Laboratory}{}{Department of Bioengineering}{University of Illinois at Chicago}{Advisor: Prof. Salman R. Khetani.
 \begin{compactitem}
@@ -291,8 +307,8 @@ University of Michigan, Ann Arbor, MI.\newline
 \cventry{8/2012--7/2017}{Tissue Development and Engineering Laboratory}{Graduate Research Assistant}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{Advisor: Prof. Gregory H. Underhill. \\
 \begin{compactitem}
 \item Designed a cell-based microarray platform with multiple readouts to deconstruct combined biochemical and biomechanical regulation of cell fate and function.
-\item Characterized the regulation of liver progenitor differentiation by biochemical factors (TGF$\beta$, Notch, and MAPK signaling) and biomechanical cues (substrate stiffness and interfacial effects).
-\item Mapped the response of lung tumor cells to chemotherapeutic drugs as a function of both support by matrix protein presentation and expression of the oncogene \textit{ASCL1}.
+\item Characterized the regulation of liver progenitor differentiation by biochemical factors and biomechanical cues.
+\item Mapped the response of lung tumor cells to chemotherapeutic drugs as a function of both support by matrix protein presentation and oncogene expression.
 \end{compactitem}}
 
 \cventry{6/2011--12/2011}{Genentech, Inc.}{Cooperative}{Biological Technologies}{South San Francisco, CA}{Manager: Dr. Guoying Jiang.
@@ -377,11 +393,11 @@ University of Michigan, Ann Arbor, MI.\newline
 
 \begin{longcv}
 
-\cventry{2024--present}{NIDDK T32: Integrated Clinical and Basic Endocrinology Research Training Grant (T32DK07011)}{}{}{University of Chicago}{Supporting postdoctoral research with Prof. Raghavendra Mirmira.}
+\cventry{2024--present}{NIDDK T32: Integrated Clinical and Basic Endocrinology Research Training Grant (T32DK007011)}{}{}{University of Chicago}{Supporting postdoctoral research with Prof. Raghavendra Mirmira.}
 %\cventry{2016}{Medical Student Interest Group Matching Grant Program}{\$500}{Intersociety Council for Pathology Information}{}{Awarded to the Pathology Interest Group at the University of Illinois College of Medicine to continue supporting programs facilitating interactions between faculty and students in addition to providing education on pathology as a career choice.}
 \cventry{2016}{NSF I-Corps}{\$2,000}{}{University of Illinois at Urbana--Champaign Site Cohort 11}{Awarded for the use of lean methodologies to develop new, clinically-relevant technologies in liver tissue engineering.}
 %\cventry{2015}{Medical Student Interest Group Matching Grant Program}{\$750}{Intersociety Council for Pathology Information}{}{Awarded to the Pathology Interest Group at the University of Illinois College of Medicine to support interactions between faculty and students and provide education on pathology as a career choice.}
-\cventry{2014}{O'Morchoe Leadership Fellowship}{\$1,500}{University of Illinois College of Medicine}{}{Awarded to support the activities of the Out in Medicine student group, chiefly education relating to the care of intersex patients.}
+\cventry{2014}{O'Morchoe Leadership Fellowship}{\$1,500}{University of Illinois College of Medicine}{}{Awarded to support the activities of the Out in Medicine student group, chiefly education relating to the clinical care of transgender and intersex persons.}
 \cventry{2010}{Summer Biomedical and Life Science Fellowship}{\$4,000}{University of Michigan Undergraduate Research Opportunity Program}{}{Supported research with Prof. Shuichi Takayama to develop a novel cell migration assay using ATPS.}
 
 \end{longcv}
@@ -509,16 +525,16 @@ University of Michigan, Ann Arbor, MI.\newline
 
 \subsubsection{University of Chicago Pritzker School of Medicine}
 
-\cventry{2024}{Clinical Skills and Reasoning}{Interviewer{}{}
+\cventry{2024}{Clinical Skills and Reasoning}{Interviewer}{}{}
 {Primary instructor: Prof. Tia Kostas, Prof. Joyce Tang, Prof. Jason Poston.\\
 Quarters: Winter 2024, Fall 2024.\\
 Contact hours: 4.\\
 Student evaluations: N/A.
 \begin{compactitem}
-\item Interviewed patients with endocrine conditions in an interactive format with pre-clinical medical students.
+\item Interviewed individuals with endocrine conditions in an interactive format with pre-clinical medical students.
 \end{compactitem}}
 
-\cventry{10/2024}{Clinical Pathophysiology and Therapeutics}{Discussant{}{}
+\cventry{10/2024}{Clinical Pathophysiology and Therapeutics}{Discussant}{}{}
 {Primary instructor: Prof. Jason Poston, Prof. Aliya Husain.\\
 Quarters: Fall 2024.\\
 Contact hours: 2.\\
@@ -542,7 +558,7 @@ Student evaluations: N/A.
 {Primary instructor: Prof. Annette Zacharia.\\
 Semesters: Fall 2020, Spring 2021.\\
 Contact hours: 16.\\
-Student evaluations: 4.9/5.0 (Fall 2020).
+Student evaluations: 4.9/5.0 (Fall 2020), N/A (Spring 2021).
 \begin{compactitem}
 \item Held virtual discussion sections with M1 students on fundamental aspects of history-taking and physical exam.
 \item Provided feedback on student assignments relating to clinical documentation and evidence-based medicine.
@@ -551,7 +567,7 @@ Student evaluations: 4.9/5.0 (Fall 2020).
 \cventry{1/2016--5/2017}{Cell and Tissue Biology}{Teaching Assistant}{}{}
 {Primary instructor: Prof. Benjamin Williams.\\
 Semesters: Spring 2016, Fall 2016, Spring 2017.\\
-Contact hours: 3/week, 48 weeks.\\
+Contact hours: 3 hours/week, 48 weeks.\\
 Student evaluations: 4.2/5.0 (Spring 2016), 4.8/5.0 (Fall 2016), 4.5/5.0 (Spring 2017).
 \begin{compactitem}
 \item Supervised weekly lab sessions providing active review of histology and identification of structures.
@@ -572,7 +588,7 @@ Student evaluations: 4.2/5.0 (Spring 2016), 4.8/5.0 (Fall 2016), 4.5/5.0 (Spring
 \subsubsection{University of Illinois at Urbana--Champaign}
 
 \cventry{8/2015--12/2015}{Introduction to Bioengineering}{Mentor}{Department of Bioengineering}{}{
-Primary instructor: Mark Gryka.\\
+Primary instructor: Prof. Jennifer Amos, Mark Gryka.\\
 Contact hours: 12.\\
 \begin{compactitem}
 \item Introduced 3 mentees to bioengineering research.
@@ -587,7 +603,7 @@ Semesters: Spring 2014.\\
 
 \cventry{8/2012--7/2017}{Tissue Development and Engineering Laboratory}{Undergraduate Mentor}{}{}{
 Advisor: Prof. Gregory H. Underhill.\\
-Contact hours: 2/week.\\
+Contact hours: 2 hours/week.\\
 \begin{compactitem}
 \item Trained new lab members in lab-specific safety guidelines, experimental protocols, analysis of data, and interpretation of results.
 \item Established goals and specific projects for each mentee in addition to assuring development of specific technical skills.
@@ -599,7 +615,7 @@ Contact hours: 2/week.\\
 \cventry{1/2012--4/2012}{Quantitative Cell Biology}{Instructional Aid}{Department of Biomedical Engineering}{}{
 Primary instructor: Prof. Shuichi Takayama.\\
 Semesters: Winter 2012.\\
-Contact hours: 2/week, 16 weeks.\\
+Contact hours: 2 hours/week, 16 weeks.\\
 Student evaluations: 4.5/5.0 (Winter 2012).
 \begin{compactitem}
 \item Graded problem sets and administered exams.
@@ -678,7 +694,7 @@ Contact hours: 4.
 
 \subsubsection{University of Illinois College of Medicine}
 
-\cventry{9/2017--Present}{Student Curricular Board}{}{}{}{
+\cventry{9/2017--5/2021}{Student Curricular Board}{}{}{}{
 \textit{Special Projects Chair (5/2018--4/2019).}\\
 \begin{compactitem}
 \item Designed a lean startup-based approach to student-driven curricular change focused on the build-measure-learn process, actionable metrics, minimum viable solutions, and pivoting.
@@ -705,7 +721,7 @@ Contact hours: 4.
 
 \cventry{5/2014--7/2017}{Out in Medicine at Illinois}{Co-President}{}{}{\begin{compactitem}
 \item Held mixers and socials to build community for students, staff, and faculty who identify as sexual or gender minorities.
-\item Organized seminars on the health of sexual or gender minorities, specifically the care of transgender and intersex patients.
+\item Organized seminars on the health of sexual or gender minorities, specifically the care of transgender and intersex persons.
 \end{compactitem}}
 
 \cventry{9/2013--8/2014}{Medical Scholars Program Retreat Committee}{Co-Chair}{}{}{
@@ -732,7 +748,10 @@ Contact hours: 4.
 
 \end{longcv}
 
-\subsection{Committee membership}
+\subsection{Committee membership and other service}
+
+\subsubsection{University of Chicago}
+\cvitem{2024--present}{Underrepresented in Medicine Mentorship Program, \textit{Mentor.}}
 
 \subsubsection{University of Illinois College of Medicine}
 
@@ -751,6 +770,8 @@ Contact hours: 4.
 % ===========================
 
 \cvitem{}{Endocrine Society.}
+\cvitem{}{American Diabetes Association.}
+\cvitem{}{American Association of Clinical Endocrinologists.}
 %\cvitem{}{American College of Physicians.}
 %\cvitem{}{American Physician Scientists Association.}
 %\cvitem{}{Biomedical Engineering Society.}
@@ -769,7 +790,7 @@ Contact hours: 4.
 
 \cvitem{Software}{macOS, Windows, GNU/Linux (Ubuntu, Red Hat).}
 \cvitem{Programming}{R, MATLAB, \LaTeX, Git, HTML, CSS.}
-\cvitem{Applications}{RStudio, NIH ImageJ (Fiji), CellProfiler, GIMP, Inkscape, SolidWorks.}
+\cvitem{Applications}{GraphPad Prism, RStudio, NIH ImageJ (Fiji), CellProfiler, GIMP, Inkscape, SolidWorks.}
 
 \subsection{Wet laboratory}
 
@@ -782,7 +803,7 @@ Contact hours: 4.
 \subsection{Analytical}
 
 \cvitem{Statistics}{Basic hypothesis testing, single and multiple linear regression, ANOVA, clustering analysis, principal components analysis.}
-\cvitem{Image analysis}{Automated high-content image cytometry (ImageJ, CellProfiler).}
+\cvitem{Image analysis}{Automated high-content image cytometry (ImageJ, CellProfiler), ilastik.}
 
 % ===========================
 %\section{Interests}
