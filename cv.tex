@@ -7,7 +7,7 @@
 \documentclass[%
 % xcolor=svgnames,%
 % color=mycolor,%
-DIV=19,
+% DIV=19,
 % fontsize=20,
 % style=classic,% (default) OR
 % style=casual% !! remove linebreak in facebook definition (see personal data); OR
@@ -15,9 +15,13 @@ DIV=19,
 % headline=name,%
 ]{komacv}
 
+
 % ===========================
 %    LENGTHS
 % ===========================
+%% Set margins
+\usepackage[margin=0.5in, papersize={8.5in,11in}]{geometry} 
+
 % \setlength\titlenamemaxwidth{.4\textwidth}
 \setlength\hintscolwidth{1.25in}
 % \setlength\sepcolwidth{1em}
@@ -208,12 +212,12 @@ defernumbers=true,
 \usepackage{comment}
 
 % uncomment for a short CV
-\includecomment{shortcv}
-\excludecomment{longcv}
+%\includecomment{shortcv}
+%\excludecomment{longcv}
 
 % uncomment for a long CV
-%\excludecomment{shortcv}
-%\includecomment{longcv}
+\excludecomment{shortcv}
+\includecomment{longcv}
 
 % ===========================
 
@@ -344,6 +348,7 @@ University of Michigan, Ann Arbor, MI.\newline
 
 \begin{shortcv}
 
+\cventry{2025}{ADA Scholars Award}{}{American Diabetes Association}{}{}
 \cventry{2024}{Early Career Forum Travel Award}{}{Endocrine Society}{}{}
 \cventry{2019}{Chancellor's Student Service Award}{}{University of Illinois at Chicago}{}{}
 \cventry{2017}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{University of Illinois College of Medicine}{}{}
@@ -360,6 +365,7 @@ University of Michigan, Ann Arbor, MI.\newline
 
 \begin{longcv}
 
+\cventry{2025}{ADA Scholars Award}{}{American Diabetes Association}{}{Career development program for early-career professionals who treat or research diabetes and its complications.}
 \cventry{2024}{Early Career Forum Travel Award}{\$400}{Endocrine Society}{}{}
 \cventry{2019}{Chancellor's Student Service Award}{}{University of Illinois at Chicago}{}{Honors students who have made an outstanding contribution to the university through service to campus and community.}
 \cventry{2017}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{University of Illinois College of Medicine}{}{Top 25\% of teaching assistants ranked by students in Spring 2017 semester.}
@@ -494,8 +500,8 @@ University of Michigan, Ann Arbor, MI.\newline
 
 \subsection{Graduate and Professional}
 
-\cventry{2025}{Cell and Organ Physiology}{Discussant}{University of Chicago Pritzker School of Medicine}{}{}
-\cventry{2024}{Clinical Skills and Reasoning}{Physician Interviewer}{University of Chicago Pritzker School of Medicine}{}{}
+\cventry{1/2025}{Cell and Organ Physiology}{Discussant}{University of Chicago Pritzker School of Medicine}{}{}
+\cventry{1/2024, 11--12/2024}{Clinical Skills and Reasoning}{Physician Interviewer}{University of Chicago Pritzker School of Medicine}{}{}
 \cventry{10/2024}{Clinical Pathophysiology and Therapeutics}{Discussant}{University of Chicago Pritzker School of Medicine}{}{}
 \cventry{11/2022}{Clinical Skills 2}{Resident Preceptor}{University of Chicago Pritzker School of Medicine}{}{}
 \cventry{8/2020--5/2021}{Doctoring and Clinical Skills 1}{M4 Tutor}{University of Illinois College of Medicine}{}{}
@@ -527,7 +533,7 @@ University of Michigan, Ann Arbor, MI.\newline
 
 \subsubsection{University of Chicago Pritzker School of Medicine}
 
-\cventry{2025}{Cell and Organ Physiology}{Discussant}{}{}
+\cventry{1/2025}{Cell and Organ Physiology}{Discussant}{}{}
 {Primary instructor: Prof. Benjamin Ko.\\
 Quarters: Winter 2025.\\
 Contact hours: 2.\\
@@ -536,7 +542,7 @@ Student evaluations: N/A.
 \item Discussed reproductive endocrinology with first-year students.
 \end{compactitem}}
 
-\cventry{2024}{Clinical Skills and Reasoning}{Interviewer}{}{}
+\cventry{1/2024, 11--12/2024}{Clinical Skills and Reasoning}{Interviewer}{}{}
 {Primary instructor: Prof. Tia Kostas, Prof. Joyce Tang, Prof. Jason Poston.\\
 Quarters: Winter 2024, Fall 2024.\\
 Contact hours: 4.\\
