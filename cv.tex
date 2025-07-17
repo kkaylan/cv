@@ -20,7 +20,7 @@
 %    LENGTHS
 % ===========================
 %% Set margins
-\usepackage[margin=0.5in, papersize={8.5in,11in}]{geometry} 
+\usepackage[margin=0.75in, papersize={8.5in,11in}]{geometry} 
 
 % \setlength\titlenamemaxwidth{.4\textwidth}
 \setlength\hintscolwidth{1.25in}
@@ -80,10 +80,10 @@
 \usepackage[T1]{fontenc}
 
 % Baskerville, Avant Garde, or Courier New
-% \defaultfontfeatures{Renderer=Basic,Ligatures=TeX}
-% \setmainfont[Numbers=OldStyle]{Baskerville}
-% \setsansfont{AvantGarde Bk BT}
-% \setmonofont{Courier New}
+%\defaultfontfeatures{Renderer=Basic,Ligatures=TeX}
+%\setmainfont[Numbers=OldStyle]{Baskerville}
+%\setsansfont{AvantGarde Bk BT}
+%\setmonofont{Courier New}
 
 % first and last name
 \setkomafont{firstnamefont}{\fontsize{16}{20}\itshape}
@@ -121,7 +121,7 @@ giveninits=true,
 defernumbers=true,
 ]{biblatex}
 
-% From: https://tex.stackexchange.com/questions/140561/anti-chronological-bibliography-with-sorting-ydnt-and-usage-of-sortyear
+% from https://tex.stackexchange.com/questions/140561/anti-chronological-bibliography-with-sorting-ydnt-and-usage-of-sortyear
 \DeclareSortingScheme{ymdnt}{
   \sort{
     \field{presort}
@@ -240,6 +240,10 @@ University of Michigan, Ann Arbor, MI.\newline
 {\small Graduated \textit{magna cum laude}.}}
 
 % ===========================
+%\section{Positions}
+% ===========================
+
+% ===========================
 \section{Medical Training, Licensure, and Board Certification}
 % ===========================
 
@@ -304,7 +308,8 @@ University of Michigan, Ann Arbor, MI.\newline
 \section{Awards and Honors}
 % ===========================
 
-\cventry{2025}{ADA Scholars Award}{}{American Diabetes Association}{}{Career development program for early-career professionals who treat or research diabetes and its complications.}
+\cventry{2025}{Chicago Diabetes Day Poster Award}{}{Chicago Diabetes Research and Training Center}{\$100}{}
+\cventry{2025}{American Diabetes Association Scholars Award}{}{American Diabetes Association}{}{Career development program for early-career professionals who treat or research diabetes and its complications.}
 \cventry{2024}{Early Career Forum Travel Award}{}{Endocrine Society}{\$400}{}
 \cventry{2019}{Chancellor's Student Service Award}{}{University of Illinois at Chicago}{}{Honors students who have made an outstanding contribution to the university through service to campus and community.}
 \cventry{2017}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{University of Illinois College of Medicine}{}{Top 25\% of teaching assistants ranked by students in Spring 2017 semester.}
@@ -317,8 +322,12 @@ University of Michigan, Ann Arbor, MI.\newline
 % ===========================
 \section{Grants and Fellowships}
 % ===========================
+~
+{\small All grant amounts represent direct costs unless otherwise specified.}
+\bigskip
 
-\cventry{7/2025--6/2026}{NIDDK K12 Diabetes Docs: Physician-Scientist Career Development Program (DiabDocs)}{K12~DK133995}{Multi-Center Program Directors: Profs. David Maahs (Stanford University) and Linda DiMeglio (Indiana University)}{direct costs: \$150,000}{National, multi-center program to support the academic research career development of the next generation of physician--scientists with a specific focus in basic and clinical diabetes. The DiabDocs program is designed to provide a mentored research experience together with tailored career development training. This award supported training and research related to my project titled "Viral nucleotide sensing by $\beta$-cell MDA5 in T1D".}
+\cventry{7/2025--6/2026}{NIDDK K12 Diabetes Docs: Physician-Scientist Career Development Program (DiabDocs)}{K12~DK133995}{Multi-Center Program Directors: Profs. David Maahs (Stanford University) and Linda DiMeglio (Indiana University)}{\$150,000}{National, multi-center program to support the academic research career development of the next generation of physician--scientists with a specific focus in basic and clinical diabetes. The DiabDocs program is designed to provide a mentored research experience together with tailored career development training. This award supported training and research related to my project titled "Viral nucleotide sensing by $\beta$-cell MDA5 in T1D".}
+\cventry{6/2025--6/2026}{Endocrine Fellows Foundation Research Grant Program}{}{}{\$10,000}{The Research Grant Program is meant to support fellows and junior faculty investigators. This award supported training and research related to my project titled "Viral nucleotide sensing by $\beta$-cell MDA5 in type 1 diabetes".}
 \cventry{7/2024--6/2025}{NIDDK T32: Integrated Clinical and Basic Endocrinology Research Training Grant}{T32~DK007011}{University of Chicago}{}{Supporting postdoctoral research with Prof. Raghavendra Mirmira.}
 %\cventry{2016}{Medical Student Interest Group Matching Grant Program}{}{Intersociety Council for Pathology Information}{\$500}{Awarded to the Pathology Interest Group at the University of Illinois College of Medicine to continue supporting programs facilitating interactions between faculty and students in addition to providing education on pathology as a career choice.}
 \cventry{2016}{NSF I-Corps}{}{University of Illinois at Urbana--Champaign Site Cohort 11}{\$2,000}{Awarded for the use of lean methodologies to develop new, clinically-relevant technologies in liver tissue engineering.}
@@ -628,12 +637,9 @@ Contact hours: 4.
  
 \cvitem{11/2012--12/2012}{Climate Survey Steering Committee.}
 
-\subsection{Reviewer for manuscripts in peer reviewed journals}
-\begin{compactenum}
-\item Journal of Clinical Investigation (JCI).
-\item JCI Insight.
-\end{compactenum}
-
+%\subsection{Reviewer for manuscripts in peer reviewed journals}
+%\begin{compactenum}
+%\end{compactenum}
 
 % ===========================
 \section{Professional Affiliations}
@@ -654,13 +660,13 @@ Contact hours: 4.
 \subsection{Software}
 
 \cvitem{Software}{macOS, Windows, GNU/Linux (Ubuntu, Red Hat).}
-\cvitem{Programming}{R, MATLAB, \LaTeX, Git, HTML, CSS.}
-\cvitem{Applications}{GraphPad Prism, RStudio, NIH ImageJ (Fiji), CellProfiler, GIMP, Inkscape, SolidWorks.}
+\cvitem{Programming}{R, R/Bioconductor, MATLAB, \LaTeX, Git, HTML, CSS.}
+\cvitem{Applications}{GraphPad Prism, RStudio, NIH ImageJ (Fiji), QuPath, Galaxy, CellProfiler, GIMP, Inkscape, SolidWorks.}
 
 \subsection{Wet laboratory}
 
 \cvitem{Cell biology}{Cell culture, viral transduction, cell migration assays.}
-\cvitem{Molecular biology}{Immunoblotting, immunocytochemistry and immunofluorescence, \textit{in situ} hybridization, qRT-PCR, ELISA, biolayer interferometry.}
+\cvitem{Molecular biology}{Immunoblotting, immunocytochemistry, immunohistochemistry, immunofluorescence, \textit{in situ} hybridization, qRT-PCR, ELISA, biolayer interferometry.}
 \cvitem{Imaging}{Phase contrast, fluorescence, and confocal microscopy.}
 \cvitem{Fabrication}{Protein microarraying, hydrogel fabrication (PDMS, polyacrylamide).}
 \cvitem{Automation}{Automated microscopy, robotic liquid handling, spotting robots.}
@@ -668,7 +674,7 @@ Contact hours: 4.
 \subsection{Analytical}
 
 \cvitem{Statistics}{Basic hypothesis testing, single and multiple linear regression, ANOVA, clustering analysis, principal components analysis.}
-\cvitem{Image analysis}{Automated high-content image cytometry (ImageJ, CellProfiler), ilastik.}
+\cvitem{Image analysis}{Automated high-content image cytometry (ImageJ, CellProfiler, ilastik, QuPath).}
 
 % ===========================
 %\section{Interests}
