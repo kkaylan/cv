@@ -1,43 +1,43 @@
-% !TEX TS-program = arara
-% arara: pdflatex
-% arara: biber
-% arara: pdflatex
-% arara: pdflatex
+%!TEX TS-program = arara
+%arara: pdflatex
+%arara: biber
+%arara: pdflatex
+%arara: pdflatex
 
 \documentclass[%
-% xcolor=svgnames,%
-% color=mycolor,%
-% DIV=19,
-% fontsize=20,
-% style=classic,% (default) OR
-% style=casual% !! remove linebreak in facebook definition (see personal data); OR
-% style=oldstyle,%
-% headline=name,%
+%xcolor=svgnames,%
+%color=mycolor,%
+%DIV=19,
+%fontsize=20,
+%style=classic, % default
+%style=casual, % remove linebreak in Facebook definition (see personal data)
+%style=oldstyle, %
+%headline=name,%
 ]{komacv}
 
 
 % ===========================
 %    LENGTHS
 % ===========================
-%% Set margins
+% set margins
 \usepackage[margin=0.75in, papersize={8.5in,11in}]{geometry} 
 
-% \setlength\titlenamemaxwidth{.4\textwidth}
+%\setlength\titlenamemaxwidth{.4\textwidth}
 \setlength\hintscolwidth{1.25in}
-% \setlength\sepcolwidth{1em}
-% \setlength\quotewidth{.3\textwidth}
-% \setlength\titlesepwidth{50pt}
-% \setlength\infocolwidth{6cm} % for oldstyle only!
-% \setlength\sepinfocolwidth{6em} % for oldstyle only!
-% \setlength\footerwidth{.5\textwidth} % for casual style only
-% \setlength\aftertitlevspace{5\baselineskip}
-% \setlength\afterquotevspace{8\baselineskip}
-% \setlength\afterelementsvspace{40pt}
-% \setlength\beforesecvspace{3\baselineskip}
-% \setlength\aftersecvspace{4\baselineskip}
-% \setlength\beforesubsecvspace{3\baselineskip}
-% \setlength\aftersubsecvspace{4\baselineskip}
-% \setlength\listitemsymbolwidth{1cm}
+%\setlength\sepcolwidth{1em}
+%\setlength\quotewidth{.3\textwidth}
+%\setlength\titlesepwidth{50pt}
+%\setlength\infocolwidth{6cm} % for oldstyle only!
+%\setlength\sepinfocolwidth{6em} % for oldstyle only!
+%\setlength\footerwidth{.5\textwidth} % for casual style only
+%\setlength\aftertitlevspace{5\baselineskip}
+%\setlength\afterquotevspace{8\baselineskip}
+%\setlength\afterelementsvspace{40pt}
+%\setlength\beforesecvspace{3\baselineskip}
+%\setlength\aftersecvspace{4\baselineskip}
+%\setlength\beforesubsecvspace{3\baselineskip}
+%\setlength\aftersubsecvspace{4\baselineskip}
+%\setlength\listitemsymbolwidth{1cm}
 
 % ===========================
 %    HEADERS AND FOOTERS
@@ -46,30 +46,30 @@
 \clearscrheadfoot
 \ifoot{Curriculum Vitae, \firstname~\familyname. Compiled \today.}
 \ofoot{\pagemark/\totalpagemark}
-% \ihead{Hello world!}
-% \ohead{My life so far}
+%\ihead{Hello world!}
+%\ohead{My life so far}
 
 % ===========================
 %    COLORS
 % ===========================
-% \xdefinecolor{mycolor}{cmyk}{0.92,0,0.87,0.09}
-% \colorlet{firstnamecolor}{blue}
-% \colorlet{familynamecolor}{red}
-% \colorlet{acadtitlecolor}{green}
-% \colorlet{addresscolor}{gray}
-% \colorlet{quotecolor}{pink}
-% \colorlet{framecolor}{yellow}
-% \colorlet{framebackcolor}{black}
-% \colorlet{secbarcolor}{familynamecolor}
-% \colorlet{seccolor}{familynamecolor}
-% \colorlet{subseccolor}{pink!70!black}
-% \colorlet{hintcolor}{orange}
+%\xdefinecolor{mycolor}{cmyk}{0.92,0,0.87,0.09}
+%\colorlet{firstnamecolor}{blue}
+%\colorlet{familynamecolor}{red}
+%\colorlet{acadtitlecolor}{green}
+%\colorlet{addresscolor}{gray}
+%\colorlet{quotecolor}{pink}
+%\colorlet{framecolor}{yellow}
+%\colorlet{framebackcolor}{black}
+%\colorlet{secbarcolor}{familynamecolor}
+%\colorlet{seccolor}{familynamecolor}
+%\colorlet{subseccolor}{pink!70!black}
+%\colorlet{hintcolor}{orange}
 
 % ===========================
 %    FONTS
 % ===========================
-%% Fonts, for use with LuaLaTeX or XeLaTeX
-%% See document beginning for Roman versus serif
+% fonts, for use with LuaLaTeX or XeLaTeX
+% see document beginning for Roman versus serif
 %\usepackage[T1]{fontenc}
 
 % Alegreya
@@ -92,7 +92,7 @@
 
 % addresses and quotes
 \setkomafont{addressfont}{\normalsize}
-% \setkomafont{acadtitlefont}{\usekomafont{familynamefont}}
+%\setkomafont{acadtitlefont}{\usekomafont{familynamefont}}
 \setkomafont{quotefont}{}
 
 % hints (years on the left)
@@ -114,14 +114,15 @@
 % ===========================
 
 \usepackage[backend=biber,
-style=numeric,%authortitle,% 
-sorting=ymdnt,%
+style=numeric, %authortitle,% 
+sorting=ymdnt,
 maxbibnames=99,
 giveninits=true,
 defernumbers=true,
 ]{biblatex}
 
-% from https://tex.stackexchange.com/questions/140561/anti-chronological-bibliography-with-sorting-ydnt-and-usage-of-sortyear
+% anti-chronological bibliography
+% https://tex.stackexchange.com/questions/140561/anti-chronological-bibliography-with-sorting-ydnt-and-usage-of-sortyear
 \DeclareSortingScheme{ymdnt}{
   \sort{
     \field{presort}
@@ -161,7 +162,8 @@ defernumbers=true,
 \DeclareFieldFormat{labelnumberwidth}{}
 \setlength{\biblabelsep}{0pt}
 
-% from https://tex.stackexchange.com/questions/73136/make-specific-author-bold-using-biblatex
+% make a specific author bold
+% https://tex.stackexchange.com/questions/73136/make-specific-author-bold-using-biblatex
 \renewcommand*{\mkbibnamegiven}[1]{%
   \ifitemannotation{highlight}
     {\textbf{#1}}
@@ -175,7 +177,7 @@ defernumbers=true,
 % ===========================
 %    PERSONAL DATA
 % ===========================
-\renewcommand*{\title}{CV}% PDF metadata
+\renewcommand*{\title}{CV} % PDF metadata
 \renewcommand*{\firstname}{Kerim B.}
 \renewcommand*{\familyname}{Kaylan}
 %\renewcommand*{\acadtitle}{B.\,Ed.}
@@ -187,30 +189,30 @@ defernumbers=true,
 %\renewcommand*{\faxnr}{001-23456788}
 \renewcommand*{\email}{kerim.kaylan@uchicagomedicine.org}
 \renewcommand*{\homepage}{www.kbkaylan.net}
-% \renewcommand*{\twitter}{twitter.com/janeeyre}
-% \renewcommand*{\github}{github.com/janeeyre}
-% \renewcommand*{\facebook}{facebook.com/\\jane.eyre}
-% \renewcommand*{\facebook}{facebook.com/jane.eyre} % avoid linebreaks in casual style
-% \renewcommand*{\linkedin}{https://uk.linkedin.com/pub/jane-eyre}
-% \renewcommand*{\extrainfo}{Some extra info}
-% \renewcommand*{\cvquote}{\enquote{Convinced I grew that neither earth should perish, \\nor one of the souls it treasured.}} %p.373
-% \renewcommand\phonesymbol{Tel.~}
-% \headline[l]{name} % [c|l|r]{none|name|title}; default: [c]{none}
-% \renewcommand\headlinecontent{Jane Elizabeth Eyre Rochester}
+%\renewcommand*{\twitter}{twitter.com/janeeyre}
+%\renewcommand*{\github}{github.com/janeeyre}
+%\renewcommand*{\facebook}{facebook.com/\\jane.eyre}
+%\renewcommand*{\facebook}{facebook.com/jane.eyre} % avoid linebreaks in casual style
+%\renewcommand*{\linkedin}{https://uk.linkedin.com/pub/jane-eyre}
+%\renewcommand*{\extrainfo}{Some extra info}
+%\renewcommand*{\cvquote}{\enquote{Convinced I grew that neither earth should perish, \\nor one of the souls it treasured.}} %p.373
+%\renewcommand\phonesymbol{Tel.~}
+%\headline[l]{name} % [c|l|r]{none|name|title}; default: [c]{none}
+%\renewcommand\headlinecontent{Jane Elizabeth Eyre Rochester}
 
 % ===========================
 %    PICTURE
 % ===========================
-% \setlength\fboxrule{7pt}
-% \setlength\mframepicshift{1cm}
-% \photo[frame]{3cm}{jeyre}
-% \photo[mframe]{5cm}{jeyre}
+%\setlength\fboxrule{7pt}
+%\setlength\mframepicshift{1cm}
+%\photo[frame]{3cm}{jeyre}
+%\photo[mframe]{5cm}{jeyre}
 
 % ===========================
 
 \begin{document}
 
-% Set Roman or san serif font
+% set Roman or sana serif font
 \renewcommand\familydefault{\sfdefault}\normalfont
 \raggedbottom
 
@@ -240,15 +242,12 @@ University of Michigan, Ann Arbor, MI.\newline
 {\small Graduated \textit{magna cum laude}.}}
 
 % ===========================
-%\section{Positions}
-% ===========================
-
-% ===========================
 \section{Medical Training, Licensure, and Board Certification}
 % ===========================
 
 \subsection{Medical Training}
-\cvitem{2023--present}{\textbf{Endocrinology Fellowship Program.}\newline Section of Endocrinology, Diabetes, and Metabolism, Department of Medicine, University of Chicago, Chicago, IL.}
+\cvitem{2025--present}{\textbf{Advanced Endocrinology Fellowship.}\newline Section of Endocrinology, Diabetes, and Metabolism, Department of Medicine, University of Chicago, Chicago, IL.}
+\cvitem{2023--2025}{\textbf{Endocrinology Fellowship Program.}\newline Section of Endocrinology, Diabetes, and Metabolism, Department of Medicine, University of Chicago, Chicago, IL.}
 \cvitem{2021--present}{\textbf{Physician Scientist Development Program}, \textit{ABIM Research Pathway}.\newline Department of Medicine, University of Chicago, Chicago, IL.}
 \cvitem{2021--2023}{\textbf{Internal Medicine Residency Program.}\newline Department of Medicine, University of Chicago, Chicago, IL.}
 
@@ -262,7 +261,7 @@ University of Michigan, Ann Arbor, MI.\newline
 \cvitem{2019}{USMLE Step 1 (passed).}
 
 % ===========================
-\section{Research and Industry}
+\section{Research and Industry Positions}
 % ===========================
 
 \cventry{7/2024--present}{Mirmira Laboratory}{Postdoctoral Fellow}{Section of Endocrinology, Diabetes, and Metabolism, Department of Medicine}{University of Chicago}{Advisor: Prof. Raghavendra Mirmira.
@@ -304,7 +303,7 @@ University of Michigan, Ann Arbor, MI.\newline
 \item Formulated and implemented SOPs for automated lab equipment.
 \end{compactitem}}
  
- % ===========================
+% ===========================
 \section{Awards and Honors}
 % ===========================
 
@@ -679,7 +678,7 @@ Contact hours: 4.
 % ===========================
 %\section{Interests}
 % ===========================
-
+%
 %Reading, programming, viola, strength training, tennis.
 
 \end{document}
