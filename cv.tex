@@ -4,40 +4,14 @@
 %arara: pdflatex
 %arara: pdflatex
 
-\documentclass[%
-%xcolor=svgnames,%
-%color=mycolor,%
-%DIV=19,
-%fontsize=20,
-%style=classic, % default
-%style=casual, % remove linebreak in Facebook definition (see personal data)
-%style=oldstyle, %
-%headline=name,%
-]{komacv}
-
+\documentclass{komacv}
 
 % ===========================
-%    LENGTHS
+%    PACKAGES AND GEOMETRY
 % ===========================
-% set margins
-\usepackage[margin=0.75in, papersize={8.5in,11in}]{geometry} 
-
-%\setlength\titlenamemaxwidth{.4\textwidth}
-\setlength\hintscolwidth{1.25in}
-%\setlength\sepcolwidth{1em}
-%\setlength\quotewidth{.3\textwidth}
-%\setlength\titlesepwidth{50pt}
-%\setlength\infocolwidth{6cm} % for oldstyle only!
-%\setlength\sepinfocolwidth{6em} % for oldstyle only!
-%\setlength\footerwidth{.5\textwidth} % for casual style only
-%\setlength\aftertitlevspace{5\baselineskip}
-%\setlength\afterquotevspace{8\baselineskip}
-%\setlength\afterelementsvspace{40pt}
-%\setlength\beforesecvspace{3\baselineskip}
-%\setlength\aftersecvspace{4\baselineskip}
-%\setlength\beforesubsecvspace{3\baselineskip}
-%\setlength\aftersubsecvspace{4\baselineskip}
-%\setlength\listitemsymbolwidth{1cm}
+\usepackage[margin=0.75in, papersize={8.5in,11in}]{geometry}
+\usepackage[scaled]{helvet}
+\usepackage[T1]{fontenc}
 
 % ===========================
 %    HEADERS AND FOOTERS
@@ -46,62 +20,22 @@
 \clearscrheadfoot
 \ifoot{Curriculum Vitae, \firstname~\familyname. Compiled \today.}
 \ofoot{\pagemark/\totalpagemark}
-%\ihead{Hello world!}
-%\ohead{My life so far}
 
 % ===========================
-%    COLORS
+%    LENGTHS
 % ===========================
-%\xdefinecolor{mycolor}{cmyk}{0.92,0,0.87,0.09}
-%\colorlet{firstnamecolor}{blue}
-%\colorlet{familynamecolor}{red}
-%\colorlet{acadtitlecolor}{green}
-%\colorlet{addresscolor}{gray}
-%\colorlet{quotecolor}{pink}
-%\colorlet{framecolor}{yellow}
-%\colorlet{framebackcolor}{black}
-%\colorlet{secbarcolor}{familynamecolor}
-%\colorlet{seccolor}{familynamecolor}
-%\colorlet{subseccolor}{pink!70!black}
-%\colorlet{hintcolor}{orange}
+\setlength\hintscolwidth{1.25in}
 
 % ===========================
 %    FONTS
 % ===========================
-% fonts, for use with LuaLaTeX or XeLaTeX
-% see document beginning for Roman versus serif
-%\usepackage[T1]{fontenc}
-
-% Alegreya
-%\usepackage{Alegreya}
-
-% Helvetica
-\usepackage[scaled]{helvet}
-\usepackage[T1]{fontenc}
-
-% Baskerville, Avant Garde, or Courier New
-%\defaultfontfeatures{Renderer=Basic,Ligatures=TeX}
-%\setmainfont[Numbers=OldStyle]{Baskerville}
-%\setsansfont{AvantGarde Bk BT}
-%\setmonofont{Courier New}
-
-% first and last name
 \setkomafont{firstnamefont}{\fontsize{16}{20}\itshape}
-\addtokomafont{firstnamefont}{\fontsize{24}36}
-\addtokomafont{familynamefont}{}
-
-% addresses and quotes
+\addtokomafont{firstnamefont}{\fontsize{24}{36}}
 \setkomafont{addressfont}{\normalsize}
-%\setkomafont{acadtitlefont}{\usekomafont{familynamefont}}
-\setkomafont{quotefont}{}
-
-% hints (years on the left)
 \setkomafont{hintfont}{\normalsize}
-
-% sections and subsections
-\addtokomafont{section}{\bfseries}
-\addtokomafont{subsection}{\slshape}
-\addtokomafont{subsubsection}{\slshape}
+\addtokomafont{section}{\bfseries\normalsize}
+\addtokomafont{subsection}{\slshape\normalsize}
+\addtokomafont{subsubsection}{\slshape\normalsize}
 
 % ===========================
 %    HYPERSETUP
@@ -112,24 +46,19 @@
 % ===========================
 %    BIBLIOGRAPHY
 % ===========================
-
+% Reverse chronological sorting (newest first)
 \usepackage[backend=biber,
-style=numeric, %authortitle,% 
+style=numeric,
 sorting=ymdnt,
 maxbibnames=99,
 giveninits=true,
 defernumbers=true,
 ]{biblatex}
 
-% anti-chronological bibliography
-% https://tex.stackexchange.com/questions/140561/anti-chronological-bibliography-with-sorting-ydnt-and-usage-of-sortyear
+% Custom sorting: year (desc) -> month (desc) -> author -> title
 \DeclareSortingScheme{ymdnt}{
-  \sort{
-    \field{presort}
-  }
-  \sort[final]{
-    \field{sortkey}
-  }
+  \sort{\field{presort}}
+  \sort[final]{\field{sortkey}}
   \sort[direction=descending]{
     \field[strside=left,strwidth=4]{sortyear}
     \field[strside=left,strwidth=4]{year}
@@ -157,66 +86,42 @@ defernumbers=true,
 \defbibheading{bibliography}[Publications]{\section{#1}}
 \DeclareFieldFormat[misc]{title}{\mkbibquote{#1}}
 
-% remove reference counts
-% https://tex.stackexchange.com/questions/219935/remove-numbers-from-cv-bibliography-using-biblatex-in-texshop
+% Remove reference counts
 \DeclareFieldFormat{labelnumberwidth}{}
 \setlength{\biblabelsep}{0pt}
 
-% make a specific author bold
-% https://tex.stackexchange.com/questions/73136/make-specific-author-bold-using-biblatex
+% Bold author name when highlighted
 \renewcommand*{\mkbibnamegiven}[1]{%
-  \ifitemannotation{highlight}
-    {\textbf{#1}}
-    {#1}}
-
+  \ifitemannotation{highlight}{\textbf{#1}}{#1}}
 \renewcommand*{\mkbibnamefamily}[1]{%
-  \ifitemannotation{highlight}
-    {\textbf{#1}}
-    {#1}}
+  \ifitemannotation{highlight}{\textbf{#1}}{#1}}
 
+% Helper command for bibliography sections
+\newcommand{\bibsection}[1]{%
+  \begin{refcontext}[]
+  \printbibliography[keyword=#1, heading=none, resetnumbers=true]
+  \end{refcontext}
+}
+    
 % ===========================
 %    PERSONAL DATA
 % ===========================
-\renewcommand*{\title}{CV} % PDF metadata
+\renewcommand*{\title}{CV}
 \renewcommand*{\firstname}{Kerim B.}
 \renewcommand*{\familyname}{Kaylan}
-%\renewcommand*{\acadtitle}{B.\,Ed.}
 \renewcommand*{\addressstreet}{Section of Endocrinology, Diabetes, and Metabolism\\Department of Medicine\\University of Chicago}
 \renewcommand*{\addresscity}{Chicago, IL 60637}
-%\renewcommand*{\address}[3]{Chicago, IL 60612}
-%\renewcommand*{\mobile}{+1 269 861 3750}
-%\renewcommand*{\phonenr}{001-23456789}
-%\renewcommand*{\faxnr}{001-23456788}
 \renewcommand*{\email}{kerim.kaylan@uchicagomedicine.org}
 \renewcommand*{\homepage}{www.kbkaylan.net}
-%\renewcommand*{\twitter}{twitter.com/janeeyre}
-%\renewcommand*{\github}{github.com/janeeyre}
-%\renewcommand*{\facebook}{facebook.com/\\jane.eyre}
-%\renewcommand*{\facebook}{facebook.com/jane.eyre} % avoid linebreaks in casual style
-%\renewcommand*{\linkedin}{https://uk.linkedin.com/pub/jane-eyre}
-%\renewcommand*{\extrainfo}{Some extra info}
-%\renewcommand*{\cvquote}{\enquote{Convinced I grew that neither earth should perish, \\nor one of the souls it treasured.}} %p.373
-%\renewcommand\phonesymbol{Tel.~}
-%\headline[l]{name} % [c|l|r]{none|name|title}; default: [c]{none}
-%\renewcommand\headlinecontent{Jane Elizabeth Eyre Rochester}
 
 % ===========================
-%    PICTURE
-% ===========================
-%\setlength\fboxrule{7pt}
-%\setlength\mframepicshift{1cm}
-%\photo[frame]{3cm}{jeyre}
-%\photo[mframe]{5cm}{jeyre}
-
-% ===========================
-
 \begin{document}
 
-% set Roman or sana serif font
 \renewcommand\familydefault{\sfdefault}\normalfont
 \raggedbottom
 
 \maketitle
+\nocite{*} % Include all entries from cv.bib
 
 % ===========================
 \section{Education}
@@ -275,7 +180,7 @@ University of Michigan, Ann Arbor, MI.\newline
 \item Investigated the functional regulation of primary human and iPSC-derived hepatocytes by matrix proteins and substrate stiffness.
 \end{compactitem}}
 
-\cventry{8/2012--7/2017}{Tissue Development and Engineering Laboratory}{Graduate Research Assistant}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{Advisor: Prof. Gregory H. Underhill. \\
+\cventry{8/2012--7/2017}{Tissue Development and Engineering Laboratory}{Graduate Research Assistant}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{Advisor: Prof. Gregory H. Underhill.
 \begin{compactitem}
 \item Designed a cell-based microarray platform with multiple readouts to deconstruct combined biochemical and biomechanical regulation of cell fate and function.
 \item Characterized the regulation of liver progenitor differentiation by biochemical factors and biomechanical cues.
@@ -327,11 +232,9 @@ University of Michigan, Ann Arbor, MI.\newline
 
 \cventry{7/2025--6/2026}{NIDDK K12 Diabetes Docs: Physician-Scientist Career Development Program (DiabDocs)}{K12~DK133995}{Multi-Center Program Directors: Profs. David Maahs (Stanford University) and Linda DiMeglio (Indiana University)}{\$150,000}{National, multi-center program to support the academic research career development of the next generation of physician--scientists with a specific focus in basic and clinical diabetes. The DiabDocs program is designed to provide a mentored research experience together with tailored career development training. This award supported training and research related to my project titled "Viral nucleotide sensing by $\beta$-cell MDA5 in T1D".}
 \cventry{6/2025--6/2026}{Endocrine Fellows Foundation Research Grant Program}{}{}{\$10,000}{The Research Grant Program is meant to support fellows and junior faculty investigators. This award supported training and research related to my project titled "Viral nucleotide sensing by $\beta$-cell MDA5 in type 1 diabetes".}
-\cventry{6/2025--6/2027}{Pollak Family Fellow}{}{Kovler Diabetes Center, University of Chicago}{\$200,000}{This position supports research for an early career investigator in type 1 diabetes.}
+\cventry{6/2025--6/2027}{Kovler Diabetes Center}{}{University of Chicago}{\$200,000}{This position supports research for an early career investigator in type 1 diabetes.}
 \cventry{7/2024--6/2025}{NIDDK T32: Integrated Clinical and Basic Endocrinology Research Training Grant}{T32~DK007011}{University of Chicago}{}{Supporting postdoctoral research with Prof. Raghavendra Mirmira.}
-%\cventry{2016}{Medical Student Interest Group Matching Grant Program}{}{Intersociety Council for Pathology Information}{\$500}{Awarded to the Pathology Interest Group at the University of Illinois College of Medicine to continue supporting programs facilitating interactions between faculty and students in addition to providing education on pathology as a career choice.}
 \cventry{2016}{NSF I-Corps}{}{University of Illinois at Urbana--Champaign Site Cohort 11}{\$2,000}{Awarded for the use of lean methodologies to develop new, clinically-relevant technologies in liver tissue engineering.}
-%\cventry{2015}{Medical Student Interest Group Matching Grant Program}{}{Intersociety Council for Pathology Information}{\$750}{Awarded to the Pathology Interest Group at the University of Illinois College of Medicine to support interactions between faculty and students and provide education on pathology as a career choice.}
 \cventry{2014}{O'Morchoe Leadership Fellowship}{}{University of Illinois College of Medicine}{\$1,500}{Awarded to support the activities of the Out in Medicine student group, chiefly education relating to the clinical care of transgender and intersex persons.}
 \cventry{2010}{Summer Biomedical and Life Science Fellowship}{}{University of Michigan Undergraduate Research Opportunity Program}{\$4,000}{Supported research with Prof. Shuichi Takayama to develop a novel cell migration assay using ATPS.}
 
@@ -342,57 +245,29 @@ University of Michigan, Ann Arbor, MI.\newline
 \subsection{Journal Articles}
 ~
 {\small Asterisk (*) indicates equal authorship.}
-
-\begin{refcontext}[]
-\nocite{*}
-\printbibliography[, keyword=article, heading=none, resetnumbers=true]
-\end{refcontext}
+\bibsection{article}
 
 \subsection{Review Articles}
-
-\begin{refcontext}[]
-\nocite{*}
-\printbibliography[, keyword=review, heading=none, resetnumbers=true]
-\end{refcontext}
+\bibsection{review}
 
 \subsection{Commentaries}
-
-\begin{refcontext}[]
-\nocite{*}
-\printbibliography[, keyword=commentary, heading=none, resetnumbers=true]
-\end{refcontext}
+\bibsection{commentary}
 
 \subsection{Book Chapters}
-
-\begin{refcontext}[]
-\nocite{*}
-\printbibliography[keyword=book, heading=none, resetnumbers=true]
-\end{refcontext}
+\bibsection{book}
 
 \subsection{Conference Proceedings}
-
-\begin{refcontext}[]
-\nocite{*}
-\printbibliography[keyword=proceeding, heading=none, resetnumbers=true]
-\end{refcontext}
+\bibsection{proceeding}
 
 % ===========================
 \section{Presentations}
 % ===========================
 
 \subsection{Oral Presentations}
-
-\begin{refcontext}[]
-\nocite{*}
-\printbibliography[keyword=talk, heading=none, resetnumbers=true]
-\end{refcontext}
+\bibsection{talk}
 
 \subsection{Poster Presentations}
-
-\begin{refcontext}[]
-\nocite{*}
-\printbibliography[keyword=poster, heading=none, resetnumbers=true]
-\end{refcontext}
+\bibsection{poster}
 
 % ===========================
 \section{Abstracts Presented by Co-Authors}
@@ -401,20 +276,12 @@ University of Michigan, Ann Arbor, MI.\newline
 \subsection{Oral Presentations by Co-Authors}
 ~
 {\small Co-author who presented is also \textbf{bolded}.}
-
-\begin{refcontext}[]
-\nocite{*}
-\printbibliography[keyword=talk-coauthor, heading=none, resetnumbers=true]
-\end{refcontext}
+\bibsection{talk-coauthor}
 
 \subsection{Poster Presentations by Co-Authors}
 ~
 {\small Co-author who presented is also \textbf{bolded}.}
-
-\begin{refcontext}[]
-\nocite{*}
-\printbibliography[keyword=poster-coauthor, heading=none, resetnumbers=true]
-\end{refcontext}
+\bibsection{poster-coauthor}
 
 % ===========================
 \section{Teaching}
@@ -481,15 +348,6 @@ Student evaluations: 4.2/5.0 (Spring 2016), 4.8/5.0 (Fall 2016), 4.5/5.0 (Spring
 \item Supervised weekly lab sessions providing active review of histology and identification of structures.
 \item Held discussions sections on disease pathophysiology, provided written feedback on student case presentations.
 \end{compactitem}}
-
-%\subsubsection{University of Illinois at Urbana--Champaign}
-%
-%\cventry{2/2014}{Quantitative Biotechnology}{Guest Lecturer}{Department of Bioengineering}{}{
-%Primary instructor: Prof. Sua Myong.\\
-%Contact hours: 2.\\
-%\begin{compactitem}
-%\item Served as guest lecturer for 1 class session.
-%\end{compactitem}}
 
 \subsection{Undergraduate}
 
@@ -587,12 +445,6 @@ Contact hours: 4.
 \item Initiated changes to the structure of the committee to adapt to changes in the demographics of the student body.
 \end{compactitem}}
 
-%\cventry{9/2015--7/2017}{Pathology Interest Group}{Organizer}{}{}{
-%\begin{compactitem}
-%\item Planned and carried out activities to promote interactions between pathology faculty and students, including panels of recently-matched students and lunch talks with practicing pathologists.
-%\item Held informational meetings regarding career options in pathology, subspecialization options, and the outlook of the field. 
-%\end{compactitem}}
-
 \cventry{5/2014--7/2017}{Out in Medicine at Illinois}{Co-President}{}{}{\begin{compactitem}
 \item Held mixers and socials to build community for students, staff, and faculty who identify as sexual or gender minorities.
 \item Organized seminars on the health of sexual or gender minorities, specifically the care of transgender and intersex persons.
@@ -623,10 +475,9 @@ Contact hours: 4.
 \subsection{Committee membership and other service}
 
 \subsubsection{University of Chicago}
-\cvitem{2024--present}{Underrepresented in Medicine Mentorship Program, \textit{Mentor.}}
+\cvitem{2024--present}{Underrepresented in Medicine Mentorship Program, \textit{Mentor}.}
 
 \subsubsection{University of Illinois College of Medicine}
-
 \cvitem{11/2018--3/2019}{Search Committee for Associate Dean of Curriculum.}
 \cvitem{9/2017--9/2018}{USMLE Preparedness Committee.}
 \cvitem{4/2017}{Medical Scholars Program Steering Committee.}
@@ -634,37 +485,46 @@ Contact hours: 4.
 \cvitem{9/2012--8/2014}{Medical Scholars Program Retreat Committee.}
 
 \subsubsection{University of Illinois at Urbana--Champaign}
- 
 \cvitem{11/2012--12/2012}{Climate Survey Steering Committee.}
 
-%\subsection{Reviewer for manuscripts in peer reviewed journals}
-%\begin{compactenum}
-%\end{compactenum}
+\subsection{Reviewer for manuscripts in peer reviewed journals}
+\subsubsection{Invited}
+\begin{compactenum}
+\item Molecular Medicine.
+\end{compactenum}
+
+\subsubsection{Assisted}
+\begin{compactenum}
+\item Journal of Clinical Investigation (JCI).
+\item JCI Insight.
+\item Microarrays.
+\end{compactenum}
+
+\subsection{Reviewer for grants}
+\begin{compactenum}
+\item Diabetes Action Research and Education Foundation.
+\end{compactenum}
 
 % ===========================
 \section{Professional Affiliations}
 % ===========================
 
-\cvitem{}{Endocrine Society.}
-\cvitem{}{American Diabetes Association.}
-\cvitem{}{American Association of Clinical Endocrinologists.}
-%\cvitem{}{American College of Physicians.}
-\cvitem{}{American Physician Scientists Association.}
-%\cvitem{}{Biomedical Engineering Society.}
-\cvitem{}{Tau Beta Pi.}
+\cvitem{present}{Endocrine Society.}
+\cvitem{present}{American Diabetes Association.}
+\cvitem{present}{American Association of Clinical Endocrinologists.}
+\cvitem{present}{American Physician Scientists Association.}
+\cvitem{present}{Tau Beta Pi.}
 
 % ===========================
 \section{Skills}
 % ===========================
 
 \subsection{Software}
-
 \cvitem{Software}{macOS, Windows, GNU/Linux (Ubuntu, Red Hat).}
 \cvitem{Programming}{R, R/Bioconductor, MATLAB, \LaTeX, Git, HTML, CSS.}
 \cvitem{Applications}{GraphPad Prism, RStudio, NIH ImageJ (Fiji), QuPath, Galaxy, CellProfiler, GIMP, Inkscape, SolidWorks.}
 
 \subsection{Wet laboratory}
-
 \cvitem{Cell biology}{Cell culture, viral transduction, cell migration assays.}
 \cvitem{Molecular biology}{Immunoblotting, immunocytochemistry, immunohistochemistry, immunofluorescence, \textit{in situ} hybridization, qRT-PCR, ELISA, biolayer interferometry.}
 \cvitem{Imaging}{Phase contrast, fluorescence, and confocal microscopy.}
@@ -672,14 +532,7 @@ Contact hours: 4.
 \cvitem{Automation}{Automated microscopy, robotic liquid handling, spotting robots.}
 
 \subsection{Analytical}
-
 \cvitem{Statistics}{Basic hypothesis testing, single and multiple linear regression, ANOVA, clustering analysis, principal components analysis.}
 \cvitem{Image analysis}{Automated high-content image cytometry (ImageJ, CellProfiler, ilastik, QuPath).}
-
-% ===========================
-%\section{Interests}
-% ===========================
-%
-%Reading, programming, viola, strength training, tennis.
 
 \end{document}
