@@ -2,7 +2,7 @@
 
 SSH_USER = kbkaylan_kbkaylan@ssh.nyc1.nearlyfreespeech.net
 DOCUMENT_ROOT = /home/public/pdf
-LOCAL_ROOT = "/Users/kerimkaylan/Sync/10-19 Meta/10 Git/10.2 Website/pdf"
+LOCAL_ROOT = "/Users/kerimkaylan/Resilio Sync/Sync/10-19 Meta/10 Git/10.2 Website/pdf"
 
 all: deploy
 

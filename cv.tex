@@ -28,6 +28,18 @@
 \setlength\afterelementsvspace{0pt} % Reduce space between cvitems
 
 % ===========================
+%    TABLES AND ENUMERATION
+% ===========================
+\newcommand{\gfield}[2]{\textbf{#1} & #2 \\}
+\newcolumntype{V}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\newcounter{cvgrant}
+\newcommand{\cvgrantitem}[1]{\stepcounter{cvgrant}\cvitem{\thecvgrant.}{#1}}
+
+\newcounter{cvtrial}
+\newcommand{\cvtrialitem}[1]{\stepcounter{cvtrial}\cvitem{\thecvtrial.}{#1}}
+
+% ===========================
 %    FONTS
 % ===========================
 \setkomafont{firstnamefont}{\fontsize{16}{20}\itshape}
@@ -103,6 +115,57 @@ defernumbers=true,
   \printbibliography[keyword=#1, heading=none, resetnumbers=true]
   \end{refcontext}
 }
+
+% Invited talks should be shown differently
+
+% Toggle for invited talk rendering mode
+\newtoggle{invitedtalkmode}
+\togglefalse{invitedtalkmode}
+
+% Environment only sets/unsets the toggle; item code is empty
+\defbibenvironment{cvtalklist}
+  {\toggletrue{invitedtalkmode}}
+  {\togglefalse{invitedtalkmode}}
+  {}
+
+% Redefine misc driver to check the toggle
+\DeclareBibliographyDriver{misc}{%
+  \iftoggle{invitedtalkmode}{%
+    \cvitem{\thefield{year}}{%
+      \iffieldundef{note}{}{\printfield{note}, }%
+      \printfield{howpublished}%
+      \iffieldundef{address}{}{ in \printfield{address}}%
+      .%
+    }%
+  }{%
+    \usebibmacro{bibindex}%
+    \usebibmacro{begentry}%
+    \usebibmacro{author/editor+others/translator+others}%
+    \setunit{\labelnamepunct}\newblock%
+    \usebibmacro{title}%
+    \newunit\newblock%
+    \usebibmacro{byauthor}%
+    \newunit\newblock%
+    \printfield{howpublished}%
+    \newunit\newblock%
+    \printfield{note}%
+    \newunit\newblock%
+    \usebibmacro{location+date}%
+    \newunit\newblock%
+    \iftoggle{bbx:url}{\usebibmacro{url+urldate}}{}%
+    \newunit\newblock%
+    \usebibmacro{addendum+pubstate}%
+    \setunit{\bibpagerefpunct}\newblock%
+    \usebibmacro{pageref}%
+    \usebibmacro{finentry}%
+  }%
+}
+
+\newcommand{\cvtalkbibsection}[1]{%
+  \begin{refcontext}[]
+  \printbibliography[keyword=#1, heading=none, resetnumbers=true, env=cvtalklist]
+  \end{refcontext}
+}
     
 % ===========================
 %    PERSONAL DATA
@@ -111,7 +174,7 @@ defernumbers=true,
 \renewcommand*{\firstname}{Kerim B.}
 \renewcommand*{\familyname}{Kaylan}
 \renewcommand*{\addressstreet}{Section of Endocrinology, Diabetes, and Metabolism\\Department of Medicine\\University of Chicago}
-\renewcommand*{\addresscity}{Chicago, IL 60637}
+\renewcommand*{\addresscity}{5841 S. Maryland Ave.\\Rm. M-267, MC 1027\\Chicago, IL 60637}
 \renewcommand*{\email}{kerim.kaylan@uchicagomedicine.org}
 \renewcommand*{\homepage}{www.kbkaylan.net}
 
@@ -134,22 +197,17 @@ defernumbers=true,
 \cvitem{2021}{\textbf{M.D.}, University of Illinois College of Medicine, Chicago, IL.}
 
 % ===========================
+%\section{Academic Appointments}
+% ===========================
+%\cvitem{2026--present}{\textbf{Pathways Instructor}, Section of Endocrinology, Diabetes, and Metabolism, Department of Medicine, University of Chicago, Chicago, IL.}
+
+% ===========================
 \section{Clinical Training}
 % ===========================
 \cvitem{2021--2023}{\textbf{Internal Medicine Residency}, University of Chicago, Chicago, IL.}
 \cvitem{2021--present}{\textbf{Physician Scientist Development Program}, University of Chicago, Chicago, IL.}
 \cvitem{2023--2025}{\textbf{Endocrinology Fellowship}, University of Chicago, Chicago, IL.}
 \cvitem{2025--present}{\textbf{Advanced Endocrinology Fellowship}, University of Chicago, Chicago, IL.}
-
-% ===========================
-\section{Research Experience}
-% ===========================
-\cvitem{9/2009--5/2011}{\textbf{Undergraduate Research Assistant}, Micro/Nano/Molecular Biotechnology Laboratory, University of Michigan. Advisor: Dr. Shuichi Takayama.}
-\cvitem{9/2010--5/2011}{\textbf{Student Engineer}, NeuroNexus, Inc., Ann Arbor, MI. Manager: Dr. John Seymour.}
-\cvitem{6/2011--12/2011}{\textbf{Cooperative in Biological Technologies}, Genentech, Inc., South San Francisco, CA. Manager: Dr. Guoying Jiang.}
-\cvitem{8/2012--7/2017}{\textbf{Graduate Research Assistant}, Tissue Development and Engineering Laboratory, University of Illinois at Urbana--Champaign. Advisor: Dr. Gregory H. Underhill.}
-\cvitem{1/2018--1/2019}{\textbf{Research Intern}, Microfabricated Tissue Models Laboratory, University of Illinois at Chicago. Advisor: Dr. Salman R. Khetani.}
-\cvitem{7/2024--present}{\textbf{Postdoctoral Fellow}, Metabolism and Islet Biology Laboratory, University of Chicago, Chicago, IL. Advisors: Dr. Raghavendra Mirmira and Dr. Sarah Tersey.}
 
 % ===========================
 \section{Board Certification and Licensure}
@@ -164,47 +222,168 @@ defernumbers=true,
 \cvitem{2024--present}{ABIM Internal Medicine Certification.}
 
 % ===========================
+\section{Research Experience}
+% ===========================
+\cvitem{2009--2011}{\textbf{Undergraduate Research Assistant}, Micro/Nano/Molecular Biotechnology Laboratory, University of Michigan. Advisor: Dr. Shuichi Takayama.}
+\cvitem{2010--2011}{\textbf{Student Engineer}, NeuroNexus, Inc., Ann Arbor, MI. Manager: Dr. John Seymour.}
+\cvitem{2011}{\textbf{Cooperative in Biological Technologies}, Genentech, Inc., South San Francisco, CA. Manager: Dr. Guoying Jiang.}
+\cvitem{2012--2017}{\textbf{Graduate Research Assistant}, Tissue Development and Engineering Laboratory, University of Illinois at Urbana--Champaign. Advisor: Dr. Gregory H. Underhill.}
+\cvitem{2018--2019}{\textbf{Research Intern}, Microfabricated Tissue Models Laboratory, University of Illinois at Chicago. Advisor: Dr. Salman R. Khetani.}
+\cvitem{2024--present}{\textbf{T32 Postdoctoral Fellow and Advanced Endocrinology Fellow}, Metabolism and Islet Biology Laboratory, University of Chicago, Chicago, IL. Advisors: Dr. Raghavendra G. Mirmira and Dr. Sarah A. Tersey.}
+
+% ===========================
+\section{Clinical Trials Experience}
+% ===========================
+
+\subsection{Sub-investigator}
+
+\cvtrialitem{\begin{tabular}[t]{@{}r@{\hspace{0.5em}}V{3.8in}}
+\gfield{}{\textbf{UPWARD/FORWARD}}
+\gfield{Title:}{A Safety, Tolerability, and Efficacy Study of VX-880 in Participants With Type 1 Diabetes}
+\gfield{Site:}{University of Chicago}
+\gfield{ClinicalTrials.gov ID:}{NCT04786262}
+\gfield{My role:}{Sub-investigator}
+\gfield{Dates:}{9/1/2023--present}
+\end{tabular}}
+
+\medskip
+
+\cvtrialitem{\begin{tabular}[t]{@{}r@{\hspace{0.5em}}V{3.8in}}
+\gfield{}{\textbf{FINE-ONE}}
+\gfield{Title:}{A Study to Learn How Well the Study Treatment Finerenone Works and How Safe it is in People With Long-term Decrease in the Kidneys' Ability to Work Properly (Chronic Kidney Disease) Together With Type 1 Diabetes}
+\gfield{Site:}{University of Chicago}
+\gfield{ClinicalTrials.gov ID:}{NCT05901831}
+\gfield{My role:}{Sub-investigator}
+\gfield{Dates:}{8/1/2024--7/1/2025}
+\end{tabular}}
+
+\medskip
+
+\cvtrialitem{\begin{tabular}[t]{@{}r@{\hspace{0.5em}}V{3.8in}}
+\gfield{}{\textbf{RADIANT}}
+\gfield{Title:}{Rare and Atypical Diabetes Network}
+\gfield{Site:}{University of Chicago}
+\gfield{ClinicalTrials.gov ID:}{NCT05544266}
+\gfield{My role:}{Sub-investigator}
+\gfield{Dates:}{2/1/2026--present}
+\end{tabular}}
+
+% ===========================
 \section{Funding}
 % ===========================
 
 \subsection{Past}
 
-\cventry{2010}{Summer Biomedical and Life Science Fellowship}{}{University of Michigan Undergraduate Research Opportunity Program}{}
-{An intensive 10-week full-time research program that provides funding for undergraduates with hands-on laboratory experience and mentoring to enhance their confidence and prepare them for graduate studies. I performed research with Dr. Shuichi Takayama on cell migration assays using aqueous two-phase-systems.\\
-My role: trainee.\\
-Title: ``Patterning of Aqueous Two-Phase Systems of Dextran and Polyethylene Glycol for the Study of Cell Migration.''\\}
+\cvgrantitem{\begin{tabular}[t]{@{}r@{\hspace{0.5em}}V{3.8in}}
+\gfield{Sponsor:}{\textbf{University of Michigan}}
+\gfield{Award:}{Undergraduate Research Opportunity Program}
+\gfield{ID\#:}{N/A}
+\gfield{Title:}{Patterning of Aqueous Two-Phase Systems of Dextran and Polyethylene Glycol for the Study of Cell Migration}
+\gfield{My role:}{Trainee}
+\gfield{Effort:}{N/A}
+\gfield{Direct costs:}{\$4,000}
+\gfield{Total costs:}{\$4,000}
+\gfield{Project period:}{5/1/2010--9/1/2010}
+\end{tabular}}
 
-\cventry{2016}{NSF I-Corps}{}{University of Illinois at Urbana--Champaign Site Cohort 11}{}
-{Immersive training program that teaches researchers to validate the commercial potential of their lab technologies through customer discovery interviews and market research.\\
-My role: trainee.\\
-Project: Use of lean methodologies to develop new, clinically-relevant technologies in liver tissue engineering.\\
-Total direct costs: \$2,000.}
+\medskip
 
-\cventry{7/2024--6/2025}{NIDDK T32: Integrated Clinical and Basic Endocrinology Research Training Grant}{T32 DK007011}{University of Chicago}{}
-{Supported postdoctoral research with Dr. Raghavendra Mirmira and Dr. Sarah Tersey.\\
-My role: trainee.\\}
+\cvgrantitem{\begin{tabular}[t]{@{}r@{\hspace{0.5em}}V{3.8in}}
+\gfield{Sponsor:}{\textbf{NSF, University of Illinois at Urbana--Champaign}}
+\gfield{Award:}{I-Corps, Site Cohort 11}
+\gfield{ID\#:}{N/A}
+\gfield{Title:}{Use of lean methodologies to develop new, clinically-relevant technologies in liver tissue engineering}
+\gfield{My role:}{Trainee}
+\gfield{Effort:}{N/A}
+\gfield{Direct costs:}{\$2,000}
+\gfield{Total costs:}{\$2,000}
+\gfield{Project period:}{9/1/2016--5/30/2017}
+\end{tabular}}
+
+\medskip
+
+\cvgrantitem{\begin{tabular}[t]{@{}r@{\hspace{0.5em}}V{3.8in}}
+\gfield{Sponsor:}{\textbf{NIH/NIDDK}}
+\gfield{Award:}{Institutional National Research Service Award (T32)}
+\gfield{ID\#:}{T32 DK007011}
+\gfield{Title:}{Integrated Clinical and Basic Endocrinology Research Training Grant}
+\gfield{My role:}{Trainee}
+\gfield{Effort:}{80\%}
+\gfield{Direct costs:}{N/A}
+\gfield{Total costs:}{N/A}
+\gfield{Project period:}{7/1/2024--6/30/2025}
+\end{tabular}}
 
 \subsection{Current}
 
-\cventry{7/2025--6/2026}{NIDDK K12 Diabetes Docs: Physician-Scientist Career Development Program (DiabDocs)}{K12 DK133995}{Multi-Center Program Directors: Dr. David Maahs (Stanford University) and Dr. Linda DiMeglio (Indiana University)}{}
-{National, multi-center program to support the academic research career development of the next generation of physician--scientists with a specific focus in basic and clinical diabetes. The DiabDocs program is designed to provide a mentored research experience together with tailored career development training.\\
-My role: trainee.\\
-Title: ``Viral nucleotide sensing by $\beta$-cell MDA5 in T1D''.\\
-Total direct costs: \$178,600.}
+\cvgrantitem{\begin{tabular}[t]{@{}r@{\hspace{0.5em}}V{3.8in}}
+\gfield{Sponsor:}{\textbf{NIH/NIDDK}}
+\gfield{Award:}{DiabDocs: Physician-Scientist Career Development Program (K12)}
+\gfield{ID\#:}{K12 DK133995}
+\gfield{MPI:}{Dr.\ David Maahs (Stanford University) and Dr.\ Linda DiMeglio (Indiana University)}
+\gfield{Project:}{Viral nucleotide sensing by $\beta$-cell MDA5 in T1D}
+\gfield{My role:}{Scholar}
+\gfield{Effort:}{80\%}
+\gfield{Direct costs:}{\$178,600}
+\gfield{Total costs:}{\$192,888}
+\gfield{Project period:}{7/1/2025--6/30/2026}
+\end{tabular}}
 
-\cventry{6/2025--6/2026}{Endocrine Fellows Foundation Research Grant Program}{}{}{}
-{My role: PI.\\
-Title: ``Viral nucleotide sensing by $\beta$-cell MDA5 in type 1 diabetes''.\\
-Total direct costs: \$10,000.}
+\medskip
 
-\cventry{6/2025--6/2027}{Pollak Family Fellow}{}{Kovler Diabetes Center, University of Chicago}{}
-{My role: PI.\\
-Internal funding from the Kovler Diabetes Center at the University of Chicago to support research for an early career investigator in type 1 diabetes.\\
-Total direct costs: \$200,000}
+\cvgrantitem{\begin{tabular}[t]{@{}r@{\hspace{0.5em}}V{3.8in}}
+\gfield{Sponsor:}{\textbf{Endocrine Fellows Foundation (EFF)}}
+\gfield{Award:}{EFF Research Grant}
+\gfield{ID\#:}{N/A}
+\gfield{Title:}{Viral nucleotide sensing by $\beta$-cell MDA5 in type 1 diabetes}
+\gfield{My role:}{PI}
+\gfield{Effort:}{0\%}
+\gfield{Direct costs:}{\$10,000}
+\gfield{Total costs:}{\$10,000}
+\gfield{Project period:}{6/1/2025--5/31/2026}
+\end{tabular}}
 
-\subsection{Pending}
+\medskip
 
-\cvitem{}{None.}
+\cvgrantitem{\begin{tabular}[t]{@{}r@{\hspace{0.5em}}V{3.8in}}
+\gfield{Sponsor:}{\textbf{Kovler Diabetes Center, University of Chicago}}
+\gfield{Award:}{Pollak Family Fellow}
+\gfield{ID\#:}{N/A}
+\gfield{Title:}{N/A}
+\gfield{My role:}{PI}
+\gfield{Effort:}{0\%}
+\gfield{Direct costs:}{\$200,000}
+\gfield{Total costs:}{\$200,000}
+\gfield{Project period:}{6/1/2025--5/31/2027}
+\end{tabular}}
+
+\subsection{Under Review}
+
+\cvgrantitem{\begin{tabular}[t]{@{}r@{\hspace{0.5em}}V{3.8in}}
+\gfield{Sponsor:}{\textbf{Breakthrough T1D}}
+\gfield{Award:}{DiabDocs T1D Career Catalyst Award}
+\gfield{ID\#:}{N/A}
+\gfield{Title:}{MDA5 and TRIM21 in $\beta$-cell inflammatory signaling and autoimmunity}
+\gfield{My role:}{PI}
+\gfield{Effort:}{5\%}
+\gfield{Direct costs:}{\$90,910}
+\gfield{Total costs:}{\$100,000}
+\gfield{Project period:}{6/1/2026--5/31/2028 (anticipated)}
+\end{tabular}}
+
+\medskip
+
+\cvgrantitem{\begin{tabular}[t]{@{}r@{\hspace{0.5em}}V{3.8in}}
+\gfield{Sponsor:}{\textbf{NIH/NIDDK}}
+\gfield{Award:}{K08 Mentored Clinical Scientist Research Career Development Award (PA-24-182)}
+\gfield{ID\#:}{N/A}
+\gfield{Title:}{$\beta$-cell inflammatory signaling in type 1 diabetes}
+\gfield{My role:}{PI}
+\gfield{Effort:}{75\%}
+\gfield{Direct costs:}{\$729,500}
+\gfield{Total costs:}{\$787,860}
+\gfield{Project period:}{7/1/2026--6/30/2031 (anticipated)}
+\end{tabular}}
 
 % ===========================
 \section{Honors, Prizes, and Awards}
@@ -215,18 +394,19 @@ Total direct costs: \$200,000}
 \cventry{2012}{Graduated \textit{magna cum laude}}{}{University of Michigan}{}{}
 \cventry{2014}{Tau Beta Pi --- Illinois Alpha}{}{Grainger College of Engineering}{University of Illinois at Urbana--Champaign}{}
 \cventry{2014}{O'Morchoe Leadership Fellowship}{}{University of Illinois College of Medicine}{\$1,500}{}
-\cventry{2016}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{University of Illinois College of Medicine}{}{Outstanding; top 10\% of teaching assistants ranked by students in Fall 2016 semester.}
-\cventry{2017}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{University of Illinois College of Medicine}{}{Top 25\% of teaching assistants ranked by students in Spring 2017 semester.}
+\cventry{2016}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{University of Illinois College of Medicine}{}{Outstanding; top 10\% of teaching assistants ranked by students in the Fall 2016 semester.}
+\cventry{2017}{Teacher Ranked as Excellent}{Cell and Tissue Biology}{University of Illinois College of Medicine}{}{Top 25\% of teaching assistants ranked by students in the Spring 2017 semester.}
 \cventry{2019}{Chancellor's Student Service Award}{}{University of Illinois at Chicago}{}{Honors students who have made an outstanding contribution to the university through service.}
 \cventry{2024}{Early Career Forum Travel Award}{}{Endocrine Society}{\$400}{Supports attendance at workshop preceding the annual Endocrine Society meeting designed to help early career professionals navigate career options in endocrinology and connect with leading professionals in the field.}
 \cventry{2025}{American Diabetes Association Scholars Award}{}{American Diabetes Association}{}{Provides early-career professionals with career development programming, networking opportunities, and mentorship focused on diabetes research and care.}
 \cventry{2025}{Chicago Diabetes Day Poster Award}{}{Chicago Diabetes Research and Training Center}{\$100}{}
+\cventry{2026}{Type 1 Diabetes Fellows Program (declined)}{}{Endocrine Society}{}{}
 
 % ===========================
 \section{Invited Speaking}
 % ===========================
 
-\bibsection{talk-invited}
+\cvtalkbibsection{talk-invited}
 
 % ===========================
 \section{Invited, Elected, or Appointed Extramural Service}
@@ -237,9 +417,10 @@ Total direct costs: \$200,000}
 \cvitem{}{\textbf{\textit{Invited}}}
 \cvitem{}{Diabetes.}
 \cvitem{}{Molecular Medicine.}
+\cvitem{}{Journal of Clinical Investigation (JCI).}
+\cvitem{}{Journal of Clinical Endocrinology \& Metabolism.}
 
 \cvitem{}{\textbf{\textit{Assisted}}}
-\cvitem{}{Journal of Clinical Investigation (JCI).}
 \cvitem{}{JCI Insight.}
 \cvitem{}{Microarrays.}
 
@@ -256,7 +437,6 @@ Total direct costs: \$200,000}
 \subsection{Other}
 \cvitem{}{Endocrine Society.}
 \cvitem{}{American Diabetes Association.}
-\cvitem{}{American Association of Clinical Endocrinologists.}
 \cvitem{}{American Physician Scientists Association.}
 
 % ===========================
@@ -265,59 +445,34 @@ Total direct costs: \$200,000}
 
 \subsection{K-12}
 
-\cventry{2/2013}{Bioengineering the Future}{Organizer and Primary Instructor}{University Lab High School}{Urbana, IL}{
-Contact hours: 4.
-\begin{compactitem}
-\item Organized a week-long bioengineering course targeted at high school students.
-\item Engaged and coordinated multiple graduate student and faculty speakers.
-\end{compactitem}}
+\cventry{2013}{Bioengineering the Future}{Organizer and Primary Instructor}{University Lab High School}{Urbana, IL}{
+Contact hours: 4.}
 
-\cventry{7/2015, 7/2016}{Discover Bioengineering Camp}{Facilitator}{College of Engineering}{University of Illinois at Urbana--Champaign}
+\cventry{2015--2016}{Discover Bioengineering Camp}{Facilitator}{College of Engineering}{University of Illinois at Urbana--Champaign}
 {Primary instructors: Dr. Gregory H. Underhill, Dr. Jennifer Amos.\\
-Contact hours: 16.
-\begin{compactitem}
-\item Designed, revised, and taught module on PCR to high school students.
-\end{compactitem}}
+Contact hours: 16.}
 
-\cventry{7/2016}{Worldwide Youth in Science and Engineering Camp}{Facilitator}{College of Engineering}{University of Illinois at Urbana--Champaign}{Primary instructor: Dr. Gregory H. Underhill.\\
-Contact hours: 8.
-\begin{compactitem}
-\item Redesigned module on PCR in response to previously identified issues.
-\item Taught PCR module to high school students. 
-\end{compactitem}}
+\cventry{2016}{Worldwide Youth in Science and Engineering Camp}{Facilitator}{College of Engineering}{University of Illinois at Urbana--Champaign}{Primary instructor: Dr. Gregory H. Underhill.\\
+Contact hours: 8.}
 
 \subsection{Undergraduate education}
 
-\cventry{8/2011--5/2012}{Peer Mentor Program}{Peer Mentor}{Engineering Advising Center, College of Engineering}{University of Michigan}{
-Contact hours: 4.
-\begin{compactitem}
-\item Advised freshman mentee on gaining research and industry experience.
-\item Provided information regarding academics and course scheduling.
-\end{compactitem}}
+\cventry{2011--2012}{Peer Mentor Program}{Peer Mentor}{Engineering Advising Center, College of Engineering}{University of Michigan}{
+Contact hours: 4.}
 
-\cventry{1/2012--4/2012}{Quantitative Cell Biology}{Instructional Aid}{Department of Biomedical Engineering}{University of Michigan}{
+\cventry{2012}{Quantitative Cell Biology}{Instructional Aid}{Department of Biomedical Engineering}{University of Michigan}{
 Primary instructor: Dr. Shuichi Takayama.\\
 Semesters: Winter 2012.\\
 Contact hours: 2 hours/week, 16 weeks.\\
-Student evaluations: 4.5/5.0 (Winter 2012).
-\begin{compactitem}
-\item Graded problem sets and administered exams.
-\item Held weekly office hours, organized review sessions for exams.
-\end{compactitem}}
+Student evaluations: 4.5/5.0 (Winter 2012).}
 
-\cventry{1/2014--5/2014}{Stem Cell Bioengineering}{Grader}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{
+\cventry{2014}{Stem Cell Bioengineering}{Grader}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{
 Primary instructor: Dr. Gregory H. Underhill.\\
-Semesters: Spring 2014.\\
-\begin{compactitem}
-\item Graded problem sets and provided written feedback to students.
-\end{compactitem}}
+Semesters: Spring 2014.}
 
-\cventry{8/2015--12/2015}{Introduction to Bioengineering}{Mentor}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{
+\cventry{2015}{Introduction to Bioengineering}{Mentor}{Department of Bioengineering}{University of Illinois at Urbana--Champaign}{
 Primary instructors: Dr. Jennifer Amos, Mark Gryka.\\
-Contact hours: 12.\\
-\begin{compactitem}
-\item Introduced 3 mentees to bioengineering research.
-\end{compactitem}}
+Contact hours: 12.}
 
 \subsection{Graduate education}
 
@@ -327,71 +482,50 @@ Contact hours: 12.\\
 
 \cvitem{}{\textbf{\scshape{Didactic}}}
 
-\cventry{1/2016--5/2017}{Cell and Tissue Biology}{Teaching Assistant}{}{}
+\cventry{2016--2017}{Cell and Tissue Biology}{Teaching Assistant}{College of Medicine}{University of Illinois at Urbana-Champaign}
 {Primary instructor: Dr. Benjamin Williams.\\
 University of Illinois College of Medicine.\\
 Semesters: Spring 2016, Fall 2016, Spring 2017.\\
 Contact hours: 3 hours/week, 48 weeks.\\
-Student evaluations: 4.2/5.0 (Spring 2016), 4.8/5.0 (Fall 2016), 4.5/5.0 (Spring 2017).
-\begin{compactitem}
-\item Supervised weekly lab sessions providing active review of histology.
-\item Directed discussions sections on disease pathophysiology
-\item Provided feedback on student case presentations.
-\end{compactitem}}
+Student evaluations: 4.2/5.0 (Spring 2016), 4.8/5.0 (Fall 2016), 4.5/5.0 (Spring 2017).}
 
-\cventry{8/2020--5/2021}{Doctoring and Clinical Skills 1}{M4 Tutor}{}{}
+\cventry{2020--2021}{Doctoring and Clinical Skills 1}{M4 Tutor}{College of Medicine}{University of Illinois at Chicago}
 {Primary instructor: Dr. Annette Zacharia.\\
 University of Illinois College of Medicine.\\
 Semesters: Fall 2020, Spring 2021.\\
 Contact hours: 16.\\
-Student evaluations: 4.9/5.0 (Fall 2020), N/A (Spring 2021).
-\begin{compactitem}
-\item Held discussion sections with first-year students on history and physical exam skills.
-\item Provided feedback on clinical documentation and evidence-based medicine assignments.
-\end{compactitem}}
+Student evaluations: 4.9/5.0 (Fall 2020), N/A (Spring 2021).}
 
-\cventry{1/2024, 11--12/2024}{Clinical Skills and Reasoning}{Interviewer}{}{}
+\cventry{2024}{Clinical Skills and Reasoning}{Interviewer}{Pritzker School of Medicine}{University of Chicago}
 {Primary instructor: Dr. Tia Kostas, Dr. Joyce Tang, Dr. Jason Poston.\\
 Quarters: Winter 2024, Fall 2024.\\
 Contact hours: 4.\\
-Student evaluations: N/A.
-\begin{compactitem}
-\item Interviewed individuals with endocrine conditions for discussions with medical students.
-\end{compactitem}}
+Student evaluations: N/A.}
 
-\cventry{10/2024, 12/2025}{Clinical Pathophysiology and Therapeutics}{Discussant}{}{}
+\cventry{2024--2025}{Clinical Pathophysiology and Therapeutics}{Discussant}{Pritzker School of Medicine}{University of Chicago}
 {Primary instructor: Dr. Jason Poston, Dr. Aliya Husain.\\
 Quarters: Fall 2024, Winter 2025.\\
 Contact hours: 4.\\
-Student evaluations: N/A.
-\begin{compactitem}
-\item Discussed diabetes and pituitary disease cases with second-year students.
-\end{compactitem}}
+Student evaluations: N/A.}
 
-\cventry{1/2025}{Cell and Organ Physiology}{Discussant}{}{}
+\cventry{2025--2026}{Cell and Organ Physiology}{Discussant}{Pritzker School of Medicine}{University of Chicago}
 {Primary instructor: Dr. Benjamin Ko.\\
-Quarters: Winter 2025.\\
-Contact hours: 2.\\
-Student evaluations: N/A.
-\begin{compactitem}
-\item Discussed reproductive endocrinology with first-year students.
-\end{compactitem}}
+Quarters: Winter 2025, Spring 2026.\\
+Contact hours: 3.\\
+Student evaluations: N/A.}
 
 \cvitem{}{\textbf{\scshape{Clinical}}}
 
-\cventry{11/2022}{Clinical Skills 2}{Resident Preceptor}{}{}
+\cventry{2022}{Clinical Skills 2}{Resident Preceptor}{Pritzker School of Medicine}{University of Chicago}
 {Primary instructor: Dr. Jason Poston.\\
 Quarters: Winter 2022.\\
 Contact hours: 4.\\
-Student evaluations: N/A.
-\begin{compactitem}
-\item Introduced history and physical exam skills for second-year students.
-\end{compactitem}}
+Student evaluations: N/A.}
 
-\cventry{7/2021--6/2023}{Inpatient teaching as a resident}{}{}{}
+\cventry{2021--2023}{Inpatient teaching as a resident}{}{Pritzker School of Medicine}{University of Chicago}
 {Teaching medical students as an internal medicine intern and resident, 6 months per year.}
 
-\cventry{7/2023--present}{Inpatient teaching as a fellow}{}{}{}
+\cventry{2023--present}{Inpatient teaching as a fellow}{}{Pritzker School of Medicine}{University of Chicago}
 {Teaching medical students while on the inpatient endocrinology consult service as an endocrinology fellow. Initially 4 months in 2023--2024 and 1 month per year thereafter.}
 
 \subsection{Graduate medical education}
@@ -402,10 +536,10 @@ Student evaluations: N/A.
 
 \cvitem{}{\textbf{\scshape{Clinical}}}
 
-\cventry{7/2022--6/2023}{Inpatient teaching as a resident}{}{}{}
+\cventry{2022--2023}{Inpatient teaching as a resident}{}{Pritzker School of Medicine}{University of Chicago}
 {Teaching and supervising interns as an internal medicine resident, 6 months per year.}
 
-\cventry{7/2023--present}{Inpatient teaching as a fellow}{}{}{}
+\cventry{2023--present}{Inpatient teaching as a fellow}{}{Pritzker School of Medicine}{University of Chicago}
 {Teaching residents while on the inpatient endocrinology consult service as an endocrinology fellow. Initially 4 months in 2023--2024 and 1 month per year thereafter.}
 
 \cvitem{}{\textbf{\scshape{Continuing medical education}}}
@@ -479,24 +613,47 @@ Student evaluations: N/A.
 \section{Service}
 % ===========================
 
-\subsection{University of Chicago}
+\subsection{National and International}
+
+%\cvitem{}{\textbf{\scshape{Leadership}}}
+%
+%\cvitem{}{None.}
+%
 
 %\cvitem{}{\textbf{\scshape{Committee membership}}}
 %
 %\cvitem{}{None.}
 %
+
+\cvitem{}{\textbf{\scshape{Other}}}
+\cvitem{2025}{Mentor, ENDO Buddy Program}
+\cvitem{2025}{Mentor, AAP/ASCI/APSA Longitudinal Coaching Program.}
+\cvitem{2025}{Topic Lead for ``Reconciling research interests with clinical subspecialty selection,'' APSA Joint Meeting Peer Networking Hour.}
+
+\subsection{University of Chicago}
+
 %\cvitem{}{\textbf{\scshape{Leadership}}}
 %
 %\cvitem{}{None.}
 %
-%\cvitem{}{\textbf{\scshape{Other}}}
 
+%\cvitem{}{\textbf{\scshape{Committee membership}}}
+%
+%\cvitem{}{None.}
+%
+
+\cvitem{}{\textbf{\scshape{Other}}}
 \cvitem{2024--present}{Mentor, Underrepresented in Medicine Mentorship Program.}
 
 \subsection{University of Illinois College of Medicine}
 
-\cvitem{}{\textbf{\scshape{Committee membership}}}
+\cvitem{}{\textbf{\scshape{Leadership}}}
+\cvitem{2013--2014}{Co-Chair, Medical Scholars Program Retreat Committee.}
+\cvitem{2014--2017}{Co-President, Out in Medicine at Illinois.}
+\cvitem{2016--2017}{Co-Chair, Medical Scholars Program Advisory Committee.}
+\cvitem{2018--2019}{Special Projects Chair, Student Curricular Board.}
 
+\cvitem{}{\textbf{\scshape{Committee membership}}}
 \cvitem{2012--2014}{Medical Scholars Program Retreat Committee.}
 \cvitem{2016--2017}{Medical Scholars Program Advisory Committee.}
 \cvitem{2017}{Medical Scholars Program Steering Committee.}
@@ -505,54 +662,35 @@ Student evaluations: N/A.
 \cvitem{2017}{Teaching Excellence and Innovation in Education Award Selection Committee.}
 \cvitem{2018--2019}{Search Committee for Associate Dean of Curriculum.}
 
-\cvitem{}{\textbf{\scshape{Leadership}}}
-
-\cvitem{2013--2014}{Co-Chair, Medical Scholars Program Retreat Committee.}
-\cvitem{2014--2017}{Co-President, Out in Medicine at Illinois.}
-\cvitem{2016--2017}{Co-Chair, Medical Scholars Program Advisory Committee.}
-\cvitem{2018--2019}{Special Projects Chair, Student Curricular Board.}
-
-%\cvitem{}{\scshape{\textit{Other}}}
-%
-%\cvitem{}{None.}
-
 \subsection{University of Illinois at Urbana--Champaign}
 
-\cvitem{}{\textbf{\scshape{Committee membership}}}
-
-\cvitem{2012}{Climate Survey Steering Committee.}
-
 \cvitem{}{\textbf{\scshape{Leadership}}}
-
 \cvitem{2013--2016}{Organizer, Graduate Cancer Community Illinois.}
 
-%\cvitem{}{\textbf{\scshape{Other}}}
-%
-%\cvitem{}{None.}
+\cvitem{}{\textbf{\scshape{Committee membership}}}
+\cvitem{2012}{Climate Survey Steering Committee.}
 
 \subsection{University of Michigan}
+
+\cvitem{}{\textbf{\scshape{Leadership}}}
+\cvitem{2010--2011}{Executive Board Member, Biomedical Engineering Society.}
+
+%\subsection{Extramural (not indicated above)}
+
+%\cvitem{}{\textbf{\scshape{Leadership}}}
+%
+%\cvitem{}{None.}
+%
 
 %\cvitem{}{\textbf{\scshape{Committee membership}}}
 %
 %\cvitem{}{None.}
-
-\cvitem{}{\textbf{\scshape{Leadership}}}
-
-\cvitem{2010--2011}{Executive Board Member, Biomedical Engineering Society.}
+%
 
 %\cvitem{}{\textbf{\scshape{Other}}}
 %
 %\cvitem{}{None.}
-
-%\subsection{Extramural (not indicated above)}
 %
-%\cvitem{}{\textbf{\scshape{Leadership roles}}}
-%
-%\cvitem{}{None.}
-%
-%\cvitem{}{\textbf{\scshape{Other}}}
-%
-%\cvitem{}{None.}
 
 % ===========================
 \section{Scholarship}
@@ -590,5 +728,9 @@ Student evaluations: N/A.
 ~
 {\small Co-author who presented is also \textbf{bolded}.}
 \bibsection{poster-coauthor}
+
+% ===========================
+%\section{Media Coverage and Appearances}
+% ===========================
 
 \end{document}
