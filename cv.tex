@@ -133,6 +133,7 @@ defernumbers=true,
   \iftoggle{invitedtalkmode}{%
     \cvitem{\thefield{year}}{%
       \iffieldundef{note}{}{\printfield{note}, }%
+      \printfield{title}. %
       \printfield{howpublished}%
       \iffieldundef{address}{}{ in \printfield{address}}%
       .%
