@@ -1,0 +1,2 @@
+# Use Homebrew's biber: TeX Live's own biber binary fails to self-extract on this Mac (lipo error)
+$biber = '/opt/homebrew/bin/biber %O %S';
